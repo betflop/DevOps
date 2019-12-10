@@ -1,1 +1,6 @@
-grep -P 'CALL.+Context=' > 1.txt
+# grep -P 'CALL.+Context=' > 1.txt
+
+# cat читает весь текстовый файл или каталог - всех текстовых файлов
+# cat rphost_*/*.log | grep -P 'CALL.+Context=' # | - передача по конвееру.
+# Точка это любой символ. Плюс означает что - (то что перед плюсом) - любое кол-ва раз но минимум один
+cat test*.log | grep -P 'CALL.+rphost'
