@@ -1,8 +1,12 @@
 # cat err/rphost_*/*.log |
 cat *.log |
-grep -P 'EXCP.+Desct=' |
-gawk -F'Descr=' '{if ($2!~/^$/) errs[$2]+=1}END{for (i in errs) print errs[i] " " i}' |
-sort -rnb > errs_total.txt
+grep -P 'CALL.+Context=' |
+sed -r 's/^[0-9]+:[0-9]+\.[0-9]+-//' |
+sed -r 's/CALL,.+,Context=/CALL,Context=/' |
+sed -r 's/,Memory=.+$//' |
+gawk -F',CALL,Context=' '{errs[$2]+=1}END{for (i in errs) print errs[i] " " i}' |
+sort -rnb |
+head -n 10 > calls_by_duration.txt
 
 # cat 
 # читает весь текстовый файл или каталог - всех текстовых файлов
@@ -35,9 +39,9 @@ sort -rnb > errs_total.txt
 # s - заменить /ЧтоЗаменить/НаЧтоЗаменить/
 # ЧтоЗаменить - может быть строка , а могут быть регулярки
 
-sed -r 's/^[0-9]+:[0-9]+\.[0-9]+-//' |
-sed -r 's/CALL,.+,Context=/CALL,Context=/' |
-sed -r 's/,Memory=.+$//' |
+# sed -r 's/^[0-9]+:[0-9]+\.[0-9]+-//' |
+# sed -r 's/CALL,.+,Context=/CALL,Context=/' |
+# sed -r 's/,Memory=.+$//' |
 
 # Регулярные выражения это шаблоны поиска
 # ^ - мы ищем что-то что находится в начале строки
