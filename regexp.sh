@@ -51,4 +51,4 @@
 
 # grep "\S" - Удаляет пустые строк ис пробелами
 
-cat test1* | grep -P "Hell" --color | sed -r 's/\n//'
+cat test1* | grep -P "Hell" --color | sed -r 's/\s//g'
