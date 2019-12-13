@@ -39,4 +39,16 @@
 # -o, --only-matching       show only the part of a line matching PATTERN
 
 # cat test1* | grep -o -P '.Ben.\.' --color
-cat test1* | grep -P '[BT]en\.' --color
+# cat test1* | grep -P '[BT]en\.' --color
+# ^ - отрицает всё что в наборе
+# [\b] - Возврат на один символ Backspace
+# cat test1* | grep -P '[SBT]en[0-9]\.' --color --line-number
+# \f - Перевод страницы Form feed
+# \n - Перевод строки Line feed
+# \r - Перевод каретки Carriage return CR при выводе которого курсор перемещается к левому краю поля, не переходя на другую строку
+# \t - Tab
+# \v - Вертикальная табуляция
+
+# grep "\S" - Удаляет пустые строк ис пробелами
+
+cat test1* | grep -P "Hell" --color | sed -r 's/\n//'

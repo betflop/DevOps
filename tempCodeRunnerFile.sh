@@ -1,2 +1,1 @@
-|
-# xargs -d'\n' rm
+\S
