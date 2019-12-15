@@ -50,5 +50,9 @@
 # \v - Вертикальная табуляция
 
 # grep "\S" - Удаляет пустые строк ис пробелами
+# sed -r "/^#/d" - Удаляем пустые строки
+# sed -r "s/ //g" - Убирает пробелы
+# cat test1* | grep -P "Hell" --color | sed -r 's/\s//g'
+ 
 
-cat test1* | grep -P "Hell" --color | sed -r 's/\s//g'
+cat test* | gsed -r '/^$/d' | gsed -r 's/ //g'
