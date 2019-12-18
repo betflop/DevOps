@@ -1,0 +1,17 @@
+<script type="text/template" id="popup_template">
+    <h1>Hello, {username}!</h1>
+    //<p>Lorem ipsum dolor sit amet..</p>
+    12.125.254.124$
+    Hello, {username}!
+    $123567
+    123$
+    453
+    123-456-789
+    (123)-456-789
+</script>
+<script type="text/javascript">
+    var container = document.getElementById('popup_template');
+    //var containerContent = container.textContent || container.innerText;
+    render_template(containerContent, {
+        username: 'Bob',
+    });
