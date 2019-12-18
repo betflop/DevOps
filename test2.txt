@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-Hello, my name is Ben. Please visit my website at http://www.forta.com/
-Hello, my name is Ben1. Please visit my website at http://www.forta.com/
-Hello, my name is Ben2. Please visit my website at http://www.forta.com/
-=======
 <script type="text/template" id="popup_template">
     <h1>Hello, {username}!</h1>
     //<p>Lorem ipsum dolor sit amet..</p>
@@ -20,4 +15,3 @@ Hello, my name is Ben2. Please visit my website at http://www.forta.com/
     render_template(containerContent, {
         username: 'Bob',
     });
->>>>>>> 7d0aa98d9f9312c42d100a3641372676c3ee02ec

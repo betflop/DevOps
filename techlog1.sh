@@ -7,10 +7,6 @@ sed -r 's/,Memory=.+$//' |
 gawk -F',CALL,Context=' '{errs[$2]+=1}END{for (i in errs) print errs[i] " " i}' |
 sort -rnb |
 head -n 10 > calls_by_duration.txt
-<<<<<<< HEAD
-
-=======
->>>>>>> 7d0aa98d9f9312c42d100a3641372676c3ee02ec
 # cat 
 # читает весь текстовый файл или каталог - всех текстовых файлов
 # cat rphost_*/*.log | grep -P 'CALL.+Context=' 

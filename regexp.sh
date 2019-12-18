@@ -53,11 +53,6 @@
 # sed -r "/^#/d" - Удаляем пустые строки
 # sed -r "s/ //g" - Убирает пробелы
 # cat test1* | grep -P "Hell" --color | sed -r 's/\s//g'
-<<<<<<< HEAD
- 
-
-cat test* | gsed -r '/^$/d' | gsed -r 's/ //g'
-=======
 # cat test*.txt | sed -r '/^$/d' | sed -r 's/ //g'
  
 # find 1/ -type f | xargs cat Прочитай все файлы любой вложенности из папки 1
@@ -124,4 +119,3 @@ cat test* | gsed -r '/^$/d' | gsed -r 's/ //g'
 # cat test2* | grep -P '(?m)\b[0-9/.]+$' --color # после числа нет $
 
 # cat test2* | grep -P '(\()?\d{3}(?(1)\)|-)\d{3}-d{4}' --color # условия в регулярный выражениях
->>>>>>> 7d0aa98d9f9312c42d100a3641372676c3ee02ec
