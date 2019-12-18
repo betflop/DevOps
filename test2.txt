@@ -1,3 +1,23 @@
+<<<<<<< HEAD
 Hello, my name is Ben. Please visit my website at http://www.forta.com/
 Hello, my name is Ben1. Please visit my website at http://www.forta.com/
 Hello, my name is Ben2. Please visit my website at http://www.forta.com/
+=======
+<script type="text/template" id="popup_template">
+    <h1>Hello, {username}!</h1>
+    //<p>Lorem ipsum dolor sit amet..</p>
+    12.125.254.124$
+    Hello, {username}!
+    $123567
+    123$
+    453
+    123-456-789
+    (123)-456-789
+</script>
+<script type="text/javascript">
+    var container = document.getElementById('popup_template');
+    //var containerContent = container.textContent || container.innerText;
+    render_template(containerContent, {
+        username: 'Bob',
+    });
+>>>>>>> 7d0aa98d9f9312c42d100a3641372676c3ee02ec
