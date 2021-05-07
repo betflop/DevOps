@@ -1,0 +1,38 @@
+pipeline {
+    agent none
+	environment  {
+        Base1C = credentials('db_user') 
+    }
+    
+    stages {
+        
+        stage('Статический анализ Sonar scanner') {
+            agent {
+                label 'sonar-scanner'
+            }
+            steps {        
+                script {
+                    def СonfigurationText = readFile encoding: 'UTF-8', file: 'src/cf/Configuration.xml'
+                    def ConfigurationVersion = (СonfigurationText =~ /<Version>(.*)<\/Version>/)[0][1]
+                    def VArray = ConfigurationVersion.split("\\.")
+                    def Version = "${VArray[0]}.${VArray[1]}.${VArray[2]}"
+                    echo "workspace directory is ${workspace}"
+                    def scannerHome = tool 'sonar-scanner'           
+                    sonarCommand = "${scannerHome}/bin/sonar-scanner -Dsonar.projectVersion=${Version}"
+                    cmd("echo ${sonarCommand}")
+                    withSonarQubeEnv('SonarQube') {
+                        sh "${sonarCommand}"         
+                    }
+                }    
+            } 
+        }
+    }
+}
+
+def cmd(command){
+    if (isUnix()) {
+        sh "${command}"
+    } else {
+        bat " chcp 65001\n${command}"
+    }
+}
