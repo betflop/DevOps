@@ -1,4 +1,4 @@
-# gRPC сервер и клиен на golang с прокси REST api через grpc-gateway 
+# gRPC сервер и клиент на golang с прокси REST api через grpc-gateway 
 
 ### Запуск компиляции proto файлов под golang через докер образ namely/protoc-all
 ### создает папку gen
