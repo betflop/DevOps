@@ -1,3 +1,4 @@
+
 set number
 set noswapfile
 
@@ -17,11 +18,12 @@ colorscheme onehalfdark
 " colorscheme gruvbox
 " colorscheme molokai
 
-set clipboard=unnamed
+" set clipboard=unnamed
 set clipboard=unnamedplus
 
 
 call plug#begin('~/.config/nvim') 
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -117,6 +119,10 @@ set colorcolumn=79
 autocmd FileType python map <buffer> <C-r> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <C-r> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
+" format with goimports instead of gofmt
+" let g:go_fmt_command = "goimports"
+" disable fmt on save
+let g:go_fmt_autosave = 0
 
 
 lua << EOF
@@ -301,3 +307,5 @@ function! s:Bclose(bang, buffer)
 endfunction
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>)
 nnoremap <silent> <Leader>bd :Bclose<CR>
+
+noremap <silent> <Leader>bd :Bclose<CR>
