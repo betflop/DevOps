@@ -30,7 +30,10 @@ type Message struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Id   int64  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	Film string `protobuf:"bytes,2,opt,name=film,proto3" json:"film,omitempty"` // text or callback
+	Img  string `protobuf:"bytes,3,opt,name=img,proto3" json:"img,omitempty"`
+	Api  string `protobuf:"bytes,4,opt,name=api,proto3" json:"api,omitempty"`
 }
 
 func (x *Message) Reset() {
@@ -65,11 +68,32 @@ func (*Message) Descriptor() ([]byte, []int) {
 	return file_example_proto_rawDescGZIP(), []int{0}
 }
 
-func (x *Message) GetId() uint64 {
+func (x *Message) GetId() int64 {
 	if x != nil {
 		return x.Id
 	}
 	return 0
+}
+
+func (x *Message) GetFilm() string {
+	if x != nil {
+		return x.Film
+	}
+	return ""
+}
+
+func (x *Message) GetImg() string {
+	if x != nil {
+		return x.Img
+	}
+	return ""
+}
+
+func (x *Message) GetApi() string {
+	if x != nil {
+		return x.Api
+	}
+	return ""
 }
 
 var File_example_proto protoreflect.FileDescriptor
@@ -78,29 +102,25 @@ var file_example_proto_rawDesc = []byte{
 	0x0a, 0x0d, 0x65, 0x78, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
 	0x02, 0x70, 0x62, 0x1a, 0x1c, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2f, 0x61, 0x70, 0x69, 0x2f,
 	0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x2e, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x22, 0x19, 0x0a, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x0e, 0x0a, 0x02,
-	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x02, 0x69, 0x64, 0x32, 0xb6, 0x02, 0x0a,
-	0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79, 0x12, 0x39, 0x0a, 0x0b, 0x50, 0x6f, 0x73, 0x74,
-	0x45, 0x78, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x12, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x65, 0x73,
-	0x73, 0x61, 0x67, 0x65, 0x1a, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67,
-	0x65, 0x22, 0x10, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0a, 0x22, 0x05, 0x2f, 0x70, 0x6f, 0x73, 0x74,
-	0x3a, 0x01, 0x2a, 0x12, 0x39, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x45, 0x78, 0x61, 0x6d, 0x70, 0x6c,
-	0x65, 0x12, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x1a, 0x0b,
-	0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x11, 0x82, 0xd3, 0xe4,
-	0x93, 0x02, 0x0b, 0x12, 0x09, 0x2f, 0x67, 0x65, 0x74, 0x2f, 0x7b, 0x69, 0x64, 0x7d, 0x12, 0x3f,
-	0x0a, 0x0d, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x45, 0x78, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x12,
-	0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x1a, 0x0b, 0x2e, 0x70,
-	0x62, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x14, 0x82, 0xd3, 0xe4, 0x93, 0x02,
-	0x0e, 0x2a, 0x0c, 0x2f, 0x64, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x2f, 0x7b, 0x69, 0x64, 0x7d, 0x12,
-	0x37, 0x0a, 0x0a, 0x50, 0x75, 0x74, 0x45, 0x78, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x12, 0x0b, 0x2e,
-	0x70, 0x62, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x1a, 0x0b, 0x2e, 0x70, 0x62, 0x2e,
-	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x0f, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x09, 0x1a,
-	0x04, 0x2f, 0x70, 0x75, 0x74, 0x3a, 0x01, 0x2a, 0x12, 0x3b, 0x0a, 0x0c, 0x50, 0x61, 0x74, 0x63,
-	0x68, 0x45, 0x78, 0x61, 0x6d, 0x70, 0x6c, 0x65, 0x12, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x65,
-	0x73, 0x73, 0x61, 0x67, 0x65, 0x1a, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61,
-	0x67, 0x65, 0x22, 0x11, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0b, 0x32, 0x06, 0x2f, 0x70, 0x61, 0x74,
-	0x63, 0x68, 0x3a, 0x01, 0x2a, 0x42, 0x05, 0x5a, 0x03, 0x2f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x33,
+	0x6f, 0x22, 0x51, 0x0a, 0x07, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x12, 0x0e, 0x0a, 0x02,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x03, 0x52, 0x02, 0x69, 0x64, 0x12, 0x12, 0x0a, 0x04,
+	0x66, 0x69, 0x6c, 0x6d, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x66, 0x69, 0x6c, 0x6d,
+	0x12, 0x10, 0x0a, 0x03, 0x69, 0x6d, 0x67, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x69,
+	0x6d, 0x67, 0x12, 0x10, 0x0a, 0x03, 0x61, 0x70, 0x69, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x03, 0x61, 0x70, 0x69, 0x32, 0xc3, 0x01, 0x0a, 0x07, 0x47, 0x61, 0x74, 0x65, 0x77, 0x61, 0x79,
+	0x12, 0x3a, 0x0a, 0x08, 0x46, 0x69, 0x6e, 0x64, 0x46, 0x69, 0x6c, 0x6d, 0x12, 0x0b, 0x2e, 0x70,
+	0x62, 0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x1a, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4d,
+	0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x14, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0e, 0x22, 0x09,
+	0x2f, 0x66, 0x69, 0x6e, 0x64, 0x66, 0x69, 0x6c, 0x6d, 0x3a, 0x01, 0x2a, 0x12, 0x40, 0x0a, 0x0b,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x12, 0x0b, 0x2e, 0x70, 0x62,
+	0x2e, 0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x1a, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x65,
+	0x73, 0x73, 0x61, 0x67, 0x65, 0x22, 0x17, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x11, 0x22, 0x0c, 0x2f,
+	0x75, 0x70, 0x64, 0x61, 0x74, 0x65, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x3a, 0x01, 0x2a, 0x12, 0x3a,
+	0x0a, 0x08, 0x47, 0x65, 0x74, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x12, 0x0b, 0x2e, 0x70, 0x62, 0x2e,
+	0x4d, 0x65, 0x73, 0x73, 0x61, 0x67, 0x65, 0x1a, 0x0b, 0x2e, 0x70, 0x62, 0x2e, 0x4d, 0x65, 0x73,
+	0x73, 0x61, 0x67, 0x65, 0x22, 0x14, 0x82, 0xd3, 0xe4, 0x93, 0x02, 0x0e, 0x22, 0x09, 0x2f, 0x67,
+	0x65, 0x74, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x3a, 0x01, 0x2a, 0x42, 0x05, 0x5a, 0x03, 0x2f, 0x70,
+	0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -120,18 +140,14 @@ var file_example_proto_goTypes = []interface{}{
 	(*Message)(nil), // 0: pb.Message
 }
 var file_example_proto_depIdxs = []int32{
-	0, // 0: pb.Gateway.PostExample:input_type -> pb.Message
-	0, // 1: pb.Gateway.GetExample:input_type -> pb.Message
-	0, // 2: pb.Gateway.DeleteExample:input_type -> pb.Message
-	0, // 3: pb.Gateway.PutExample:input_type -> pb.Message
-	0, // 4: pb.Gateway.PatchExample:input_type -> pb.Message
-	0, // 5: pb.Gateway.PostExample:output_type -> pb.Message
-	0, // 6: pb.Gateway.GetExample:output_type -> pb.Message
-	0, // 7: pb.Gateway.DeleteExample:output_type -> pb.Message
-	0, // 8: pb.Gateway.PutExample:output_type -> pb.Message
-	0, // 9: pb.Gateway.PatchExample:output_type -> pb.Message
-	5, // [5:10] is the sub-list for method output_type
-	0, // [0:5] is the sub-list for method input_type
+	0, // 0: pb.Gateway.FindFilm:input_type -> pb.Message
+	0, // 1: pb.Gateway.UpdateImage:input_type -> pb.Message
+	0, // 2: pb.Gateway.GetImage:input_type -> pb.Message
+	0, // 3: pb.Gateway.FindFilm:output_type -> pb.Message
+	0, // 4: pb.Gateway.UpdateImage:output_type -> pb.Message
+	0, // 5: pb.Gateway.GetImage:output_type -> pb.Message
+	3, // [3:6] is the sub-list for method output_type
+	0, // [0:3] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -188,11 +204,9 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type GatewayClient interface {
-	PostExample(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
-	GetExample(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
-	DeleteExample(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
-	PutExample(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
-	PatchExample(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
+	FindFilm(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
+	UpdateImage(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
+	GetImage(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error)
 }
 
 type gatewayClient struct {
@@ -203,45 +217,27 @@ func NewGatewayClient(cc grpc.ClientConnInterface) GatewayClient {
 	return &gatewayClient{cc}
 }
 
-func (c *gatewayClient) PostExample(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
+func (c *gatewayClient) FindFilm(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
 	out := new(Message)
-	err := c.cc.Invoke(ctx, "/pb.Gateway/PostExample", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.Gateway/FindFilm", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) GetExample(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
+func (c *gatewayClient) UpdateImage(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
 	out := new(Message)
-	err := c.cc.Invoke(ctx, "/pb.Gateway/GetExample", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.Gateway/UpdateImage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *gatewayClient) DeleteExample(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
+func (c *gatewayClient) GetImage(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
 	out := new(Message)
-	err := c.cc.Invoke(ctx, "/pb.Gateway/DeleteExample", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) PutExample(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
-	out := new(Message)
-	err := c.cc.Invoke(ctx, "/pb.Gateway/PutExample", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *gatewayClient) PatchExample(ctx context.Context, in *Message, opts ...grpc.CallOption) (*Message, error) {
-	out := new(Message)
-	err := c.cc.Invoke(ctx, "/pb.Gateway/PatchExample", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/pb.Gateway/GetImage", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -250,123 +246,79 @@ func (c *gatewayClient) PatchExample(ctx context.Context, in *Message, opts ...g
 
 // GatewayServer is the server API for Gateway service.
 type GatewayServer interface {
-	PostExample(context.Context, *Message) (*Message, error)
-	GetExample(context.Context, *Message) (*Message, error)
-	DeleteExample(context.Context, *Message) (*Message, error)
-	PutExample(context.Context, *Message) (*Message, error)
-	PatchExample(context.Context, *Message) (*Message, error)
+	FindFilm(context.Context, *Message) (*Message, error)
+	UpdateImage(context.Context, *Message) (*Message, error)
+	GetImage(context.Context, *Message) (*Message, error)
 }
 
 // UnimplementedGatewayServer can be embedded to have forward compatible implementations.
 type UnimplementedGatewayServer struct {
 }
 
-func (*UnimplementedGatewayServer) PostExample(context.Context, *Message) (*Message, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PostExample not implemented")
+func (*UnimplementedGatewayServer) FindFilm(context.Context, *Message) (*Message, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FindFilm not implemented")
 }
-func (*UnimplementedGatewayServer) GetExample(context.Context, *Message) (*Message, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method GetExample not implemented")
+func (*UnimplementedGatewayServer) UpdateImage(context.Context, *Message) (*Message, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateImage not implemented")
 }
-func (*UnimplementedGatewayServer) DeleteExample(context.Context, *Message) (*Message, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method DeleteExample not implemented")
-}
-func (*UnimplementedGatewayServer) PutExample(context.Context, *Message) (*Message, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PutExample not implemented")
-}
-func (*UnimplementedGatewayServer) PatchExample(context.Context, *Message) (*Message, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method PatchExample not implemented")
+func (*UnimplementedGatewayServer) GetImage(context.Context, *Message) (*Message, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetImage not implemented")
 }
 
 func RegisterGatewayServer(s *grpc.Server, srv GatewayServer) {
 	s.RegisterService(&_Gateway_serviceDesc, srv)
 }
 
-func _Gateway_PostExample_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_FindFilm_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Message)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).PostExample(ctx, in)
+		return srv.(GatewayServer).FindFilm(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Gateway/PostExample",
+		FullMethod: "/pb.Gateway/FindFilm",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).PostExample(ctx, req.(*Message))
+		return srv.(GatewayServer).FindFilm(ctx, req.(*Message))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_GetExample_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_UpdateImage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Message)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).GetExample(ctx, in)
+		return srv.(GatewayServer).UpdateImage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Gateway/GetExample",
+		FullMethod: "/pb.Gateway/UpdateImage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).GetExample(ctx, req.(*Message))
+		return srv.(GatewayServer).UpdateImage(ctx, req.(*Message))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Gateway_DeleteExample_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Gateway_GetImage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(Message)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(GatewayServer).DeleteExample(ctx, in)
+		return srv.(GatewayServer).GetImage(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/pb.Gateway/DeleteExample",
+		FullMethod: "/pb.Gateway/GetImage",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).DeleteExample(ctx, req.(*Message))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_PutExample_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Message)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).PutExample(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/pb.Gateway/PutExample",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).PutExample(ctx, req.(*Message))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Gateway_PatchExample_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(Message)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(GatewayServer).PatchExample(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/pb.Gateway/PatchExample",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GatewayServer).PatchExample(ctx, req.(*Message))
+		return srv.(GatewayServer).GetImage(ctx, req.(*Message))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -376,24 +328,16 @@ var _Gateway_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*GatewayServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "PostExample",
-			Handler:    _Gateway_PostExample_Handler,
+			MethodName: "FindFilm",
+			Handler:    _Gateway_FindFilm_Handler,
 		},
 		{
-			MethodName: "GetExample",
-			Handler:    _Gateway_GetExample_Handler,
+			MethodName: "UpdateImage",
+			Handler:    _Gateway_UpdateImage_Handler,
 		},
 		{
-			MethodName: "DeleteExample",
-			Handler:    _Gateway_DeleteExample_Handler,
-		},
-		{
-			MethodName: "PutExample",
-			Handler:    _Gateway_PutExample_Handler,
-		},
-		{
-			MethodName: "PatchExample",
-			Handler:    _Gateway_PatchExample_Handler,
+			MethodName: "GetImage",
+			Handler:    _Gateway_GetImage_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
