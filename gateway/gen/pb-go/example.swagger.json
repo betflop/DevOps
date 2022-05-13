@@ -45,7 +45,7 @@
     },
     "/getimage": {
       "post": {
-        "operationId": "Gateway_GetImage",
+        "operationId": "Gateway_UpdateScore",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -124,6 +124,21 @@
         },
         "api": {
           "type": "string"
+        },
+        "user_id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "user_name": {
+          "type": "string"
+        },
+        "score": {
+          "type": "string",
+          "format": "int64"
+        },
+        "result": {
+          "type": "string",
+          "format": "int64"
         }
       }
     },

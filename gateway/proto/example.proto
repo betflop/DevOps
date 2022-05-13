@@ -23,33 +23,21 @@ service Gateway {
       body: "*"
     };
   }
-  /* rpc GetExample(Message) returns (Message) { */
-  /*   option (google.api.http) = { */
-  /*     get: "/get/{id}" */
-  /*   }; */
-  /* } */
-  /* rpc DeleteExample(Message) returns (Message) { */
-  /*   option (google.api.http) = { */
-  /*     delete: "/delete/{id}" */
-  /*   }; */
-  /* } */
-  /* rpc PutExample(Message) returns (Message) { */
-  /*   option (google.api.http) = { */
-  /*     put: "/put" */
-  /*     body: "*" */
-  /*   }; */
-  /* } */
-  /* rpc PatchExample(Message) returns (Message) { */
-  /*   option (google.api.http) = { */
-  /*     patch: "/patch" */
-  /*     body: "*" */
-  /*   }; */
-  /* } */
+      rpc UpdateScore(Message) returns (Message) {
+    option (google.api.http) = {
+      post: "/getimage"
+      body: "*"
+    };
+  }
 }
 
 message Message {
   int64 id = 1;
-  string film = 2; // text or callback
+  string film = 2; 
   string img = 3;
   string api = 4;
+  int64 user_id = 5;
+  string user_name = 6;
+  int64 score = 7;
+  int64 result = 8;
 }

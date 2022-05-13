@@ -22,13 +22,13 @@ type server struct {
 	pb.UnimplementedGatewayServer
 }
 
-// curl -d '{"id":"22"}' -H "Content-Type: application/json"  -X POST http://localhost:8888/post
 func (s *server) FindFilm(ctx context.Context, in *pb.Message) (*pb.Message, error) {
 	var (
 		ctx2 = context.Background()
-		dsn = "user=ozon password=ozon dbname=ozon sslmode=disable"
+		dsn  = "user=ozon password=ozon dbname=ozon sslmode=disable"
 	)
 	db, err := sql.Open("postgres", dsn)
+	db.SetMaxOpenConns(10)
 	if err = db.PingContext(ctx2); err != nil {
 		log.Fatal(err)
 	}
@@ -48,13 +48,15 @@ func (s *server) FindFilm(ctx context.Context, in *pb.Message) (*pb.Message, err
 func (s *server) UpdateImage(ctx context.Context, in *pb.Message) (*pb.Message, error) {
 	var (
 		ctx2 = context.Background()
-		dsn = "user=ozon password=ozon dbname=ozon sslmode=disable"
+		dsn  = "user=ozon password=ozon dbname=ozon sslmode=disable"
 	)
 	db, err1 := sql.Open("postgres", dsn)
+	db.SetMaxOpenConns(10)
+
 	if err1 = db.PingContext(ctx2); err1 != nil {
 		log.Fatal(err1)
 	}
-		var res sql.Result
+	var res sql.Result
 	var err error
 	if res, err = db.Exec("UPDATE films SET img = $1 where id = $2", in.Img, in.Id); err != nil {
 		log.Fatal(err)
@@ -63,6 +65,38 @@ func (s *server) UpdateImage(ctx context.Context, in *pb.Message) (*pb.Message, 
 	return &pb.Message{Id: in.Id, Film: in.Film, Img: in.Img}, nil
 }
 
+func (s *server) UpdateScore(ctx context.Context, in *pb.Message) (*pb.Message, error) {
+	var (
+		ctx2 = context.Background()
+		dsn  = "user=ozon password=ozon dbname=ozon sslmode=disable"
+	)
+
+	var score int64
+	score = 0
+	db, err1 := sql.Open("postgres", dsn)
+	db.SetMaxOpenConns(10)
+
+	if err1 = db.PingContext(ctx2); err1 != nil {
+		log.Fatal(err1)
+	}
+	var res sql.Result
+	var err error
+	if res, err = db.Exec("INSERT INTO results (user_id, user_name, score) values ($1, $2, $3)", in.UserId, in.UserName, in.Score); err != nil {
+		log.Fatal(err)
+	}
+	if in.Result == 10 {
+		rows, _ := db.Query("SELECT sum(score) as score FROM public.results where user_id = $1 LIMIT 10", int(in.UserId))
+		defer rows.Close()
+		for rows.Next() {
+			err := rows.Scan(&score)
+			if err != nil {
+				log.Fatal(err)
+			}
+		}
+	}
+	fmt.Printf("%v", res)
+	return &pb.Message{Result: score}, nil
+}
 
 func (s *server) GetImage(ctx context.Context, in *pb.Message) (*pb.Message, error) {
 	parameter := map[string]string{
@@ -71,7 +105,6 @@ func (s *server) GetImage(ctx context.Context, in *pb.Message) (*pb.Message, err
 	}
 
 	query := g.NewGoogleSearch(parameter, in.Api)
-	// Many search engine available: bing, yahoo, baidu, googemaps, googleproduct, googlescholar, ebay, walmart, youtube..
 
 	rsp, err := query.GetJSON()
 	println(err)
@@ -81,36 +114,9 @@ func (s *server) GetImage(ctx context.Context, in *pb.Message) (*pb.Message, err
 	var img string
 	if str, ok := data["original"].(string); ok {
 		img = str
-		/* act on str */
-		// return str
-	// } else {
-		/* not string */
-		// return "error"
 	}
 	return &pb.Message{Id: in.Id, Film: in.Film, Img: img}, nil
 }
-
-
-// curl -X GET http://localhost:8888/get/1
-// func (s *server) GetExample(ctx context.Context, in *pb.Message) (*pb.Message, error) {
-// 	fmt.Println(in)
-// 	return &pb.Message{Id: 100 + in.Id}, nil
-// }
-
-// func (s *server) DeleteExample(ctx context.Context, in *pb.Message) (*pb.Message, error) {
-// 	fmt.Println(in)
-// 	return &pb.Message{Id: 100 + in.Id}, nil
-// }
-
-// func (s *server) PutExample(ctx context.Context, in *pb.Message) (*pb.Message, error) {
-// 	fmt.Println(in)
-// 	return &pb.Message{Id: 100 + in.Id}, nil
-// }
-
-// func (s *server) PatchExample(ctx context.Context, in *pb.Message) (*pb.Message, error) {
-// 	fmt.Println(in)
-// 	return &pb.Message{Id: 100 + in.Id}, nil
-// }
 
 func runRest() {
 	// Пакет context в go позволяет вам передавать данные в вашу программу в каком-то «контексте».

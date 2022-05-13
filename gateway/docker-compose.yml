@@ -11,6 +11,11 @@ services:
       - POSTGRES_USER=ozon
       - POSTGRES_PASSWORD=ozon
       - POSTGRES_DB=ozon
+    healthcheck:
+        test: ["CMD-SHELL", "pg_isready -U ozon -d ozon"]
+        interval: 10s
+        timeout: 5s
+        retries: 5
 
   pgadmin:
     image: dpage/pgadmin4:4.18
@@ -32,7 +37,8 @@ services:
         - ./migrations:/migrations
      command: -source=file://migrations -database postgres://ozon:ozon@pgsql-server:5432/ozon?sslmode=disable up 4
      depends_on:
-       - db
+       db:
+         condition: service_healthy
      links: 
         - "db:pgsql-server"  
 

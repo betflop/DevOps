@@ -2,10 +2,10 @@ package main
 
 import (
 	"context"
-	"fmt"
+	"strconv"
+	"strings"
 
 	pb "example.gateway/gen/pb-go/pb"
-	// pb "github.com/matzhouse/go-grpc/proto"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/grpclog"
 
@@ -41,7 +41,6 @@ func main() {
 	opts := []grpc.DialOption{
 		grpc.WithInsecure(),
 	}
-	// args := os.Args
 	conn, err := grpc.Dial("0.0.0.0:12201", opts...)
 
 	if err != nil {
@@ -51,14 +50,6 @@ func main() {
 	defer conn.Close()
 
 	client := pb.NewGatewayClient(conn)
-	// args[1]
-	// i, err := strconv.ParseUint(args[1], 10, 64)
-	// if err != nil {
-	// handle error
-	// fmt.Println(err)
-	// os.Exit(2)
-	// }
-
 	bot, err := tgbotapi.NewBotAPI(botconfig.Token)
 	if err != nil {
 		log.Panic(err)
@@ -71,17 +62,21 @@ func main() {
 	for update := range updates {
 		rand.Seed(time.Now().UnixNano())
 		if update.Message != nil { // If we got a message
-			sendNewQuestions(client, bot, update, botconfig, update.Message.Chat.ID, update.Message.Text)
+			var num int64
+			sendNewQuestions(client, bot, update, botconfig, update.Message.Chat.ID, update.Message.Text, num)
 		} else if update.CallbackQuery != nil {
-			updateCallback(bot, update)
-			if true {
-				sendNewQuestions(client, bot, update, botconfig, update.CallbackQuery.From.ID, "/start")
+			updateCallback(client, bot, update)
+
+			words := strings.Split(update.CallbackQuery.Data, "_")
+			i, _ := strconv.ParseInt(words[0], 10, 64)
+			if i < 10 {
+				sendNewQuestions(client, bot, update, botconfig, update.CallbackQuery.From.ID, "/start", i)
 			}
 		}
 	}
 }
 
-func updateCallback(bot *tgbotapi.BotAPI, update tgbotapi.Update) {
+func updateCallback(client pb.GatewayClient, bot *tgbotapi.BotAPI, update tgbotapi.Update) {
 	// Respond to the callback query, telling Telegram to show the user
 	// a message with the data received.
 	callback := tgbotapi.NewCallback(update.CallbackQuery.ID, update.CallbackQuery.Data)
@@ -98,19 +93,40 @@ func updateCallback(bot *tgbotapi.BotAPI, update tgbotapi.Update) {
 	// And finally, send a message containing the data received.
 
 	var text string
-	if update.CallbackQuery.Data == "correct" {
+	var score int64
+	words := strings.Split(update.CallbackQuery.Data, "_")
+	// for idx, word := range words {
+	// 	fmt.Printf("Word %d is: %s\n", idx, word)
+	// }
+	if words[1] == "correct" {
 		text = "Правильно!"
+		score = 1
 	} else {
 		text = "Ошибка..."
+		score = 0
 	}
+	i, _ := strconv.ParseInt(words[0], 10, 64)
+	request := &pb.Message{UserId: update.CallbackQuery.From.ID, UserName: update.CallbackQuery.From.UserName, Score: score, Result: i}
+	response, _ := client.UpdateScore(context.Background(), request)
+	// println("response --------------")
+	result := response.Result
+	println(result)
 	msg := tgbotapi.NewMessage(update.CallbackQuery.Message.Chat.ID, text)
 	if _, err := bot.Send(msg); err != nil {
 		panic(err)
 	}
+
+	if i == 10 {
+		msg := tgbotapi.NewMessage(update.CallbackQuery.Message.Chat.ID, "Отлично!\nТвой результат "+strconv.FormatInt(result, 10)+" из 10.\nЕсли хочешь сыграть еще раз, нажми /start")
+		if _, err := bot.Send(msg); err != nil {
+			panic(err)
+		}
+
+	}
+
 }
 
-func sendNewQuestions(client pb.GatewayClient, bot *tgbotapi.BotAPI, update tgbotapi.Update, botconfig Config, ChatID int64, messageText string) {
-	// log.Printf("[%s] +++ %s", update.Message.From.UserName, update.Message.Text)
+func sendNewQuestions(client pb.GatewayClient, bot *tgbotapi.BotAPI, update tgbotapi.Update, botconfig Config, ChatID int64, messageText string, num int64) {
 	var text string
 	if messageText != "/start" {
 		text = "Привет я бот Угадай кино, нажми на /start"
@@ -122,16 +138,13 @@ func sendNewQuestions(client pb.GatewayClient, bot *tgbotapi.BotAPI, update tgbo
 	questions := make(map[int][]string)
 	correct_answer := rand.Intn(4) + 1
 	for {
-		i := rand.Intn(4) + 1
+		i := rand.Intn(65) + 1
 		if _, ok := questions[i]; ok {
 			//do something here
-			// println("уже было")
 		} else {
 			questions_array = append(questions_array, i)
 			var film string
 			var img string
-			// film, img = findfilm(db, i)
-
 			request := &pb.Message{Id: int64(i)}
 			response, err := client.FindFilm(context.Background(), request)
 			println("response --------------")
@@ -152,15 +165,12 @@ func sendNewQuestions(client pb.GatewayClient, bot *tgbotapi.BotAPI, update tgbo
 					if err != nil {
 						grpclog.Fatalf("fail to dial: %v", err)
 					}
-					// img = parse(questions[i][0], botconfig.Api)
 					request2 := &pb.Message{Id: int64(i), Img: img}
 					response2, err := client.UpdateImage(context.Background(), request2)
-					// img = response.Img
 					println(response2)
 					if err != nil {
 						grpclog.Fatalf("fail to dial: %v", err)
 					}
-					// updateImage(db, i, img)
 				}
 				text = "[Угадай кино по кадру](" + img + ")"
 
@@ -174,14 +184,17 @@ func sendNewQuestions(client pb.GatewayClient, bot *tgbotapi.BotAPI, update tgbo
 			break
 		}
 	}
+	num++
+	numstr := strconv.FormatInt(num, 10)
+	// numstr := strconv.Itoa(num)
 	var numericKeyboard = tgbotapi.NewInlineKeyboardMarkup(
 		tgbotapi.NewInlineKeyboardRow(
-			tgbotapi.NewInlineKeyboardButtonData(questions[questions_array[0]][0], questions[questions_array[0]][1]),
-			tgbotapi.NewInlineKeyboardButtonData(questions[questions_array[1]][0], questions[questions_array[1]][1]),
+			tgbotapi.NewInlineKeyboardButtonData(questions[questions_array[0]][0], numstr+"_"+questions[questions_array[0]][1]),
+			tgbotapi.NewInlineKeyboardButtonData(questions[questions_array[1]][0], numstr+"_"+questions[questions_array[1]][1]),
 		),
 		tgbotapi.NewInlineKeyboardRow(
-			tgbotapi.NewInlineKeyboardButtonData(questions[questions_array[2]][0], questions[questions_array[2]][1]),
-			tgbotapi.NewInlineKeyboardButtonData(questions[questions_array[3]][0], questions[questions_array[3]][1]),
+			tgbotapi.NewInlineKeyboardButtonData(questions[questions_array[2]][0], numstr+"_"+questions[questions_array[2]][1]),
+			tgbotapi.NewInlineKeyboardButtonData(questions[questions_array[3]][0], numstr+"_"+questions[questions_array[3]][1]),
 		),
 	)
 	msg := tgbotapi.NewMessage(ChatID, text)
@@ -190,8 +203,6 @@ func sendNewQuestions(client pb.GatewayClient, bot *tgbotapi.BotAPI, update tgbo
 	if messageText == "/start" {
 		msg.ReplyMarkup = numericKeyboard
 	}
-	fmt.Printf("questions = %v", questions)
-	println("questions_array", questions_array)
 	msg.ReplyMarkup = numericKeyboard
 	bot.Send(msg)
 }
