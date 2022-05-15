@@ -2,8 +2,6 @@ package main
 
 import (
 	"context"
-	"database/sql"
-	"fmt"
 	"log"
 	"net"
 	"net/http"
@@ -16,6 +14,8 @@ import (
 	g "github.com/serpapi/google-search-results-golang"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/credentials/insecure"
+
+	dbozon "example.gateway/pkg/dbozon"
 )
 
 type server struct {
@@ -23,79 +23,23 @@ type server struct {
 }
 
 func (s *server) FindFilm(ctx context.Context, in *pb.Message) (*pb.Message, error) {
-	var (
-		ctx2 = context.Background()
-		dsn  = "user=ozon password=ozon dbname=ozon sslmode=disable"
-	)
-	db, err := sql.Open("postgres", dsn)
-	db.SetMaxOpenConns(10)
-	if err = db.PingContext(ctx2); err != nil {
-		log.Fatal(err)
-	}
-	rows, _ := db.Query("select film, img from films where id = $1", int(in.Id))
-	defer rows.Close()
+
 	var film string
 	var img string
-	for rows.Next() {
-		err := rows.Scan(&film, &img)
-		if err != nil {
-			log.Fatal(err)
-		}
-	}
+	film, img = dbozon.FindFilmPostgre(int(in.Id))	
 	return &pb.Message{Id: in.Id, Film: film, Img: img}, nil
+
 }
 
 func (s *server) UpdateImage(ctx context.Context, in *pb.Message) (*pb.Message, error) {
-	var (
-		ctx2 = context.Background()
-		dsn  = "user=ozon password=ozon dbname=ozon sslmode=disable"
-	)
-	db, err1 := sql.Open("postgres", dsn)
-	db.SetMaxOpenConns(10)
-
-	if err1 = db.PingContext(ctx2); err1 != nil {
-		log.Fatal(err1)
-	}
-	var res sql.Result
-	var err error
-	if res, err = db.Exec("UPDATE films SET img = $1 where id = $2", in.Img, in.Id); err != nil {
-		log.Fatal(err)
-	}
-	fmt.Printf("%v", res)
+	dbozon.UpdateImagePostgre(int(in.Id), in.Img)	
 	return &pb.Message{Id: in.Id, Film: in.Film, Img: in.Img}, nil
 }
 
 func (s *server) UpdateScore(ctx context.Context, in *pb.Message) (*pb.Message, error) {
-	var (
-		ctx2 = context.Background()
-		dsn  = "user=ozon password=ozon dbname=ozon sslmode=disable"
-	)
-
-	var score int64
-	score = 0
-	db, err1 := sql.Open("postgres", dsn)
-	db.SetMaxOpenConns(10)
-
-	if err1 = db.PingContext(ctx2); err1 != nil {
-		log.Fatal(err1)
-	}
-	var res sql.Result
-	var err error
-	if res, err = db.Exec("INSERT INTO results (user_id, user_name, score) values ($1, $2, $3)", in.UserId, in.UserName, in.Score); err != nil {
-		log.Fatal(err)
-	}
-	if in.Result == 10 {
-		rows, _ := db.Query("SELECT sum(score) as score FROM public.results where user_id = $1 LIMIT 10", int(in.UserId))
-		defer rows.Close()
-		for rows.Next() {
-			err := rows.Scan(&score)
-			if err != nil {
-				log.Fatal(err)
-			}
-		}
-	}
-	fmt.Printf("%v", res)
-	return &pb.Message{Result: score}, nil
+// fmt.Printf("%v", res)
+        result := dbozon.UpdateScorePostgre(int(in.UserId), in.UserName, int(in.Score), int(in.Result))
+	return &pb.Message{Result: int64(result)}, nil
 }
 
 func (s *server) GetImage(ctx context.Context, in *pb.Message) (*pb.Message, error) {

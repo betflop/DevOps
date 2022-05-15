@@ -3,4 +3,4 @@ RUN mkdir /app
 ADD . /app/
 WORKDIR /app/server
 RUN go build -o main . 
-CMD ["/app/server/main"]
+CMD ["/app/cmd/server/main"]

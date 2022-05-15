@@ -8,7 +8,7 @@ services:
     command: 
       -d proto
       -o gen/pb-go
-      -i third_party/googleapis
+      -i pkg/third_party/googleapis
       -l go
       --with-gateway
     volumes:
