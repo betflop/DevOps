@@ -1,6 +1,6 @@
 FROM golang:latest 
 RUN mkdir /app
 ADD . /app/
-WORKDIR /app/client
+WORKDIR /app/cmd/client
 RUN go build -o main . 
 CMD ["/app/cmd/client/main"]
