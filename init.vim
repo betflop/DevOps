@@ -1,26 +1,21 @@
-
 set number
 set noswapfile
 
-" set termguicolors
-" if exists('+termguicolors')
-"   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-"   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-"   set termguicolors
-" endif
 if (has('termguicolors'))
   set termguicolors
 endif
 
-
+filetype plugin indent on
 set background=dark
-colorscheme onehalfdark
-" colorscheme gruvbox
+" colorscheme onehalfdark
+colorscheme gruvbox
 " colorscheme molokai
 
-" set clipboard=unnamed
 set clipboard=unnamedplus
-
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 
 call plug#begin('~/.config/nvim') 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -43,34 +38,44 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tpope/vim-commentary' 
 Plug 'mattn/emmet-vim' 
 Plug 'raimondi/delimitmate' 
-" Plug 'valloric/youcompleteme' 
-" Plug 'SirVer/ultisnips' 
-" Plug 'honza/vim-snippets' 
-" Plug 'anyakichi/vim-surround' 
-" Plug 'scrooloose/syntastic' 
 Plug 'puremourning/vimspector' 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
 Plug 'junegunn/fzf.vim' 
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 
-" Plug 'junegunn/fzf.vim' 
+" Plug 'tpope/vim-surround'
+Plug 'valloric/matchtagalways'
+Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
+" Plug 'othree/html5.vim'
+" Plug 'htacg/tidy-html5'
+" Plug 'arunsahadeo/webval'
+" Plug 'sorin-ionescu/vim-htmlvalidator'
+" Plug 'alvan/vim-closetag'
+" Plug 'neoclide/coc.nvim'
+" Plug 'dense-analysis/ale'
+Plug 'ryanoasis/vim-devicons'
+Plug 'sirver/ultisnips'
 call plug#end()
+
+" assuming you want to use snipmate snippet engine
+" ActivateAddons vim-snippets snipmate
+
+" let g:ale_fixers = {'html': ['prettier'], 'css': ['stylelint']}
+" let g:ale_linters = {'html': ['htmlhint'], 'css': ['stylelint']}
+" let g:ale_linters_explicit = 1
+" let g:ale_fix_on_save = 1
 
 set encoding=UTF-8
 autocmd FileType python map <buffer> <Leader>q :w<CR>:exec '!python3 %'<CR>
-" shellescape(@%, 1)<CR> 
 autocmd FileType go map <buffer> <Leader>q :w<CR>:exec '!go run %'<CR>
-" shellescape(@%, 1)<CR>
-" autocmd FileType cpp map <buffer> <Leader><F5> :w<CR>:exec '!g++ % -g -o a.o    ut && ./a.out'<CR> 
 
 
 nmap <C-e> :NERDTreeToggle<CR> 
-noremap <leader>/ :Commentary<CR> 
+noremap '/ :Commentary<CR> 
+" nmap <C-x><C-o> <C-BS>
 " nnoremap <F4> mzgggqG`z 
 
-inoremap jk <esc>
+" inoremap jk <esc>
 nnoremap ,<space> :nohlsearch<CR>
-" nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR> 
-" nnoremap <leader>d :YcmCompleter GetDoc<CR>
 
 let $BAT_THEME='Monokai Extended Origin' 
 
@@ -83,6 +88,7 @@ au FileType scss setlocal formatprg=prettier\ --parser\ css
 au FileType css setlocal formatprg=prettier\ --parser\ css 
 au FileType python setlocal formatprg=autopep8\ -aa\ --indent-size\ 0\ - 
 au FileType json setlocal formatprg=prettier 
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 let g:UltiSnipsExpandTrigger="<c-j>" 
 let g:ycm_autoclose_preview_window_after_insertion = 1 
@@ -119,9 +125,6 @@ set colorcolumn=79
 autocmd FileType python map <buffer> <C-r> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 autocmd FileType python imap <buffer> <C-r> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
-" format with goimports instead of gofmt
-" let g:go_fmt_command = "goimports"
-" disable fmt on save
 let g:go_fmt_autosave = 0
 
 
@@ -130,18 +133,19 @@ lua << EOF
 vim.o.completeopt = 'menuone,noselect'
 
 -- luasnip setup
+-- luasnip setup
 local luasnip = require 'luasnip'
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
-cmp.setup {
+cmp.setup({
   completion = {
     autocomplete = false
   },
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
-    end,
+require('luasnip').lsp_expand(args.body)
+end,
   },
   mapping = {
     ['<C-p>'] = cmp.mapping.select_prev_item(),
@@ -157,8 +161,6 @@ cmp.setup {
     ['<Tab>'] = function(fallback)
       if vim.fn.pumvisible() == 1 then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
-      elseif luasnip.expand_or_jumpable() then
-        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
       else
         fallback()
       end
@@ -166,6 +168,8 @@ cmp.setup {
     ['<S-Tab>'] = function(fallback)
       if vim.fn.pumvisible() == 1 then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
+		      elseif luasnip.expand_or_jumpable() then
+        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
       elseif luasnip.jumpable(-1) then
         vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
       else
@@ -177,14 +181,49 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
-}
-EOF
+    formatting = {
+      format = function(entry, vim_item)
+        vim_item.kind = ({
+          Text = "Text",
+          Method = "Method",
+          Function = "Function",
+          Constructor = "Constructor",
+          Field = "Field",
+          Variable = "Variable",
+          Class = "Class",
+          Module = "Module",
+          Property = "Property",
+          Value = "Value",
+          Enum = "Enum",
+          Snippet = "Snippet",
+        })[vim_item.kind]
+        vim_item.menu = ({
+          nvim_lsp = "[LSP]",
+          treesitter = "[TreeSitter]",
+          luasnip = "[LuaSnip]",
+          buffer = "[Buffer]",
+        })[entry.source.name]
 
+        return vim_item
+      end,
+    },
+  })
+
+  -- Setup lspconfig.
+  require('lspconfig').solargraph.setup{
+    capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+  }
+
+  require("luasnip/loaders/from_vscode").load({ paths = { "~/.config/nvim/snippets/friendly-snippets-main" } })
+  -- require("luasnip/loaders/from_vscode").load()
+  -- require("luasnip/loaders/from_vscode").lazy_load()
+EOF
 
 
 
 lua << EOF
 local nvim_lsp = require('lspconfig')
+
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -222,7 +261,9 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'gopls' }
+local servers = { 'pyright', 'gopls', 'tsserver' } 
+
+
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -308,4 +349,16 @@ endfunction
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>)
 nnoremap <silent> <Leader>bd :Bclose<CR>
 
-noremap <silent> <Leader>bd :Bclose<CR>
+" autocmd FileType c setlocal foldmethod=syntax
+
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+" For changing choices in choiceNodes (not strictly necessary for a basic setup).
+" imap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+" smap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+
+augroup remember_folds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent! loadview
+augroup END
