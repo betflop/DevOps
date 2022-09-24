@@ -49,6 +49,9 @@ Plug 'chiel92/vim-autoformat'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sirver/ultisnips'
 Plug 'andreevlex/vim-language-1c-bsl'
+Plug 'tpope/vim-fugitive'
+Plug 'adrienverge/yamllint'
+Plug 'neomake/neomake'
 call plug#end()
 
 set encoding=UTF-8
@@ -89,8 +92,8 @@ let g:user_emmet_leader_key='<tab>'
 " fzf
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>f :Files<CR>
-" nmap <Leader>t :Tags<CR>
-nmap <Leader>l :Lines<CR>
+nmap <Leader>t :Tags<CR>
+" nmap <Leader>l :Lines<CR>
 nmap <Leader>r :Rg<CR>
 " :Rg :Ag
 
@@ -345,10 +348,20 @@ augroup END
 
 " Airline settings.
 let g:airline_theme = "molokai"
-" au BufWrite * :Autoformat
+au BufWrite *.yml :Neomake
+" au BufWrite *.yml :call Neomake()
+" autocmd BufWritePre call Neomake()
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
+
+map <Enter> o<ESC>
+map <S-Enter> O<ESC>
+
+
+
+" command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -- ".shellescape(<q-args>), 1,fzf#vim#with_preview(), <bang>0)
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -- ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
