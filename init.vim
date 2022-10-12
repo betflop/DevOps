@@ -1,22 +1,24 @@
+set encoding=UTF-8
 set number
 set noswapfile
 set relativenumber
-
-if (has('termguicolors'))
-	set termguicolors
-endif
-
-filetype plugin indent on
-set background=dark
-" colorscheme onehalfdark
-colorscheme gruvbox
-" colorscheme molokai
-
 set clipboard=unnamedplus
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
+set background=dark
+set colorcolumn=79
+set mouse=a
+filetype plugin indent on
+
+if (has('termguicolors'))
+	set termguicolors
+endif
+
+let $BAT_THEME='Monokai Extended Origin'
+colorscheme gruvbox
+let g:airline_theme = "molokai"
 
 call plug#begin('~/.config/nvim')
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -54,17 +56,18 @@ Plug 'adrienverge/yamllint'
 Plug 'neomake/neomake'
 call plug#end()
 
-set encoding=UTF-8
 autocmd FileType python map <buffer> <Leader>q :w<CR>:exec '!python3 %'<CR>
 autocmd FileType go map <buffer> <Leader>q :w<CR>:exec '!go run %'<CR>
-
+" run current script with python3 by CTRL+R in command and insert mode
+" autocmd FileType python map <buffer> <C-r> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+" autocmd FileType python imap <buffer> <C-r> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 nmap <C-e> :NERDTreeToggle<CR>
 noremap '/ :Commentary<CR>
-
 nnoremap ,<space> :nohlsearch<CR>
-
-let $BAT_THEME='Monokai Extended Origin'
+map gn :bn<cr>
+map gp :bp<cr>
+map gw :Bclose<cr>
 
 " FORMATTERS
 au FileType javascript setlocal formatprg=prettier
@@ -76,19 +79,36 @@ au FileType css setlocal formatprg=prettier\ --parser\ css
 au FileType python setlocal formatprg=autopep8\ -aa\ --indent-size\ 0\ -
 au FileType json setlocal formatprg=prettier
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-
 let g:syntastic_check_on_open=1
-filetype plugin on
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-let g:UltiSnipsExpandTrigger="<c-j>"
 let g:user_emmet_leader_key='<tab>'
 " tab + ,
+let g:vimspector_enable_mappings = 'HUMAN'
+let g:go_fmt_autosave = 0
+let g:python_highlight_all = 1
+
+augroup remember_folds
+" autocmd!
+" autocmd BufWinLeave * mkview
+" autocmd BufWinEnter * silent! loadview
+" augroup END
+
+au BufWrite *.yml :Neomake
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+
+" Enter dont insert mod
+map <Enter> o<ESC>
+
 " fzf
 nmap <Leader>b :Buffers<CR>
 nmap <Leader>f :Files<CR>
@@ -97,21 +117,11 @@ nmap <Leader>t :Tags<CR>
 nmap <Leader>r :Rg<CR>
 " :Rg :Ag
 
-set mouse=a
-let g:python_highlight_all = 1
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -- ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
 
 
-map gn :bn<cr>
-map gp :bp<cr>
-map gw :Bclose<cr>
-let g:vimspector_enable_mappings = 'HUMAN'
+" /////////////////////////////////////////////////////////////////////////////////
 
-set colorcolumn=79
-" run current script with python3 by CTRL+R in command and insert mode
-autocmd FileType python map <buffer> <C-r> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-autocmd FileType python imap <buffer> <C-r> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
-
-let g:go_fmt_autosave = 0
 
 lua << EOF
 
@@ -330,38 +340,8 @@ execute 'bdelete'.a:bang.' '.btarget
 execute wcurrent.'wincmd w'
 endfunction
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>)
-nnoremap <silent> <Leader>bd :Bclose<CR>
 
-" autocmd FileType c setlocal foldmethod=syntax
+nnoremap <silent> <Leader>bd :Bclose<CR>
 
 snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
 snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
-" For changing choices in choiceNodes (not strictly necessary for a basic setup).
- " imap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
- " smap <silent><expr> <C-n> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
-
-augroup remember_folds
-autocmd!
-" autocmd BufWinLeave * mkview
-" autocmd BufWinEnter * silent! loadview
-augroup END
-
-" Airline settings.
-let g:airline_theme = "molokai"
-au BufWrite *.yml :Neomake
-" au BufWrite *.yml :call Neomake()
-" autocmd BufWritePre call Neomake()
-
-" Return to last edit position when opening files (You want this!)
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-
-map <Enter> o<ESC>
-map <S-Enter> O<ESC>
-
-
-
-" command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -- ".shellescape(<q-args>), 1,fzf#vim#with_preview(), <bang>0)
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -- ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
