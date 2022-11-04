@@ -1,0 +1,32 @@
+# add the user to the docker group.
+```
+sudo usermod -aG docker $USER
+sudo reboot
+```
+
+# start psql in docker
+```
+docker exec -it db_postgres_1 psql -U project
+Выйти из клиента PostgreSQL:
+\q
+
+Показать список баз данных PostgreSQL:
+\l
+
+Показать список таблиц:
+\dt
+
+Показать список пользователей (ролей):
+\du
+
+Показать структуру таблицы:
+\d table_name
+
+Посмотреть список всех схем:
+\dn
+
+Подключиться к конкретной схеме:
+SET search_path TO schema_name
+
+```
+
