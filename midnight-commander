@@ -1,0 +1,5 @@
+[Midnight-Commander]
+# for 8/16 color..
+skin=dracula
+# for 256 color..
+skin=dracula256
