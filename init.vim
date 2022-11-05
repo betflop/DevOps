@@ -18,6 +18,8 @@ endif
 
 let $BAT_THEME='Monokai Extended Origin'
 colorscheme gruvbox
+" colorscheme onehalfdark
+" colorscheme space-vim-dark
 let g:airline_theme = "molokai"
 
 call plug#begin('~/.config/nvim')
@@ -50,7 +52,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'chiel92/vim-autoformat'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sirver/ultisnips'
-Plug 'andreevlex/vim-language-1c-bsl'
 Plug 'tpope/vim-fugitive'
 Plug 'adrienverge/yamllint'
 Plug 'neomake/neomake'
