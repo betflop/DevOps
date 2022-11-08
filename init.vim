@@ -120,8 +120,15 @@ nmap <Leader>r :Rg<CR>
 
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -- ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
 
-# git difftool --tool nvimdiff
+" GIT diff
+" git difftool --tool nvimdiff
+
+
 " /////////////////////////////////////////////////////////////////////////////////
+
+" pumvisible() checks if the complete popup is currently visible. 
+" feedkeys() Sends input-keys to Nvim, subject to various quirks controlled by mode flags
+" To input sequences like <C-o> use nvim_replace_termcodes() (typically with escape_ks=false) to replace keycodes, then pass the result to nvim_feedkeys().
 
 
 lua << EOF
@@ -157,50 +164,49 @@ mapping = {
 		vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
 	else
 		fallback()
-		end
-		end,
-		['<S-Tab>'] = function(fallback)
-		if vim.fn.pumvisible() == 1 then
-			vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
-		elseif luasnip.expand_or_jumpable() then
-			vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
-		elseif luasnip.jumpable(-1) then
-			vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
-		else
-			fallback()
-			end
-			end,
-			},
-		sources = {
-			{ name = 'nvim_lsp' },
-			{ name = 'luasnip' },
-			},
-		formatting = {
-			format = function(entry, vim_item)
-			vim_item.kind = ({
-			Text = "Text",
-			Method = "Method",
-			Function = "Function",
-			Constructor = "Constructor",
-			Field = "Field",
-			Variable = "Variable",
-			Class = "Class",
-			Module = "Module",
-			Property = "Property",
-			Value = "Value",
-			Enum = "Enum",
-			Snippet = "Snippet",
-			})[vim_item.kind]
-		vim_item.menu = ({
-		nvim_lsp = "[LSP]",
-		treesitter = "[TreeSitter]",
-		luasnip = "[LuaSnip]",
-		buffer = "[Buffer]",
-		})[entry.source.name]
-
-	return vim_item
+	end
 	end,
+		['<S-Tab>'] = function(fallback)
+		    if vim.fn.pumvisible() == 1 then
+		        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
+		    elseif luasnip.expand_or_jumpable() then
+		        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+		    elseif luasnip.jumpable(-1) then
+		        vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
+		    else
+			fallback()
+		    end
+		end,
 	},
+sources = {
+	{ name = 'nvim_lsp' },
+	{ name = 'luasnip' },
+	},
+formatting = {
+	format = function(entry, vim_item)
+	vim_item.kind = ({
+	Text = "Text",
+	Method = "Method",
+	Function = "Function",
+	Constructor = "Constructor",
+	Field = "Field",
+	Variable = "Variable",
+	Class = "Class",
+	Module = "Module",
+	Property = "Property",
+	Value = "Value",
+	Enum = "Enum",
+	Snippet = "Snippet",
+	})[vim_item.kind]
+vim_item.menu = ({
+nvim_lsp = "[LSP]",
+treesitter = "[TreeSitter]",
+luasnip = "[LuaSnip]",
+buffer = "[Buffer]",
+})[entry.source.name]
+return vim_item
+end,
+},
 })
 
 -- Setup lspconfig.
