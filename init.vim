@@ -131,6 +131,25 @@ command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-hea
 " To input sequences like <C-o> use nvim_replace_termcodes() (typically with escape_ks=false) to replace keycodes, then pass the result to nvim_feedkeys().
 
 
+" ['<Tab>'] = function(fallback)
+" 	if vim.fn.pumvisible() == 1 then
+" 		vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
+" 	else
+" 		fallback()
+" 	end
+" 	end,
+" 	['<S-Tab>'] = function(fallback)
+" 	if vim.fn.pumvisible() == 1 then
+" 	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
+" 	elseif luasnip.expand_or_jumpable() then
+" 	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+" 	elseif luasnip.jumpable(-1) then
+" 	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
+" 	else
+" 	    fallback()
+" 	end
+" 	end,
+
 lua << EOF
 
 -- Set completeopt to have a better completion experience
@@ -159,24 +178,9 @@ mapping = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = true,
 		},
-	['<Tab>'] = function(fallback)
-	if vim.fn.pumvisible() == 1 then
-		vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
-	else
-		fallback()
-	end
-	end,
-	['<S-Tab>'] = function(fallback)
-	if vim.fn.pumvisible() == 1 then
-	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
-	elseif luasnip.expand_or_jumpable() then
-	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
-	elseif luasnip.jumpable(-1) then
-	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
-	else
-	    fallback()
-	end
-	end,
+
+
+		
 	},
 sources = {
 	{ name = 'nvim_lsp' },
@@ -306,49 +310,49 @@ function! s:Bclose(bang, buffer)
 	else
 		let btarget = bufnr(a:buffer)
 	endif
-if btarget < 0
-	call s:Warn('No matching buffer for '.a:buffer)
-	return
-endif
-if empty(a:bang) && getbufvar(btarget, '&modified')
-	call s:Warn('No write since last change for buffer '.btarget.' (use :Bclose!)')
-	return
-endif
-" Numbers of windows that view target buffer which we will delete.
-let wnums = filter(range(1, winnr('$')), 'winbufnr(v:val) == btarget')
-if !g:bclose_multiple && len(wnums) > 1
-	call s:Warn('Buffer is in multiple windows (use ":let bclose_multiple=1")')
-	return
-endif
-let wcurrent = winnr()
-for w in wnums
-	execute w.'wincmd w'
-	let prevbuf = bufnr('#')
-	if prevbuf > 0 && buflisted(prevbuf) && prevbuf != btarget
-		buffer #
-	else
-		bprevious
+	if btarget < 0
+		call s:Warn('No matching buffer for '.a:buffer)
+		return
 	endif
-	if btarget == bufnr('%')
-		" Numbers of listed buffers which are not the target to be deleted.
-		let blisted = filter(range(1, bufnr('$')), 'buflisted(v:val) && v:val != btarget')
-		" Listed, not target, and not displayed.
-		let bhidden = filter(copy(blisted), 'bufwinnr(v:val) < 0')
-		" Take the first buffer, if any (could be more intelligent).
-		let bjump = (bhidden + blisted + [-1])[0]
-		if bjump > 0
-			execute 'buffer '.bjump
+	if empty(a:bang) && getbufvar(btarget, '&modified')
+		call s:Warn('No write since last change for buffer '.btarget.' (use :Bclose!)')
+		return
+	endif
+	" Numbers of windows that view target buffer which we will delete.
+	let wnums = filter(range(1, winnr('$')), 'winbufnr(v:val) == btarget')
+	if !g:bclose_multiple && len(wnums) > 1
+		call s:Warn('Buffer is in multiple windows (use ":let bclose_multiple=1")')
+		return
+	endif
+	let wcurrent = winnr()
+	for w in wnums
+		execute w.'wincmd w'
+		let prevbuf = bufnr('#')
+		if prevbuf > 0 && buflisted(prevbuf) && prevbuf != btarget
+			buffer #
 		else
-			execute 'enew'.a:bang
+			bprevious
 		endif
-	endif
-endfor
-execute 'bdelete'.a:bang.' '.btarget
-execute wcurrent.'wincmd w'
+		if btarget == bufnr('%')
+			" Numbers of listed buffers which are not the target to be deleted.
+			let blisted = filter(range(1, bufnr('$')), 'buflisted(v:val) && v:val != btarget')
+			" Listed, not target, and not displayed.
+			let bhidden = filter(copy(blisted), 'bufwinnr(v:val) < 0')
+			" Take the first buffer, if any (could be more intelligent).
+			let bjump = (bhidden + blisted + [-1])[0]
+			if bjump > 0
+				execute 'buffer '.bjump
+			else
+				execute 'enew'.a:bang
+			endif
+		endif
+	endfor
+	execute 'bdelete'.a:bang.' '.btarget
+	execute wcurrent.'wincmd w'
 endfunction
+
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>)
 
 nnoremap <silent> <Leader>bd :Bclose<CR>
-
 snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
 snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
