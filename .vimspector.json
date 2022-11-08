@@ -1,0 +1,21 @@
+{
+  "configurations": {
+    "python": {
+      "adapter": "debugpy",
+      "filetypes": [ "python" ],
+      "configuration": {
+        "request": "launch",
+        "program": "${file}"
+      }
+    }
+    ,
+"run": {
+      "adapter": "delve",
+      "filetypes": [ "go" ],
+      "configuration": {
+        "request": "launch",
+        "program": "${file}"
+      }
+    }
+  }
+}
