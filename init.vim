@@ -55,6 +55,7 @@ Plug 'sirver/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'adrienverge/yamllint'
 Plug 'neomake/neomake'
+Plug 'MattesGroeger/vim-bookmarks'
 call plug#end()
 
 autocmd FileType python map <buffer> <Leader>q :w<CR>:exec '!python3 %'<CR>
@@ -118,11 +119,16 @@ nmap <Leader>t :Tags<CR>
 nmap <Leader>r :Rg<CR>
 " :Rg :Ag
 
+
+
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -- ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
 
 " GIT diff
 " git difftool --tool nvimdiff
-
+" git difftool --tool nvimdiff master master~10
+" git difftool HEAD~1 --tool=nvimdiff
+" git difftool HEAD~3 HEAD~2 --tool=nvimdiff
+" git diff branch1 branch2
 
 " /////////////////////////////////////////////////////////////////////////////////
 
