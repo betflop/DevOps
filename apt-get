@@ -1,0 +1,24 @@
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get update
+sudo apt-get install neovim
+sudo apt install tmux
+sudo apt-get install curl
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+sudo apt install lua5.3
+sudo apt-get install git
+sudo apt-get install python3-dev
+sudo apt install python3-pip
+sudo apt-get install fzf
+sudo apt-get install ripgrep
+sudo npm install -g pyright
+sudo apt-get install  golang
+sudo apt-get install  goplz
+sudo apt-get -y install delve
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install nodejs
+sudo apt install nodejs npm
+sudo npm install -g typescript typescript-language-server
+curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+nvm install --lts 10; nvm use --lts 10; python3 ./install_gadget.py --force-enable-node
+nvm deactivate
