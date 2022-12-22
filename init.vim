@@ -3,6 +3,7 @@ set number
 set noswapfile
 set relativenumber
 set clipboard=unnamedplus
+set clipboard+=unnamedplus
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
@@ -50,19 +51,46 @@ Plug 'valloric/matchtagalways'
 Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chiel92/vim-autoformat'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'sirver/ultisnips'
 Plug 'tpope/vim-fugitive'
 Plug 'adrienverge/yamllint'
 Plug 'neomake/neomake'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'kabouzeid/nvim-lspinstall'
+
+" JS/JSX/TS
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'maxmellon/vim-jsx-pretty'
+" TS from here https://jose-elias-alvarez.medium.com/configuring-neovims-lsp-client-for-typescript-development-5789d58ea9c
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jose-elias-alvarez/nvim-lsp-ts-utils'
+Plug 'nvim-lua/plenary.nvim'
+
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install --frozen-lockfile --production',
+  \ 'for': ['javascript', 'typescript', 'typescriptreact', 'javascriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+
+Plug 'bmatcuk/stylelint-lsp'
 call plug#end()
 
+
+autocmd FileType sh map <buffer> <Leader>q :w<CR>:exec '!sh %'<CR>
 autocmd FileType python map <buffer> <Leader>q :w<CR>:exec '!python3 %'<CR>
 autocmd FileType go map <buffer> <Leader>q :w<CR>:exec '!go run %'<CR>
 " run current script with python3 by CTRL+R in command and insert mode
 " autocmd FileType python map <buffer> <C-r> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 " autocmd FileType python imap <buffer> <C-r> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
+
+" Automatically format frontend files with prettier after file save
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+
+" Disable quickfix window for prettier
+let g:prettier#quickfix_enabled = 0
 
 nmap <C-e> :NERDTreeToggle<CR>
 noremap '/ :Commentary<CR>
@@ -93,6 +121,7 @@ let g:user_emmet_leader_key='<tab>'
 let g:vimspector_enable_mappings = 'HUMAN'
 let g:go_fmt_autosave = 0
 let g:python_highlight_all = 1
+let g:vimspector_base_dir='/home/pk/.config/nvim/vimspector'
 
 augroup remember_folds
 " autocmd!
@@ -119,14 +148,11 @@ nmap <Leader>t :Tags<CR>
 nmap <Leader>r :Rg<CR>
 " :Rg :Ag
 
-
-
 " command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -- ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --hidden --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
-
 
 " GIT diff
 " git difftool --tool nvimdiff
@@ -141,32 +167,13 @@ command! -bang -nargs=* Rg
 " feedkeys() Sends input-keys to Nvim, subject to various quirks controlled by mode flags
 " To input sequences like <C-o> use nvim_replace_termcodes() (typically with escape_ks=false) to replace keycodes, then pass the result to nvim_feedkeys().
 
-
-" ['<Tab>'] = function(fallback)
-" 	if vim.fn.pumvisible() == 1 then
-" 		vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
-" 	else
-" 		fallback()
-" 	end
-" 	end,
-" 	['<S-Tab>'] = function(fallback)
-" 	if vim.fn.pumvisible() == 1 then
-" 	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
-" 	elseif luasnip.expand_or_jumpable() then
-" 	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
-" 	elseif luasnip.jumpable(-1) then
-" 	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
-" 	else
-" 	    fallback()
-" 	end
-" 	end,
-
 lua << EOF
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
 local luasnip = require 'luasnip'
+local async = require "plenary.async"
 
 local cmp = require 'cmp'
 cmp.setup({
@@ -189,6 +196,26 @@ mapping = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = true,
 		},
+
+
+ ['<Tab>'] = function(fallback)
+ 	if vim.fn.pumvisible() == 1 then
+ 		vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-n>', true, true, true), 'n')
+ 	else
+ 		fallback()
+ 	end
+ 	end,
+ 	['<S-Tab>'] = function(fallback)
+ 	if vim.fn.pumvisible() == 1 then
+ 	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<C-p>', true, true, true), 'n')
+ 	elseif luasnip.expand_or_jumpable() then
+ 	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-expand-or-jump', true, true, true), '')
+ 	elseif luasnip.jumpable(-1) then
+ 	    vim.fn.feedkeys(vim.api.nvim_replace_termcodes('<Plug>luasnip-jump-prev', true, true, true), '')
+ 	else
+ 	    fallback()
+ 	end
+ 	end,
 
 
 		
@@ -226,7 +253,7 @@ end,
 
 -- Setup lspconfig.
 require('lspconfig').solargraph.setup{
-capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 
 require("luasnip/loaders/from_vscode").load({ paths = { "~/.config/nvim/snippets/friendly-snippets-main" } })
@@ -266,18 +293,64 @@ buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', op
 buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 buf_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
 buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
 buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+buf_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
 buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
 end
 
+
+
+
+-- TS setup
+local buf_map = function(bufnr, mode, lhs, rhs, opts)
+    vim.api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, opts or {
+        silent = true,
+    })
+end
+
+nvim_lsp.tsserver.setup({
+    on_attach = function(client, bufnr)
+        client.server_capabilities.document_formatting = false
+        client.server_capabilities.document_range_formatting = false
+        local ts_utils = require("nvim-lsp-ts-utils")
+        ts_utils.setup({})
+        ts_utils.setup_client(client)
+        buf_map(bufnr, "n", "gs", ":TSLspOrganize<CR>")
+        buf_map(bufnr, "n", "gi", ":TSLspRenameFile<CR>")
+        buf_map(bufnr, "n", "go", ":TSLspImportAll<CR>")
+        on_attach(client, bufnr)
+    end,
+})
+
+local null_ls = require("null-ls")
+null_ls.setup({
+    sources = {
+        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.code_actions.eslint,
+        null_ls.builtins.formatting.prettier
+    },
+    on_attach = on_attach
+})
+
+-- Stylelint format after save
+require'lspconfig'.stylelint_lsp.setup{
+  settings = {
+    stylelintplus = {
+      --autoFixOnSave = true,
+      --autoFixOnFormat = true,
+    }
+  }
+}
+
+
+
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'gopls', 'tsserver' }
-
+local servers = { 'pyright', 'gopls'  }
 
 for _, lsp in ipairs(servers) do
 nvim_lsp[lsp].setup {
@@ -367,3 +440,11 @@ command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-ar
 nnoremap <silent> <Leader>bd :Bclose<CR>
 snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
 snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+
+" White colors for LSP messages in code
+set termguicolors
+hi DiagnosticError guifg=White
+hi DiagnosticWarn  guifg=White
+hi DiagnosticInfo  guifg=White
+hi DiagnosticHint  guifg=White
