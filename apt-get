@@ -22,3 +22,12 @@ sudo npm install -g typescript typescript-language-server
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 nvm install --lts 10; nvm use --lts 10; python3 ./install_gadget.py --force-enable-node
 nvm deactivate
+npm i -D eslint
+npm install --save-dev --save-exact prettier
+npm i -D eslint-config-prettier
+npm i -D eslint-config-react
+npm install -D @typescript-eslint/eslint-plugin
+npm install -D @typescript-eslint/parser
+npm i -D stylelint stylelint-config-standard
+npm i -D stylelint stylelint-config-prettier
+npm i -D stylelint-lsp
