@@ -32,6 +32,7 @@ npm i -D eslint
 npm install --save-dev --save-exact prettier
 npm i -D eslint-config-prettier
 npm i -D eslint-config-react
+npm i -D eslint-plugin-solid
 npm install -D @typescript-eslint/eslint-plugin
 npm install -D @typescript-eslint/parser
 npm i -D stylelint stylelint-config-standard
