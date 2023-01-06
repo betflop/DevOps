@@ -9,6 +9,7 @@ cd ~
 mkdir -p .config/nvim
 sudo apt install lua5.3
 sudo apt-get install git
+sudo apt install mc
 sudo apt-get install python3-dev
 sudo apt install python3-pip
 sudo apt-get install fzf
