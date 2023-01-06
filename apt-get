@@ -24,6 +24,7 @@ sudo apt-get install -y nodejs
 sudo npm install -g pyright
 sudo npm install -g typescript typescript-language-server
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+source ~/.bashrc
 nvm install --lts 10; nvm use --lts 10; python3 ./install_gadget.py --force-enable-node
 nvm deactivate
 ################# local
