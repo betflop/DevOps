@@ -16,7 +16,6 @@ sudo apt-get -y install gopls
 sudo apt-get -y install delve
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
-sudo apt install nodejs npm
 sudo npm install -g pyright
 sudo npm install -g typescript typescript-language-server
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
