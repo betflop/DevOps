@@ -345,7 +345,18 @@ require'lspconfig'.stylelint_lsp.setup{
   }
 }
 
-
+require('lspconfig').yamlls.setup {
+  -- other configuration for setup {}
+  settings = {
+    yaml = {
+      -- other settings. note this overrides the lspconfig defaults.
+      schemas = {
+        ["https://raw.githubusercontent.com/instrumenta/kubernetes-json-schema/master/v1.18.0-standalone-strict/all.json"] = "/*.k8s.yaml",
+        -- other schemas
+      },
+    },
+  }
+}
 
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
