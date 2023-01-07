@@ -8,6 +8,7 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 cd ~
 mkdir -p .config/nvim
 pip install neovim
+sudo apt install ssh-askpass
 sudo apt install lua5.3
 sudo apt-get install xclip
 sudo apt-get install git
@@ -22,6 +23,7 @@ sudo apt-get -y install delve
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install -g pyright
+sudo npm i yaml-language-server
 sudo npm install -g typescript typescript-language-server
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.bashrc
