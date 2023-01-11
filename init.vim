@@ -53,6 +53,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'chiel92/vim-autoformat'
 " Plug 'ryanoasis/vim-devicons'
 Plug 'sirver/ultisnips'
+
+Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'adrienverge/yamllint'
 Plug 'neomake/neomake'
@@ -74,6 +76,10 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'typescriptreact', 'javascriptreact', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
 Plug 'bmatcuk/stylelint-lsp'
+
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+
 call plug#end()
 
 
@@ -141,18 +147,16 @@ autocmd BufReadPost *
 map <Enter> o<ESC>
 
 " fzf
-nmap <Leader>b :Buffers<CR>
-nmap <Leader>f :Files<CR>
-nmap <Leader>t :Tags<CR>
-" nmap <Leader>l :Lines<CR>
-nmap <Leader>r :Rg<CR>
+" nmap <Leader>b :Buffers<CR>
+" nmap <Leader>f :Files<CR>
+" nmap <Leader>t :Tags<CR>
+" nmap <Leader>r :Rg<CR>
 " :Rg :Ag
 
-" command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case --hidden -- ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0) 
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --hidden --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
+" command! -bang -nargs=* Rg
+  " \ call fzf#vim#grep(
+  " \   'rg --hidden --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  " \   fzf#vim#with_preview(), <bang>0)
 
 " GIT diff
 " git difftool --tool nvimdiff
@@ -166,6 +170,32 @@ command! -bang -nargs=* Rg
 " pumvisible() checks if the complete popup is currently visible. 
 " feedkeys() Sends input-keys to Nvim, subject to various quirks controlled by mode flags
 " To input sequences like <C-o> use nvim_replace_termcodes() (typically with escape_ks=false) to replace keycodes, then pass the result to nvim_feedkeys().
+
+" Telescope bindings
+nnoremap ,f <cmd>Telescope find_files<cr>
+nnoremap ,g <cmd>Telescope live_grep<cr>
+
+" Telescope fzf plugin
+lua << EOF
+require('telescope').load_extension('fzf')
+
+require("telescope").setup { 
+
+    pickers = {
+	find_files = {
+            hidden = true
+	    },
+        live_grep = {
+    	    file_ignore_patterns = { 'node_modules', '.git' },
+            additional_args = function(opts)
+                return {"--hidden"}
+            end
+        },
+    },
+}
+
+
+EOF
 
 lua << EOF
 
