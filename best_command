@@ -1,0 +1,7 @@
+# mount ssh files
+sudo sshfs -o allow_other,default_permissions student@51.250.90.137: /home/pk/Documents/yandex_DevOps/student_workdir/
+
+# ripgrep, fzf
+rg --line-number --with-filename --hidden --no-heading deploy --field-match-separator ' '  | fzf --preview "cat -s -n {1}"
+rg deploy --hidden | fzf
+rg --files | rg deploy --field-match-separator ' '  | fzf --preview "cat -s -n {1}"
