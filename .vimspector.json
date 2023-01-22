@@ -9,6 +9,15 @@
       }
     }
     ,
+"js": {
+      "adapter": "vscode-node",
+      "filetypes": [ "javascript", "typescript" ],
+      "configuration": {
+        "request": "launch",
+        "program": "${file}"
+      }
+    }
+    ,
 "run": {
       "adapter": "delve",
       "filetypes": [ "go" ],

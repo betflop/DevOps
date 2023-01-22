@@ -17,13 +17,16 @@ if (has('termguicolors'))
 	set termguicolors
 endif
 
-let $BAT_THEME='Monokai Extended Origin'
-colorscheme gruvbox
+" let $BAT_THEME='Monokai Extended Origin'
+" colorscheme gruvbox
 " colorscheme onehalfdark
 " colorscheme space-vim-dark
+" colorscheme nord
+
 let g:airline_theme = "molokai"
 
 call plug#begin('~/.config/nvim')
+Plug 'Mofiqul/dracula.nvim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/nvim-cmp'
@@ -45,13 +48,13 @@ Plug 'tpope/vim-commentary'
 Plug 'mattn/emmet-vim'
 Plug 'raimondi/delimitmate'
 Plug 'puremourning/vimspector'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf.vim'
 Plug 'valloric/matchtagalways'
 Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'chiel92/vim-autoformat'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 Plug 'sirver/ultisnips'
 
 Plug 'airblade/vim-gitgutter'
@@ -59,6 +62,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'adrienverge/yamllint'
 Plug 'neomake/neomake'
 Plug 'MattesGroeger/vim-bookmarks'
+" mm, mn, mp
 Plug 'kabouzeid/nvim-lspinstall'
 
 " JS/JSX/TS
@@ -103,7 +107,9 @@ noremap '/ :Commentary<CR>
 nnoremap ,<space> :nohlsearch<CR>
 map gn :bn<cr>
 map gp :bp<cr>
-map gw :Bclose<cr>
+map gw :tabclose<cr>
+" map gd :Bclose<cr>
+" map <C-w> :tabclose<cr>
 
 " FORMATTERS
 au FileType javascript setlocal formatprg=prettier
@@ -145,6 +151,7 @@ autocmd BufReadPost *
 
 " Enter dont insert mod
 map <Enter> o<ESC>
+" let NERDTreeMapOpenInTab='<ENTER>'
 
 " fzf
 " nmap <Leader>b :Buffers<CR>
@@ -175,8 +182,12 @@ map <Enter> o<ESC>
 nnoremap ,f <cmd>Telescope find_files<cr>
 nnoremap ,g <cmd>Telescope live_grep<cr>
 
+
 " Telescope fzf plugin
 lua << EOF
+
+vim.cmd[[colorscheme dracula]]
+
 require('telescope').load_extension('fzf')
 
 require("telescope").setup { 
@@ -478,7 +489,7 @@ endfunction
 
 command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>)
 
-nnoremap <silent> <Leader>bd :Bclose<CR>
+" nnoremap <silent> <Leader>bd :Bclose<CR>
 snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
 snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
 
