@@ -1,3 +1,6 @@
+# gnome language
+gsettings set org.gnome.desktop.wm.keybindings switch-input-source-backward "['<Alt>Shift_L']"
+
 # mount ssh files
 sudo sshfs -o allow_other,default_permissions student@51.250.90.137: /home/pk/Documents/yandex_DevOps/student_workdir/
 
