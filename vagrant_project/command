@@ -1,0 +1,4 @@
+vagrant box add generic/ubuntu2204 .05b04961-4e00-4a1e-8f14-c5d01e6bd70c.box
+vagrant init generic/ubuntu2204
+vagrant up --provider=virtualbox 
+vagrant ssh
