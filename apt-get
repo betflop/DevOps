@@ -32,6 +32,7 @@ nvm install --lts 10; nvm use --lts 10; python3 ./install_gadget.py --force-enab
 nvm deactivate
 
 ################# local
+
 npm i -D eslint
 npm install --save-dev --save-exact prettier
 npm i -D eslint-config-prettier
