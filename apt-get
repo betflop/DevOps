@@ -20,6 +20,7 @@ sudo apt-get install ripgrep
 sudo apt-get install  golang
 sudo apt-get -y install gopls
 sudo apt-get -y install delve
+sudo apt install tidy
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install -g pyright
