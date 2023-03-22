@@ -1,0 +1,52 @@
+---
+- name: Docker | Remove old packages
+  ansible.builtin.apt:
+    name:
+      - docker
+      - docker-engine
+      - docker.io
+      - containerd
+      - runc
+    state: absent
+
+- name: Docker | Make sure keyrings dir exists
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    mode: 0755
+    state: directory
+    owner: root
+    group: root
+
+- name: Docker | Add an Apt key
+  ansible.builtin.apt_key:
+    url: "{{ docker_gpg_url }}/gpg"
+    keyring: "{{ docker_gpg_path }}"
+    state: present
+
+- name: Docker | Add apt source
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64 signed-by={{ docker_gpg_path }}] {{ docker_gpg_url }} {{ ansible_distribution_release }} stable"
+    state: present
+
+- name: Docker | Install packages
+  ansible.builtin.apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+      - python3-pip
+    update_cache: yes
+
+- name: Docker | Start service
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Docker | Install docker python package
+  ansible.builtin.pip:
+    name:
+     - docker
+     - docker-compose

@@ -1,0 +1,33 @@
+---
+# default docker gpg-keys
+docker_gpg_url: "https://download.docker.com/linux/ubuntu"
+docker_gpg_path: "/etc/apt/keyrings/docker.gpg"
+
+# docker registry login
+docker_registry_login: false
+docker_registry:
+  url: "{{ lookup('env','CI_REGISTRY') }}"
+  user: "gitlab-ci-token"
+  password: "{{ lookup('env','CI_JOB_TOKEN') }}"
+
+docker_prune_job: true
+
+docker_templates_path: "{{ role_path }}/templates"
+
+docker_project_image: ""
+docker_project_name: "docker-project"
+docker_project_port: "80"
+
+docker_container_start: false
+docker_container_image: "{{ docker_project_image }}"
+docker_container_port: "{{ docker_project_port }}"
+
+docker_compose_start: false
+docker_compose_version: "3.7"
+docker_compose_remove_orphans: true
+docker_compose_project_path: "/opt/{{ docker_project_name }}"
+docker_compose_project_release: ""
+docker_compose_services:
+  - image: "{{ docker_project_image }}"
+    name: "{{ docker_project_name }}"
+    port: "{{ docker_project_port }}"

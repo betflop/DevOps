@@ -1,0 +1,9 @@
+---
+- name: Docker | Run project container
+  docker_container:
+    name: "{{ docker_service_name }}"
+    image: "{{ docker_service_image }}"
+    state: present
+    recreate: yes
+    exposed_ports:
+      - "{{ docker_service_port }}"

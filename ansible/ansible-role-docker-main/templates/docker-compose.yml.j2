@@ -1,0 +1,11 @@
+#jinja2: trim_blocks:False
+version: '{{ docker_compose_version }}'
+
+services:
+{% for service in docker_compose_services %}
+  {{ service.name | default('app' + loop.index|string) }}:
+    container_name: "{{ service.name | default('app' + loop.index|string) }}"
+    image: {{ service.image }}
+    expose:
+      - "{{ service.port | default('80') }}"
+{% endfor %}
