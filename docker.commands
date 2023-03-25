@@ -3,7 +3,7 @@
 sudo usermod -aG docker $USER
 sudo reboot
 ```
-
+# test
 # start psql in docker
 ```
 docker exec -it db_postgres_1 psql -U project
