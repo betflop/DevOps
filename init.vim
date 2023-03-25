@@ -12,12 +12,34 @@ set background=dark
 set colorcolumn=79
 set mouse=a
 filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
+" nmap <leader>l :set list! list?<CR>
+set list
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
+" set listchars=tab:▒░,trail:·,eol:¶
 
 if (has('termguicolors'))
 	set termguicolors
 endif
 
-" let $BAT_THEME='Monokai Extended Origin'
+
+
+inoremap <C-Space> <C-x><C-o>
+imap <buffer> <Nul> <C-Space>
+smap <buffer> <Nul> <C-Space>" filetype plugin on
+
+" set omnifunc=syntaxcomplete#Complete
+" highlight Cursor guifg=white guibg=black
+" highlight iCursor guifg=white guibg=steelblue
+" set guicursor=n-v-c:block-Cursor
+" set guicursor+=i:ver100-iCursor
+" set guicursor+=n-v-c:blinkon0
+" set guicursor+=i:blinkwait10" let $BAT_THEME='Monokai Extended Origin'
 " colorscheme gruvbox
 " colorscheme onehalfdark
 " colorscheme space-vim-dark
@@ -53,11 +75,12 @@ Plug 'puremourning/vimspector'
 Plug 'valloric/matchtagalways'
 Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'chiel92/vim-autoformat'
+" Plug 'chiel92/vim-autoformat'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sirver/ultisnips'
 
 Plug 'airblade/vim-gitgutter'
+" hunks with <leader>hp
 Plug 'tpope/vim-fugitive'
 Plug 'adrienverge/yamllint'
 Plug 'neomake/neomake'
@@ -84,12 +107,14 @@ Plug 'bmatcuk/stylelint-lsp'
 Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
+Plug 'preservim/vim-indent-guides'
 call plug#end()
 
 
 autocmd FileType sh map <buffer> <Leader>q :w<CR>:exec '!sh %'<CR>
 autocmd FileType python map <buffer> <Leader>q :w<CR>:exec '!python3 %'<CR>
 autocmd FileType go map <buffer> <Leader>q :w<CR>:exec '!go run %'<CR>
+autocmd FileType javascript map <buffer> <Leader>q :w<CR>:exec '!node %'<CR>
 " run current script with python3 by CTRL+R in command and insert mode
 " autocmd FileType python map <buffer> <C-r> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 " autocmd FileType python imap <buffer> <C-r> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
@@ -105,8 +130,9 @@ let g:prettier#quickfix_enabled = 0
 nmap <C-e> :NERDTreeToggle<CR>
 noremap '/ :Commentary<CR>
 nnoremap ,<space> :nohlsearch<CR>
-map gn :bn<cr>
-map gp :bp<cr>
+map bn :bn<cr>
+map bp :bp<cr>
+map bw :Bclose<cr>
 map gw :tabclose<cr>
 " map gd :Bclose<cr>
 " map <C-w> :tabclose<cr>
@@ -166,6 +192,7 @@ map <Enter> o<ESC>
   " \   fzf#vim#with_preview(), <bang>0)
 
 " GIT diff
+" git difftool --tool=vimdiff - сравнение файлов измененных
 " git difftool --tool nvimdiff
 " git difftool --tool nvimdiff master master~10
 " git difftool HEAD~1 --tool=nvimdiff
@@ -181,9 +208,12 @@ map <Enter> o<ESC>
 " Telescope bindings
 nnoremap ,f <cmd>Telescope find_files<cr>
 nnoremap ,g <cmd>Telescope live_grep<cr>
-
+nnoremap ,b <cmd>Telescope buffers<cr>
 
 " Telescope fzf plugin
+
+let g:indent_guides_enable_on_vim_startup = 1
+
 lua << EOF
 
 vim.cmd[[colorscheme dracula]]
@@ -197,16 +227,17 @@ require("telescope").setup {
             hidden = true
 	    },
         live_grep = {
-    	    file_ignore_patterns = { 'node_modules', '.git' },
             additional_args = function(opts)
                 return {"--hidden"}
-            end
+            end,
         },
     },
 }
 
 
 EOF
+
+
 
 lua << EOF
 
@@ -303,6 +334,9 @@ require("luasnip/loaders/from_vscode").load({ paths = { "~/.config/nvim/snippets
 EOF
 
 
+" -- Enable completion triggered by <c-x><c-o>
+" buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
 
 lua << EOF
 local nvim_lsp = require('lspconfig')
@@ -315,8 +349,8 @@ local on_attach = function(client, bufnr)
 local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
 local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
--- Enable completion triggered by <c-x><c-o>
-buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+
 
 -- Mappings.
 local opts = { noremap=true, silent=true }
@@ -369,6 +403,7 @@ nvim_lsp.tsserver.setup({
 local null_ls = require("null-ls")
 null_ls.setup({
     sources = {
+        null_ls.builtins.diagnostics.tidy,
         null_ls.builtins.diagnostics.eslint,
         null_ls.builtins.code_actions.eslint,
         null_ls.builtins.formatting.prettier
@@ -399,10 +434,16 @@ require('lspconfig').yamlls.setup {
   }
 }
 
+-- bashls
+require 'lspconfig'.bashls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { 'zsh', 'bash', 'sh' },
+}
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'gopls'  }
+local servers = { 'pyright', 'gopls' }
 
 for _, lsp in ipairs(servers) do
 nvim_lsp[lsp].setup {
