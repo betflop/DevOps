@@ -27,7 +27,7 @@ if (has('termguicolors'))
 	set termguicolors
 endif
 
-
+let NERDTreeShowHidden=1
 
 inoremap <C-Space> <C-x><C-o>
 imap <buffer> <Nul> <C-Space>
@@ -108,6 +108,8 @@ Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 
 Plug 'preservim/vim-indent-guides'
+Plug 'ryanoasis/vim-devicons'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 
@@ -119,7 +121,20 @@ autocmd FileType javascript map <buffer> <Leader>q :w<CR>:exec '!node %'<CR>
 " autocmd FileType python map <buffer> <C-r> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 " autocmd FileType python imap <buffer> <C-r> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
-
+" ✹
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
+" let g:NERDTreeGitStatusUseNerdFonts = 1
 " Automatically format frontend files with prettier after file save
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
@@ -167,7 +182,7 @@ augroup remember_folds
 " autocmd BufWinEnter * silent! loadview
 " augroup END
 
-au BufWrite *.yml :Neomake
+" au BufWrite *.yml :Neomake
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
