@@ -4,7 +4,7 @@ __oc_ps1()
     CONTEXT=$(cat ~/.kube/config 2>/dev/null| grep -o '^current-context: [^/]*' | cut -d' ' -f2)
 
     if [ -n "$CONTEXT" ]; then
-        echo "(ocp123:${CONTEXT})"
+        echo "(k8s:${CONTEXT})"
     fi
 }
 # Подсветка веток в консоле
