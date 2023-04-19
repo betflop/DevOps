@@ -212,6 +212,7 @@ map <Enter> o<ESC>
 " git difftool --tool nvimdiff master master~10
 " git difftool HEAD~1 --tool=nvimdiff
 " git difftool HEAD~3 HEAD~2 --tool=nvimdiff
+" git difftool HEAD:sausage-store-chart/Chart.yaml HEAD~1:sausage-store-chart/Chart.yaml --tool=nvimdiff
 " git diff branch1 branch2
 
 " /////////////////////////////////////////////////////////////////////////////////
@@ -556,3 +557,8 @@ hi DiagnosticError guifg=White
 hi DiagnosticWarn  guifg=White
 hi DiagnosticInfo  guifg=White
 hi DiagnosticHint  guifg=White
+
+if &diff
+    " colorscheme evening
+    colorscheme molokai
+endif
