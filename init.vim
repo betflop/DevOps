@@ -214,6 +214,16 @@ map <Enter> o<ESC>
 " git difftool HEAD~3 HEAD~2 --tool=nvimdiff
 " git difftool HEAD:sausage-store-chart/Chart.yaml HEAD~1:sausage-store-chart/Chart.yaml --tool=nvimdiff
 " git diff branch1 branch2
+" git mergetool --tool=nvimdiff - Run merge conflict resolution tools to resolve merge conflicts
+" :diffg RE  # get from REMOTE
+" :diffg BA  # get from BASE
+" :diffg LO  # get from LOCAL
+" :сquit 
+"
+".gitconfig
+"[difftool]
+" Be able to abort all diffs with `:cq` or `:cquit`
+" trustExitCode = true
 
 " /////////////////////////////////////////////////////////////////////////////////
 
