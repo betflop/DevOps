@@ -1,0 +1,130 @@
+set encoding=UTF-8
+set number
+set noswapfile
+set relativenumber
+set clipboard=unnamedplus
+set clipboard+=unnamedplus
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+set background=dark
+set colorcolumn=90
+set mouse=a
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" " when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" " On pressing tab, insert 4 spaces
+set expandtab
+" " nmap <leader>l :set list! list?<CR>
+set list
+set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
+
+" set termguicolors
+
+let NERDTreeShowHidden=1
+
+inoremap <C-Space> <C-x><C-o>
+imap <buffer> <Nul> <C-Space>
+smap <buffer> <Nul> <C-Space>" filetype plugin on
+let g:airline_theme = "molokai"
+
+colorscheme one-dark
+
+call plug#begin('~/.config/nvim')
+" Plug 'morhetz/gruvbox'
+Plug 'Mofiqul/dracula.nvim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'vim-python/python-syntax'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'preservim/NERDTree'
+Plug 'tpope/vim-commentary'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'valloric/matchtagalways'
+Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline-themes'
+" " Plug 'chiel92/vim-autoformat'
+Plug 'ryanoasis/vim-devicons'
+"
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'adrienverge/yamllint'
+Plug 'neomake/neomake'
+Plug 'MattesGroeger/vim-bookmarks'
+" mm, mn, mp
+
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+"
+Plug 'preservim/vim-indent-guides'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+call plug#end()
+
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+	                \ 'Modified'  :'',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
+
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+
+let g:prettier#quickfix_enabled = 0
+
+nmap <C-e> :NERDTreeToggle<CR>
+noremap '/ :Commentary<CR>
+nnoremap ,<space> :nohlsearch<CR>
+map bn :bn<cr>
+map bp :bp<cr>
+map bw :Bclose<cr>
+map gw :tabclose<cr>
+
+" FORMATTERS
+au FileType javascript setlocal formatprg=prettier
+au FileType javascript.jsx setlocal formatprg=prettier
+au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+au FileType html setlocal formatprg=js-beautify\ --type\ html
+au FileType scss setlocal formatprg=prettier\ --parser\ css
+au FileType css setlocal formatprg=prettier\ --parser\ css
+au FileType python setlocal formatprg=autopep8\ -aa\ --indent-size\ 0\ -
+au FileType json setlocal formatprg=prettier
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+augroup remember_folds
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+
+
+map <Enter> o<ESC>
+
+
+nnoremap ,f <cmd>:Files<cr>
+nnoremap ,g <cmd>:Rg<cr>
+
+" Telescope bindings
+" nnoremap ,f <cmd>Telescope find_files<cr>
+" nnoremap ,g <cmd>Telescope live_grep<cr>
+" nnoremap ,b <cmd>Telescope buffers<cr>
+
+let g:indent_guides_enable_on_vim_startup = 1
+
+if &diff
+    colorscheme molokai
+endif
