@@ -32,6 +32,7 @@ smap <buffer> <Nul> <C-Space>" filetype plugin on
 let g:airline_theme = "molokai"
 
 colorscheme one-dark
+colorscheme nord
 
 call plug#begin('~/.config/nvim')
 " Plug 'morhetz/gruvbox'
