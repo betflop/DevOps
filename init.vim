@@ -48,6 +48,7 @@ smap <buffer> <Nul> <C-Space>" filetype plugin on
 let g:airline_theme = "molokai"
 
 call plug#begin('~/.config/nvim')
+Plug 'rafamadriz/friendly-snippets'
 Plug 'Mofiqul/dracula.nvim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'neovim/nvim-lspconfig'
@@ -243,6 +244,7 @@ let g:indent_guides_enable_on_vim_startup = 1
 lua << EOF
 
 vim.cmd[[colorscheme dracula]]
+vim.cmd [[autocmd BufRead,BufNewFile Docker* set filetype=dockerfile]]
 
 require('telescope').load_extension('fzf')
 
@@ -288,7 +290,7 @@ mapping = {
 	['<C-n>'] = cmp.mapping.select_next_item(),
 	['<C-d>'] = cmp.mapping.scroll_docs(-4),
 	['<C-f>'] = cmp.mapping.scroll_docs(4),
-	['<C-Space>'] = cmp.mapping.complete(),
+	['<C-space>'] = cmp.mapping.complete(),
 	['<C-e>'] = cmp.mapping.close(),
 	['<CR>'] = cmp.mapping.confirm {
 		behavior = cmp.ConfirmBehavior.Replace,
@@ -354,7 +356,7 @@ require('lspconfig').solargraph.setup{
 capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 
-require("luasnip/loaders/from_vscode").load({ paths = { "~/.config/nvim/snippets/friendly-snippets-main" } })
+require("luasnip/loaders/from_vscode").load({ paths = { "~/.config/nvim/friendly-snippets" } })
 -- require("luasnip/loaders/from_vscode").load()
 -- require("luasnip/loaders/from_vscode").lazy_load()
 EOF
@@ -481,6 +483,8 @@ nvim_lsp[lsp].setup {
 end
 EOF
 
+" set filetype LSP
+" :set ft=dockerfile
 
 
 " Delete buffer while keeping window layout (don't close buffer's windows).
