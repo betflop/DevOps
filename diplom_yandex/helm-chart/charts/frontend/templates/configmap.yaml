@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-conf
+data:
+  momo-store-nginx.conf: |
+    server {
+      listen {{ .Values.servicePort }};
+      location / {
+        root   /usr/share/nginx/html;
+        index  index.html;
+        try_files $uri $uri/ /index.html;
+      }
+      location ~ /(orders|categories|products|auth|metrics) {
+          proxy_pass http://{{ .Values.global.proxy_pass_Name }}:{{ .Values.global.proxy_pass_Port }};
+      }
+    }

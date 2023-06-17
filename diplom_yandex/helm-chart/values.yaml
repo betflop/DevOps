@@ -1,0 +1,41 @@
+global:
+  environment: production
+  revisionHistoryLimit: 15
+  dockerconfigjson: ewoJImF1dGhzIjogewoJCSJnaXRsYWIucHJha3Rpa3VtLXNlcnZpY2VzLnJ1OjUwNTAiOiB7CgkJCSJhdXRoIjogIlpYSmhhMmh0WlhSNmVXRnViM1k2TlZrNWNESnlSM05RUVcxSFVIST0iCgkJfQoJfQp9
+  proxy_pass_Name: backend
+  proxy_pass_Port: 8081
+
+backend:
+  replicaCount: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 20%
+  containersName: backend
+  containerPort: 8081
+  servicePort: 8081
+  updatePolicy:
+    updateMode: "Recreate"
+  resourcePolicy:
+    containerName: "*"
+    minAllowed:
+      cpu: 0m
+      memory: 0Mi
+    maxAllowed:
+      cpu: 1
+      memory: 500Mi
+  image:
+    repository: pawwlyk52/momo-backend
+    tag: latest
+    imagePullPolicy: Always
+
+frontend:
+  replicaCount: 1
+  containerPort: 80
+  servicePort: 80
+  containersName: frontend
+  image:
+    repository: pawwlyk52/momo-frontend
+    tag: latest
+    imagePullPolicy: Always

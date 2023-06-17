@@ -1,0 +1,51 @@
+stages:
+  - module-pipelines
+  - deploy
+
+frontend:
+  stage: module-pipelines
+  trigger:
+    include:
+      - "/frontend/.gitlab-ci.yml"
+    strategy: depend # depend нужен, если какой-нибудь дочерний пайплайн свалился, мы знали, что общий пайплайн тоже идёт с ошибкой
+  only:
+    changes: # как только происходит изменение в папке frontend, запускается дочерний пайплайн, который лежит в этой папке
+      - frontend/**/*
+
+backend:
+  stage: module-pipelines
+  trigger:
+    include:
+      - "/backend/.gitlab-ci.yml"
+    strategy: depend
+  only:
+    changes: # как только происходит изменение в папке backend, запускается дочерний пайплайн, который лежит в этой папке
+      - backend/**/*
+
+deploy_staging:
+  stage: deploy
+  # image: lwolf/helm-kubectl-docker:v152_213
+  image: alpine/k8s:1.24.13
+  before_script:
+    - cd helm-chart
+    - mkdir ~/.kube
+    - echo ${kube_config} | base64 -d > ~/.kube/config
+    - KUBECONFIG=~/.kube/config
+    - export KUBECONFIG
+    - cat ~/.kube/config
+    - echo $KUBECONFIG
+    # - kubectl config use-context default
+    - cat $KUBECONFIG
+    - kubectl config view
+    - kubectl get deployments --namespace=default
+    # - helm init
+    - helm repo add momostore https://nexus.k8s.praktikum-services.tech/repository/pavel_kozlov_momo_store --username "${usernexus}" --password "${passnexus}"
+    - helm repo update
+  script:
+    - helm package .
+    - curl -u "${usernexus}:${passnexus}" https://nexus.k8s.praktikum-services.tech/repository/pavel_kozlov_momo_store/ --upload-file momostore-0.1.1.tgz
+    # - helm install momostore1 momostore/momostore --version 0.1.1  --namespace=default
+    - helm upgrade momostore1 momostore/momostore --version 0.1.1 --namespace=default 
+  # only:
+  #   changes: # как только происходит изменение в папке backend, запускается дочерний пайплайн, который лежит в этой папке
+  #     - helm-chart/**/*

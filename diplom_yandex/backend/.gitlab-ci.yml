@@ -1,0 +1,71 @@
+include:
+  - template: Security/SAST.gitlab-ci.yml
+  - project: "templates/ci"
+    file: "DockerInDockerTemplate.yml"
+
+variables:
+  VERSION: 1.0.${CI_PIPELINE_ID}
+  SAST_EXCLUDED_ANALYZERS: "Semgrep, eslint, nodejs-scan"
+
+stages:
+  - docker-build
+  - test
+  - analysis
+  # - release
+
+docker-build-backend:
+  stage: docker-build
+  image: docker:20.10.12-dind-rootless
+  before_script:
+    - until docker info; do sleep 1; done
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - cd backend
+    - >
+      docker build
+      --tag $CI_REGISTRY_IMAGE/momo-backend:$CI_COMMIT_SHA
+      .
+    - docker push $CI_REGISTRY_IMAGE/momo-backend:$CI_COMMIT_SHA
+  rules:
+    - changes:
+        - backend/**/*
+
+spotbugs-sast:
+  dependencies:
+    - docker-build-backend
+  artifacts:
+    paths:
+      - gl-sast-report.json
+  rules:
+    - changes:
+        - backend/**/*
+  variables:
+    COMPILE: "false"
+
+sonarqube:
+  stage: analysis
+  image: sonarsource/sonar-scanner-cli:latest
+  script:
+    - cd backend
+    - >
+      sonar-scanner -Dsonar.qualitygate.wait=true
+      -Dsonar.projectKey=12_Pavel_Kozlov
+      -Dsonar.projectName=12_Pavel_Kozlov
+      -Dsonar.host.url=${Sonar_url}
+      -Dsonar.login=${Sonar_token_backend}
+
+# upload-backend-latest:
+#   variables:
+#     GIT_STRATEGY: none
+#   image: docker:20.10.12-dind-rootless
+#   stage: release
+#   before_script:
+#     - until docker info; do sleep 1; done
+#     - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+#   script:
+#     - docker pull $CI_REGISTRY_IMAGE/sausage-backend:$CI_COMMIT_SHA
+#     # если образ прошел проверки в CI (сканирование, тесты и т.д), то тегаем latest
+#     - docker tag $CI_REGISTRY_IMAGE/sausage-backend:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE/sausage-backend:latest
+#     - docker push $CI_REGISTRY_IMAGE/sausage-backend:latest
+
+

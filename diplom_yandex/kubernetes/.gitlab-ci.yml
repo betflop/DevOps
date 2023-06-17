@@ -1,0 +1,18 @@
+# stages:
+#   - deploy
+
+# deploy:
+#   stage: deploy
+#   image: alpine/k8s:1.22.6
+#   environment:
+#     name: kubernetes
+#     url: https://08-p-kozlov.k8s.praktikum-services.tech
+#   before_script:
+#     - mkdir -p ~/.kube
+#     - echo ${kubeconfig} | base64 -d > ~/.kube/config
+#     - KUBECONFIG=~/.kube/config
+#     - export KUBECONFIG
+#   script:
+#     - kubectl apply -f kubernetes/backend/
+#     - kubectl apply -f kubernetes/frontend/
+#     - rm -f ~/.kube/config
