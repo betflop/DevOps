@@ -1,0 +1,24 @@
+---
+- name: Docker compose | Ensure project dir exists
+  ansible.builtin.file:
+    path: "{{ docker_compose_project_path }}"
+    mode: 0755
+    state: directory
+    owner: "{{ ansible_ssh_user }}"
+    group: "{{ ansible_ssh_user }}"
+
+- name: Docker-compose | Configure docker-compose yml
+  template:
+    src: "{{ docker_templates_path }}/docker-compose.yml.j2"
+    dest: "{{ docker_compose_project_path }}/{{ docker_compose_project_release }}/docker-compose.yml"
+    owner: "{{ ansible_ssh_user }}"
+    group: "{{ ansible_ssh_user }}"
+    force: yes
+    mode: 0644
+
+- name: Docker-compose | Run containers
+  docker_compose:
+    project_src: "{{ docker_compose_project_path }}/{{ docker_compose_project_release }}"
+    project_name: "{{ docker_project_name }}{{ '-' + docker_compose_project_release if docker_compose_project_release is defined else '' }}"
+    pull: yes
+    remove_orphans: '{{ docker_compose_remove_orphans }}'

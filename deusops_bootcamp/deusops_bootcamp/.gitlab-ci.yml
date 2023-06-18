@@ -1,0 +1,85 @@
+stages:
+  - docker-build
+  - deploy
+
+docker-build-backend:
+  stage: docker-build
+  image: docker:stable
+  tags:
+    - yandex
+  services:
+    - docker:dind
+  before_script:
+    - echo $CI_REGISTRY
+    - echo $CI_REGISTRY_IMAGE
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - cd backend
+    - >
+      docker build
+      --tag $CI_REGISTRY_IMAGE/deus1-back:$CI_COMMIT_SHA
+      .
+    - docker tag $CI_REGISTRY_IMAGE/deus1-back:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE/deus1-back:latest
+    - docker push $CI_REGISTRY_IMAGE/deus1-back:latest
+  rules:
+    - changes:
+        - backend/**/*
+
+
+docker-build-frontend:
+  stage: docker-build
+  image: docker:stable
+  tags:
+    - yandex
+  services:
+    - docker:dind
+  before_script:
+    - echo $CI_REGISTRY
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - cd frontend
+    - >
+      docker build
+      --tag $CI_REGISTRY_IMAGE/deus1-front:$CI_COMMIT_SHA
+      .
+    - docker tag $CI_REGISTRY_IMAGE/deus1-front:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE/deus1-front:latest
+    - docker push $CI_REGISTRY_IMAGE/deus1-front:latest
+  rules:
+    - changes:
+        - frontend/**/*
+
+# docker-compose-deploy:
+#   stage: deploy_test
+#   image: docker/compose:latest
+#   services:
+#     - docker:20.10.16-dind
+#   tags:
+#     - yandex
+#   before_script:
+#     - echo $CI_REGISTRY
+#     - echo $CI_REGISTRY_IMAGE
+#     - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+#     - docker pull $CI_REGISTRY_IMAGE/deus1-back:latest
+#     - docker pull $CI_REGISTRY_IMAGE/deus1-front:latest
+#     - docker pull mysql
+#   script:
+#     - docker-compose up -d
+#     - docker-compose up -d
+#
+deploy_ansible:
+  stage: deploy
+  image: pawwlyk52/ansible-ci:latest
+  variables:
+    ANSIBLE_HOST_KEY_CHECKING: "False"
+  script:
+     - echo ${SSH_KEY} | base64 -di > ./runner
+     - chmod 600 ./runner
+     - mkdir -p ~/.ssh
+     - ssh-keyscan -t rsa 51.250.6.244 >> ~/.ssh/known_hosts
+     # - sed 's#https://#https://gitlab-ci-token:${CI_JOB_TOKEN}@#g' -i requirements.yml
+     # - sleep 300
+     - ansible-galaxy install -f -r requirements.yml
+     - ansible-playbook -u gitlab --private-key="./runner" -i inventories/hosts playbook.yml -D
+  tags:
+     - vivo
+

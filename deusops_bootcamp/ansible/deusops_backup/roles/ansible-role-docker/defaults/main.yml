@@ -1,0 +1,50 @@
+---
+# default docker gpg-keys
+#
+docker_gpg_url: "https://download.docker.com/linux/ubuntu"
+docker_gpg_path: "/etc/apt/keyrings/docker.gpg"
+
+# docker registry login
+docker_registry_login: false
+docker_registry:
+  url: "{{ lookup('env','CI_REGISTRY') }}"
+  # user: "gitlab-ci-token"
+  # password: "{{ lookup('env','CI_JOB_TOKEN') }}"
+  user: pawwlyk52@gmail.com
+  password: 11332244xX
+
+docker_prune_job: true
+
+docker_templates_path: "{{ role_path }}/templates"
+
+docker_project_image: "registry.gitlab.com/pawwlyk52/deusops1/"
+docker_project_name: "deus1"
+docker_project_port: "80"
+
+docker_container_start: false
+docker_container_image: "{{ docker_project_image }}"
+docker_container_port: "{{ docker_project_port }}"
+
+docker_compose_start: true
+docker_compose_version: "3.8"
+docker_compose_remove_orphans: true
+docker_compose_project_path: "/opt/{{ docker_project_name }}"
+docker_compose_project_release: ""
+docker_compose_services:
+  - image: "{{ docker_project_image }}deus1-front:latest"
+    name: "front"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes: /var/run/docker.sock:/tmp/docker.sock:ro
+  - image: "{{ docker_project_image }}deus1-back:latest"
+    name: "backend"
+  - image: "mysql"
+    name: "deusops1_db_1"
+    ports:
+      - "3306:3306"
+    environment:
+      - key: MYSQL_DATABASE
+        value: fullstack
+      - key: MYSQL_ROOT_PASSWORD
+        value: pass

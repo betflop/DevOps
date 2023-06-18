@@ -1,0 +1,1 @@
+ansible-playbook -u gitlab --private-key=~/.ssh/ -i inventories/hosts playbook.yml -D

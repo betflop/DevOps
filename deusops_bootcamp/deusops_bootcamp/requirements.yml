@@ -1,0 +1,3 @@
+- src: git+https://gitlab.com/pawwlyk52/deusops2.git
+  version: main
+  name: docker

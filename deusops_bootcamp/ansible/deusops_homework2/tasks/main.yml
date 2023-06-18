@@ -1,0 +1,27 @@
+---
+- import_tasks: install.yml
+
+- name: Log into private registry and force re-authorization
+  docker_login:
+    registry: "{{ docker_registry.url }}"
+    username: "{{ docker_registry.user }}"
+    password: "{{ docker_registry.password }}"
+  when: docker_registry_login and docker_registry.url is defined
+
+- name: Add current user to Docker group
+  ansible.builtin.user:
+    name: "{{ ansible_ssh_user }}"
+    groups: docker
+
+- name: Docker | Add crontab prune job
+  cron:
+    name: "Docker prune"
+    hour: "0"
+    job: "docker system prune -f"
+  when: docker_prune_job
+
+# - import_tasks: service.yml
+  # when: docker_container_start
+
+- import_tasks: dc.yml
+  when: docker_compose_start

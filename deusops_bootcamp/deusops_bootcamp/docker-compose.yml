@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+
+  frontend:
+    image: registry.gitlab.com/pawwlyk52/deusops1/deus1-front:latest
+    container_name: deus1_front
+    restart: always
+    ports:
+      - "80:80"
+      - "8080:8080"
+    # environment:
+    # REACT_APP_PUBLIC_URL: "http://51.250.6.244/"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+    networks:
+      - deus1
+
+  backend:
+    image: registry.gitlab.com/pawwlyk52/deusops1/deus1-back:latest
+    container_name: deus1_back
+    restart: always
+    networks:
+      - deus1
+
+  db:
+    image: mysql
+    environment:
+      MYSQL_DATABASE: 'fullstack'
+        # MYSQL_USER: 'root'
+        # MYSQL_PASSWORD: 'pass'
+      MYSQL_ROOT_PASSWORD: 'pass'
+    ports:
+      - '3306:3306'
+    networks:
+      - deus1
+
+networks:
+  deus1:

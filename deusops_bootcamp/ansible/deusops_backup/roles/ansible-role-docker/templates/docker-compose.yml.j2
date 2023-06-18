@@ -1,0 +1,32 @@
+#jinja2: trim_blocks:False
+version: '{{ docker_compose_version }}'
+
+services:
+{% for service in docker_compose_services %}
+  {{ service.name | default('app' + loop.index|string) }}:
+    container_name: "{{ service.name | default('app' + loop.index|string) }}"
+    image: {{ service.image }}
+    # restart: always
+    {% if service.ports is defined %}
+    ports:
+    {% for i in service.ports %}
+      - "{{ i }}"
+    {% endfor %}
+    {% endif %}
+    {% if service.volumes is defined %}
+    volumes:
+      - {{ service.volumes }}
+    {% endif %}
+    {% if service.environment is defined %}
+    environment:
+    {% for i in service.environment %}
+      {{ i.key }}: "{{ i.value }}"
+    {% endfor %}
+    {% endif %}
+    networks:
+      - deus1
+{% endfor %}
+
+networks:
+  deus1:
+
