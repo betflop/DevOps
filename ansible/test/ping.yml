@@ -1,0 +1,13 @@
+---
+- name: ping
+  hosts: all
+  # become: yes
+  tasks:
+    - name: Print a sample message
+      ping: 
+    - name: Test msg
+      shell: uname -a
+      register: datecmd
+      # tags: datecmd
+
+    - debug: msg="{{datecmd.stdout}}"

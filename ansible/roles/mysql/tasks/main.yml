@@ -1,0 +1,35 @@
+---
+- name: "Install mysql via apt"
+  ansible.builtin.apt:
+    name: "mysql-server"
+    state: "latest"
+    update_cache: true
+
+- name: "Install pymysql via apt"
+  ansible.builtin.apt:
+    name: "python3-pymysql"
+    state: "latest"
+    update_cache: true
+
+- name: "Set up root user"
+  community.mysql.mysql_user:
+    name: "root"
+    password: "password"
+    login_user: "root"
+    login_password: "password"
+    check_implicit_admin: true
+    login_unix_socket: "/var/run/mysqld/mysqld.sock"
+
+- name: "Remove anonymous users"
+  community.mysql.mysql_user:
+    name: ""
+    state: "absent"
+    login_user: "root"
+    login_password: "password"
+
+- name: "Remove test database"
+  community.mysql.mysql_db:
+    name: "test"
+    state: "absent"
+    login_user: "root"
+    login_password: "password"

@@ -1,0 +1,3 @@
+ansible all -i hosts.ini -m ping
+
+ansible all -i hosts.ini --ask-pass -m ping

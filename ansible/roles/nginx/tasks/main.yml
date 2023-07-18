@@ -1,0 +1,21 @@
+---
+- name: "Install nginx via apt"
+  ansible.builtin.apt:
+    name: "nginx"
+    state: "latest"
+    update_cache: true
+
+- name: "Delete /var/www/html folder"
+  ansible.builtin.file:
+    path: "/var/www/html"
+    state: "absent"
+
+- name: "Copy our landing to /var/www/html folder"
+  ansible.builtin.copy:
+    src: "files/html"
+    dest: "/var/www"
+    owner: "pk"
+    group: "pk"
+    mode: "0644"
+
+
