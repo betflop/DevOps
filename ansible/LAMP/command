@@ -1,0 +1,11 @@
+ansible all -i hosts.ini -m ping
+
+ansible all -i hosts.ini --ask-pass -m ping
+
+ansible-playbook playbook.yml -i hosts.ini -K
+
+ansible-playbook playbook_vartest.yml -e test_var=hello
+
+ansible-galaxy role init test_galaxy
+
+ansible-galaxy install -r requirements.yml

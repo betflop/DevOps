@@ -1,0 +1,8 @@
+---
+- name: "Test vars ROLE"
+  vars:
+    test_var: 333
+  ansible.builtin.debug:
+    msg: "Variable is set to {{ test_var }} {{ ansible_date_time }}"
+
+

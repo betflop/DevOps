@@ -6,7 +6,7 @@ RUN mvn package -Dmaven.test.skip=true
 
 
 FROM openjdk:16-jdk
-# RUN apk update && apk upgrade
+RUN apk update
 # RUN apt update && apt -y install curl && apt install mysql-client
 WORKDIR /app
 COPY --from=builder /usr/src/app/target/*.jar ./app.jar

@@ -1,0 +1,8 @@
+roles:
+- src: geerlingguy.postgresql
+
+- name: green.mongodb
+  src: https://github.com/UnderGreen/ansible-role-mongodb
+
+collections:
+- name: community.postgresql

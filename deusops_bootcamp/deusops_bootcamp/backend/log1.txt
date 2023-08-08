@@ -1,0 +1,67 @@
+-----------------------------------------------------------------------dasdas
+[92mpyxtermjs > [0mINFO (main:154) serving on http://0.0.0.0:5555
+[92mpyxtermjs > [0mINFO (main:156) serving -----------------------------
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+[92mpyxtermjs > [0mINFO (main:154) serving on http://0.0.0.0:5555
+[92mpyxtermjs > [0mINFO (main:156) serving -----------------------------
+/certs/server/cert.pem: OK
+/certs/client/cert.pem: OK
+[92mpyxtermjs > [0mERROR (_log_error_once:720) The WebSocket transport is not available, you must install a WebSocket server that is compatible with your async mode to enable it. See the documentation for details. (further occurrences of this error will be logged with level INFO)
+[92mpyxtermjs > [0mINFO (connect:74) new client connected
+[92mpyxtermjs > [0mDEBUG (set_winsize:28) setting window size with termios
+[92mpyxtermjs > [0mINFO (connect:74) new client connected
+[92mpyxtermjs > [0mDEBUG (resize:67) Resizing window to 54x101
+[92mpyxtermjs > [0mDEBUG (set_winsize:28) setting window size with termios
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: l
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: s
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: c
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: a
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: l
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: l
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: l
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: s
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: l
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: a
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: s
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser:  
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: -
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: a
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: o
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: F
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: [A
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: [D
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: [A
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+[92mpyxtermjs > [0mDEBUG (pty_input:60) received input from browser: 
+-----------------------------------------------------------------------dasdas
+/certs/server/cert.pem: OK
+/certs/client/cert.pem: OK
+[92mpyxtermjs > [0mINFO (main:154) serving on http://0.0.0.0:5555
+[92mpyxtermjs > [0mINFO (main:156) serving -----------------------------
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+[92mpyxtermjs > [0mINFO (main:154) serving on http://0.0.0.0:5555
+[92mpyxtermjs > [0mINFO (main:156) serving -----------------------------
