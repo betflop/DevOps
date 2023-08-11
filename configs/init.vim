@@ -22,6 +22,7 @@ set expandtab
 set list
 set listchars=trail:·,precedes:«,extends:»,eol:↲,tab:▸\ 
 " set listchars=tab:▒░,trail:·,eol:¶
+set autochdir
 
 if (has('termguicolors'))
 	set termguicolors
