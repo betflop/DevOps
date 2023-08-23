@@ -112,6 +112,8 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'preservim/vim-indent-guides'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'pearofducks/ansible-vim'
 call plug#end()
 
 
@@ -450,6 +452,33 @@ require'lspconfig'.stylelint_lsp.setup{
   }
 }
 
+require('lspconfig').ansiblels.setup{
+  filetypes = {
+       "yaml.ansible",
+  },
+  settings = {
+    ansible = {
+      ansible = {
+        path = "ansible",
+        useFullyQualifiedCollectionNames = true
+      },
+      ansibleLint = {
+        enabled = true,
+        path = "ansible-lint"
+      },
+      executionEnvironment = {
+        enabled = false
+      },
+      python = {
+        interpreterPath = "python3"
+      },
+      completion = {
+          provideRedirectModules = true,
+          provideModuleOptionAliases = true
+      }
+    },
+  },
+}
 
 -- ["https://json.schemastore.org/yamllint.json"] = "/*",
 require('lspconfig').yamlls.setup {
@@ -580,3 +609,4 @@ if &diff
     " colorscheme evening
     colorscheme molokai
 endif
+
