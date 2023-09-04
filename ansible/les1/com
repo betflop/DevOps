@@ -1,0 +1,1 @@
+ansible all --list-hosts -i hosts.ini
