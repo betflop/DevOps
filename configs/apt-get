@@ -20,6 +20,7 @@ sudo apt-get install ripgrep
 
 ################# prog
 npm install -g @ansible/ansible-language-server
+sudo apt-get intall terraform-ls
 sudo apt-get install  golang
 sudo apt-get -y install gopls
 sudo apt-get -y install delve
