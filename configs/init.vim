@@ -480,6 +480,8 @@ require('lspconfig').ansiblels.setup{
   },
 }
 
+require'lspconfig'.terraformls.setup{}
+
 -- ["https://json.schemastore.org/yamllint.json"] = "/*",
 require('lspconfig').yamlls.setup {
   -- other configuration for setup {}
