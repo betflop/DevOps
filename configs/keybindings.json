@@ -46,11 +46,12 @@
     "command": "list.select",
     "when": "listFocus && !inputFocus"
 },
-{
-    "key": "' /",
-    "command": "editor.action.commentLine",
-    "when": "editorTextFocus && !editorReadonly"
-},
+/ {
+     "key": "' /",
+     "command": "editor.action.commentLine",
+    "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
+    //  "when": "vim.active && vim.mode != 'Insert && editorTextFocus && !editorReadonly"
+ },
 {
     "key": "cmd+/",
     "command": "-editor.action.commentLine",
@@ -83,5 +84,15 @@
 {
     "key": "cmd+p",
     "command": "-workbench.action.quickOpen"
+},
+{
+    "key": "shift+k",
+    "command": "editor.action.showHover",
+    "when": "editorTextFocus"
+},
+{
+    "key": "cmd+k cmd+i",
+    "command": "-editor.action.showHover",
+    "when": "editorTextFocus"
 }
 ]

@@ -3,6 +3,4 @@
   vars:
     test_var: 333
   ansible.builtin.debug:
-    msg: "Variable is set to {{ test_var }} {{ ansible_date_time }}"
-
-
+    msg: "Variable is set to {{ test_var }} {{ newtest }} {{ ansible_date_time }}"

@@ -1,10 +1,10 @@
 ---
-- hosts: "all"
+- hosts: "testansible"
   become: true
   roles:
     - nginx
-    - mysql
-    - php
+    # - mysql
+    # - php
 
   tasks:
     - name: "Reload nginx"
