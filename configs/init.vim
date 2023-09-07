@@ -114,6 +114,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'pearofducks/ansible-vim'
+Plug 'towolf/vim-helm'
 call plug#end()
 
 
@@ -149,6 +150,7 @@ let g:prettier#quickfix_enabled = 0
 nmap <C-e> :NERDTreeToggle<CR>
 noremap '/ :Commentary<CR>
 nnoremap ,<space> :nohlsearch<CR>
+nnoremap <S-F8> :LspStart<CR>
 map bn :bn<cr>
 map bp :bp<cr>
 map bd :bd<cr>
@@ -486,6 +488,7 @@ require'lspconfig'.terraformls.setup{}
 require('lspconfig').yamlls.setup {
   -- other configuration for setup {}
   on_attach = on_attach,
+  autostart = false,
   capabilities = capabilities,
   settings = {
     yaml = {
