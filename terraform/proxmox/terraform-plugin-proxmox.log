@@ -27199,3 +27199,2438 @@ unusedDiskNames: []
 [90mWed, 06 Sep 2023 12:43:30 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1322[0m[36m >[0m Network block received 'map[0:map[bridge:vmbr0 id:0 macaddr:92:1E:F6:66:32:5E model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
 [90mWed, 06 Sep 2023 12:43:30 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1367[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr0 id:0 macaddr:92:1E:F6:66:32:5E model:virtio tag:-1]]' from '[map[bridge:vmbr0 macaddr:92:1E:F6:66:32:5E model:virtio tag:-1]]' set as '[map[bridge:vmbr0 firewall:false link_down:false macaddr:92:1E:F6:66:32:5E model:virtio queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
 [90mWed, 06 Sep 2023 12:43:30 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1369[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":15,"agent":1,"args":"","balloon":0,"bios":"seabios","boot":"cdn","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"","clone":"VM 9000","clone_wait":15,"cloudinit_cdrom_storage":"","cores":2,"cpu":"host","default_ipv4_address":"","define_connection_info":true,"desc":"","disk":[{"backup":0,"cache":"none","discard":"","file":"vm-2001-disk-0","format":"raw","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"30G","slot":0,"ssd":0,"storage":"local-lvm2","storage_type":"lvm","type":"scsi","volume":"local-lvm2:vm-2001-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":true,"guest_agent_ready_timeout":600,"hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=192.168.0.101/24,gw=192.168.0.1","ipconfig1":"","ipconfig2":"","iso":"","kvm":true,"mac":"","memory":2048,"name":"test-vm-1","nameserver":"","network":[{"bridge":"vmbr0","firewall":false,"link_down":false,"macaddr":"92:1E:F6:66:32:5E","model":"virtio","queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":true,"os_network_config":"","os_type":"cloud-init","pool":"","preprovision":true,"qemu_os":"other","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"192.168.0.101","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE+O8FwO8rcOb+W/VNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS/v6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6/9/yfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef+Nw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM+My0NeagOFbK0/D5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii+Zkww1bOLvZmf6Wsd/pnU28pSZhLK+/3EQ03niqO5eogcTM+0MlT+FM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk= pavelkozlov@MacBookPro.local\n\n","storage":"","storage_type":"","tags":"","target_node":"prox","unused_disk":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":2001}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+[90mWed, 06 Sep 2023 16:03:08 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:141[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mWed, 06 Sep 2023 16:03:08 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:174[0m[36m >[0m Logging Started. Root Logger Set to level debug
+[90mWed, 06 Sep 2023 16:03:08 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1202[0m[36m >[0m Reading configuration for vmid [36mloggerName=[0mresource_vm_read [36mvmid=[0m2003
+[90mWed, 06 Sep 2023 16:03:08 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1202[0m[36m >[0m Reading configuration for vmid [36mloggerName=[0mresource_vm_read [36mvmid=[0m2002
+[90mWed, 06 Sep 2023 16:03:08 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1202[0m[36m >[0m Reading configuration for vmid [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+2023/09/06 16:03:08 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:08 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:08 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1662
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"maxmem":4294967296,"netout":0,"node":"prox","uptime":0,"status":"stopped","id":"qemu/100","template":0,"mem":0,"name":"testansible","vmid":100,"netin":0,"diskread":0,"disk":0,"type":"qemu","maxdisk":53687091200,"diskwrite":0,"maxcpu":4,"cpu":0},{"diskread":0,"disk":0,"type":"qemu","maxdisk":2361393152,"diskwrite":0,"cpu":0,"maxcpu":1,"mem":0,"name":"ubuntu2","vmid":123,"netin":0,"uptime":0,"node":"prox","status":"stopped","id":"qemu/123","template":0,"maxmem":2147483648,"netout":0},{"maxmem":2147483648,"netout":4203415,"id":"qemu/2001","template":0,"node":"prox","uptime":12583,"status":"running","vmid":2001,"netin":887990807,"mem":149946368,"name":"test-vm-1","maxcpu":2,"cpu":0.0240370368984217,"diskread":1197662020,"disk":0,"type":"qemu","maxdisk":32212254720,"diskwrite":2519356416},{"node":"prox","uptime":12583,"status":"running","id":"qemu/2002","template":0,"maxmem":2147483648,"netout":577586,"diskread":550803060,"disk":0,"type":"qemu","maxdisk":32212254720,"diskwrite":1780711936,"maxcpu":2,"cpu":0.0230559333515474,"mem":276418560,"name":"test-vm-2","vmid":2002,"netin":72854389},{"cpu":0.0230559333515474,"maxcpu":2,"disk":0,"diskread":335806276,"type":"qemu","maxdisk":32212254720,"diskwrite":1769849856,"vmid":2003,"netin":72830712,"mem":1007112192,"name":"test-vm-3","id":"qemu/2003","template":0,"node":"prox","uptime":12583,"status":"running","maxmem":2147483648,"netout":572527},{"diskwrite":0,"maxdisk":2361393152,"disk":0,"diskread":0,"type":"qemu","maxcpu":1,"cpu":0,"name":"VM 9000","mem":0,"netin":0,"vmid":9000,"status":"stopped","node":"prox","uptime":0,"template":1,"id":"qemu/9000","netout":0,"maxmem":2147483648}]}
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1662
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"maxcpu":4,"cpu":0,"maxdisk":53687091200,"diskwrite":0,"disk":0,"diskread":0,"type":"qemu","netin":0,"vmid":100,"name":"testansible","mem":0,"id":"qemu/100","template":0,"node":"prox","uptime":0,"status":"stopped","netout":0,"maxmem":4294967296},{"name":"ubuntu2","mem":0,"netin":0,"vmid":123,"maxdisk":2361393152,"diskwrite":0,"diskread":0,"disk":0,"type":"qemu","cpu":0,"maxcpu":1,"netout":0,"maxmem":2147483648,"node":"prox","uptime":0,"status":"stopped","id":"qemu/123","template":0},{"netout":4203415,"maxmem":2147483648,"id":"qemu/2001","template":0,"node":"prox","uptime":12583,"status":"running","netin":887990807,"vmid":2001,"name":"test-vm-1","mem":149946368,"maxcpu":2,"cpu":0.0240370368984217,"maxdisk":32212254720,"diskwrite":2519356416,"diskread":1197662020,"disk":0,"type":"qemu"},{"id":"qemu/2002","template":0,"uptime":12583,"node":"prox","status":"running","netout":577586,"maxmem":2147483648,"maxcpu":2,"cpu":0.0230559333515474,"maxdisk":32212254720,"diskwrite":1780711936,"disk":0,"diskread":550803060,"type":"qemu","netin":72854389,"vmid":2002,"name":"test-vm-2","mem":276418560},{"netout":572527,"maxmem":2147483648,"id":"qemu/2003","template":0,"uptime":12583,"node":"prox","status":"running","netin":72830712,"vmid":2003,"name":"test-vm-3","mem":1007112192,"maxcpu":2,"cpu":0.0230559333515474,"maxdisk":32212254720,"diskwrite":1769849856,"disk":0,"diskread":335806276,"type":"qemu"},{"netout":0,"maxmem":2147483648,"node":"prox","uptime":0,"status":"stopped","id":"qemu/9000","template":1,"name":"VM 9000","mem":0,"netin":0,"vmid":9000,"maxdisk":2361393152,"diskwrite":0,"disk":0,"diskread":0,"type":"qemu","maxcpu":1,"cpu":0}]}
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1662
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"maxcpu":4,"cpu":0,"disk":0,"diskread":0,"type":"qemu","diskwrite":0,"maxdisk":53687091200,"vmid":100,"netin":0,"mem":0,"name":"testansible","template":0,"id":"qemu/100","status":"stopped","node":"prox","uptime":0,"maxmem":4294967296,"netout":0},{"status":"stopped","node":"prox","uptime":0,"template":0,"id":"qemu/123","netout":0,"maxmem":2147483648,"diskwrite":0,"maxdisk":2361393152,"diskread":0,"disk":0,"type":"qemu","cpu":0,"maxcpu":1,"name":"ubuntu2","mem":0,"netin":0,"vmid":123},{"diskread":1197662020,"disk":0,"type":"qemu","diskwrite":2519356416,"maxdisk":32212254720,"cpu":0.0240370368984217,"maxcpu":2,"mem":149946368,"name":"test-vm-1","vmid":2001,"netin":887990807,"status":"running","node":"prox","uptime":12583,"template":0,"id":"qemu/2001","maxmem":2147483648,"netout":4203415},{"id":"qemu/2002","template":0,"uptime":12583,"node":"prox","status":"running","netout":577586,"maxmem":2147483648,"maxcpu":2,"cpu":0.0230559333515474,"maxdisk":32212254720,"diskwrite":1780711936,"disk":0,"diskread":550803060,"type":"qemu","netin":72854389,"vmid":2002,"name":"test-vm-2","mem":276418560},{"diskwrite":1769849856,"maxdisk":32212254720,"diskread":335806276,"disk":0,"type":"qemu","maxcpu":2,"cpu":0.0230559333515474,"name":"test-vm-3","mem":1007112192,"netin":72830712,"vmid":2003,"status":"running","node":"prox","uptime":12583,"template":0,"id":"qemu/2003","netout":572527,"maxmem":2147483648},{"cpu":0,"maxcpu":1,"diskwrite":0,"maxdisk":2361393152,"disk":0,"diskread":0,"type":"qemu","netin":0,"vmid":9000,"name":"VM 9000","mem":0,"template":1,"id":"qemu/9000","status":"stopped","uptime":0,"node":"prox","netout":0,"maxmem":2147483648}]}
+2023/09/06 16:03:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2003/config HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/config HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2002/config HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1286
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"smbios1":"uuid=cc63cee5-9777-409b-b052-28303a9f84f3","hotplug":"network,disk,usb","serial0":"socket","meta":"creation-qemu=8.0.2,ctime=1693936972","scsi0":"local-lvm2:vm-2003-disk-0,size=30G","scsihw":"virtio-scsi-pci","onboot":1,"bios":"seabios","sockets":1,"numa":0,"net0":"virtio=62:70:CC:A9:70:19,bridge=vmbr0","name":"test-vm-3","bootdisk":"scsi0","memory":2048,"cpu":"host","cores":2,"sshkeys":"%20%20ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE%2BO8FwO8rcOb%2BW%2FVNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS%2Fv6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6%2F9%2FyfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef%2BNw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM%2BMy0NeagOFbK0%2FD5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii%2BZkww1bOLvZmf6Wsd%2FpnU28pSZhLK%2B%2F3EQ03niqO5eogcTM%2B0MlT%2BFM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk%3D%20pavelkozlov%40MacBookPro.local%0A%0A","digest":"3a7d356d056e2a07c981da5bde610c7bfc444166","kvm":1,"ide2":"local-lvm2:vm-2003-cloudinit,media=cdrom,size=4M","ipconfig0":"ip=192.168.0.103/24,gw=192.168.0.1","vmgenid":"9a3333db-cc4d-4195-826a-8113ee76eaed","agent":"1","boot":"cdn"}}
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1286
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"net0":"virtio=92:1E:F6:66:32:5E,bridge=vmbr0","bootdisk":"scsi0","name":"test-vm-1","cpu":"host","cores":2,"sshkeys":"%20%20ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE%2BO8FwO8rcOb%2BW%2FVNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS%2Fv6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6%2F9%2FyfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef%2BNw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM%2BMy0NeagOFbK0%2FD5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii%2BZkww1bOLvZmf6Wsd%2FpnU28pSZhLK%2B%2F3EQ03niqO5eogcTM%2B0MlT%2BFM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk%3D%20pavelkozlov%40MacBookPro.local%0A%0A","digest":"f0e69fedb8ac841156f400adfa33d8b767030ba8","memory":2048,"ide2":"local-lvm2:vm-2001-cloudinit,media=cdrom,size=4M","kvm":1,"vmgenid":"7eae8d79-7e9d-47ff-ae2f-ce3faed931aa","agent":"1","boot":"cdn","ipconfig0":"ip=192.168.0.101/24,gw=192.168.0.1","smbios1":"uuid=aee45f02-34b1-40f8-9319-8b29e32012b8","serial0":"socket","hotplug":"network,disk,usb","scsihw":"virtio-scsi-pci","onboot":1,"meta":"creation-qemu=8.0.2,ctime=1693936972","scsi0":"local-lvm2:vm-2001-disk-0,size=30G","sockets":1,"bios":"seabios","numa":0}}
+2023/09/06 16:03:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/content HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/content HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1286
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"hotplug":"network,disk,usb","serial0":"socket","smbios1":"uuid=bd6f7467-ea9b-437c-8489-63082ff20b99","scsi0":"local-lvm2:vm-2002-disk-0,size=30G","meta":"creation-qemu=8.0.2,ctime=1693936972","onboot":1,"scsihw":"virtio-scsi-pci","numa":0,"bios":"seabios","sockets":1,"name":"test-vm-2","bootdisk":"scsi0","net0":"virtio=E6:47:26:C0:B4:B1,bridge=vmbr0","memory":2048,"digest":"d4e95e08bc5f3962612c0231603d7a5a877e16be","sshkeys":"%20%20ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE%2BO8FwO8rcOb%2BW%2FVNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS%2Fv6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6%2F9%2FyfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef%2BNw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM%2BMy0NeagOFbK0%2FD5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii%2BZkww1bOLvZmf6Wsd%2FpnU28pSZhLK%2B%2F3EQ03niqO5eogcTM%2B0MlT%2BFM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk%3D%20pavelkozlov%40MacBookPro.local%0A%0A","cpu":"host","cores":2,"kvm":1,"ide2":"local-lvm2:vm-2002-cloudinit,media=cdrom,size=4M","ipconfig0":"ip=192.168.0.102/24,gw=192.168.0.1","boot":"cdn","agent":"1","vmgenid":"2a2d3dcf-8735-47bb-97df-9c67b9af3490"}}
+2023/09/06 16:03:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/content HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 751
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"size":4194304,"content":"images","vmid":2001,"volid":"local-lvm2:vm-2001-cloudinit","ctime":"1693992753","format":"raw"},{"content":"images","vmid":2001,"size":32212254720,"volid":"local-lvm2:vm-2001-disk-0","ctime":"1693992754","format":"raw"},{"format":"raw","ctime":"1693992754","volid":"local-lvm2:vm-2002-cloudinit","size":4194304,"vmid":2002,"content":"images"},{"size":32212254720,"content":"images","vmid":2002,"volid":"local-lvm2:vm-2002-disk-0","ctime":"1693992754","format":"raw"},{"size":4194304,"vmid":2003,"content":"images","format":"raw","ctime":"1693992754","volid":"local-lvm2:vm-2003-cloudinit"},{"size":32212254720,"vmid":2003,"content":"images","format":"raw","ctime":"1693992755","volid":"local-lvm2:vm-2003-disk-0"}]}
+2023/09/06 16:03:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 751
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"vmid":2001,"content":"images","size":4194304,"format":"raw","volid":"local-lvm2:vm-2001-cloudinit","ctime":"1693992753"},{"size":32212254720,"vmid":2001,"content":"images","format":"raw","ctime":"1693992754","volid":"local-lvm2:vm-2001-disk-0"},{"volid":"local-lvm2:vm-2002-cloudinit","ctime":"1693992754","format":"raw","size":4194304,"content":"images","vmid":2002},{"size":32212254720,"vmid":2002,"content":"images","format":"raw","volid":"local-lvm2:vm-2002-disk-0","ctime":"1693992754"},{"content":"images","vmid":2003,"size":4194304,"volid":"local-lvm2:vm-2003-cloudinit","ctime":"1693992754","format":"raw"},{"vmid":2003,"content":"images","size":32212254720,"format":"raw","volid":"local-lvm2:vm-2003-disk-0","ctime":"1693992755"}]}
+2023/09/06 16:03:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 751
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"vmid":2001,"content":"images","size":4194304,"format":"raw","ctime":"1693992753","volid":"local-lvm2:vm-2001-cloudinit"},{"volid":"local-lvm2:vm-2001-disk-0","ctime":"1693992754","format":"raw","content":"images","vmid":2001,"size":32212254720},{"format":"raw","ctime":"1693992754","volid":"local-lvm2:vm-2002-cloudinit","size":4194304,"vmid":2002,"content":"images"},{"vmid":2002,"content":"images","size":32212254720,"format":"raw","ctime":"1693992754","volid":"local-lvm2:vm-2002-disk-0"},{"size":4194304,"vmid":2003,"content":"images","format":"raw","ctime":"1693992754","volid":"local-lvm2:vm-2003-cloudinit"},{"format":"raw","ctime":"1693992755","volid":"local-lvm2:vm-2003-disk-0","vmid":2003,"content":"images","size":32212254720}]}
+2023/09/06 16:03:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788D::nuyd9w30R2hDi07vKMxdYlyQqYy9JbWcruq+NsctoFzUkEHYF0bN4gUPc79PgQg0bRXZI7p/jAQmCgb7nPQ3HqsWPR7wMYo0tsjoBLkJ6E2rGiSOeHpA3MowK50OogsfJeFZHfGUDc52r2YvbYUe60+f+DP0lb641ntpOB3fVDMr6aP4BosuJzwH0RpoELnt4RyQcdwhnYrPDLhJBlYzf1ReMzhxn9WPb72BFmYJ4wa6/DGEegcAkS0sMJQalXdIzUdVT8/3oDjty0hQcxHE74rrjobNIysp/wdXuEE1RjxhY09BUlnMLBSO0FnHm25Y/Ssq7+Hub8J42bjWUi50bA==
+Csrfpreventiontoken: 64F8788D:1uje0NNhqscUhFNyMgabo3Xp/JjqyvWWgVVAVVUc1Dg
+Accept-Encoding: gzip
+
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 145
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"total":512107741184,"used":96649347072,"type":"lvm","enabled":1,"content":"rootdir,images","active":1,"shared":0,"avail":415458394112}}
+unusedDiskNames: []
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1220[0m[36m >[0m [READ] Received Config from Proxmox API: {"vmid":0,"name":"test-vm-2","desc":"","bios":"seabios","onboot":true,"agent":1,"memory":2048,"balloon":0,"os":"other","cores":2,"sockets":1,"vcpus":0,"cpu":"host","numa":false,"kvm":true,"hotplug":"network,disk,usb","iso":"local-lvm2:vm-2002-cloudinit","fullclone":null,"boot":"cdn","bootdisk":"scsi0","scsihw":"virtio-scsi-pci","disk":{"0":{"file":"vm-2002-disk-0","format":"raw","size":"30G","slot":0,"storage":"local-lvm2","storage_type":"lvm","type":"scsi","volume":"local-lvm2:vm-2002-disk-0"}},"unused_disk":{},"network":{"0":{"bridge":"vmbr0","id":0,"macaddr":"E6:47:26:C0:B4:B1","model":"virtio"}},"serial":{"0":{"id":0,"type":"socket"}},"tags":"","args":"","diskGB":0,"storage":"","storageType":"","nic":"","bridge":"","vlan":-1,"mac":"","ciuser":"","cipassword":"","cicustom":"","searchdomain":"","nameserver":"","sshkeys":"  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE+O8FwO8rcOb+W/VNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS/v6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6/9/yfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef+Nw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM+My0NeagOFbK0/D5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii+Zkww1bOLvZmf6Wsd/pnU28pSZhLK+/3EQ03niqO5eogcTM+0MlT+FM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk= pavelkozlov@MacBookPro.local\n\n","ipconfig0":"ip=192.168.0.102/24,gw=192.168.0.1","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":""} [36mloggerName=[0mresource_vm_read [36mvmid=[0m2002
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1308[0m[36m >[0m Unused Disk Block Processed 'map[0:map[bridge:vmbr0 id:0 macaddr:E6:47:26:C0:B4:B1 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2002
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1322[0m[36m >[0m Network block received 'map[0:map[bridge:vmbr0 id:0 macaddr:E6:47:26:C0:B4:B1 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2002
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1367[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr0 id:0 macaddr:E6:47:26:C0:B4:B1 model:virtio tag:-1]]' from '[map[bridge:vmbr0 macaddr:E6:47:26:C0:B4:B1 model:virtio tag:-1]]' set as '[map[bridge:vmbr0 firewall:false link_down:false macaddr:E6:47:26:C0:B4:B1 model:virtio queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2002
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1369[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":15,"agent":1,"args":"","balloon":0,"bios":"seabios","boot":"cdn","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"","clone":"VM 9000","clone_wait":15,"cloudinit_cdrom_storage":"","cores":2,"cpu":"host","default_ipv4_address":"","define_connection_info":true,"desc":"","disk":[{"backup":0,"cache":"none","discard":"","file":"vm-2002-disk-0","format":"raw","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"30G","slot":0,"ssd":0,"storage":"local-lvm2","storage_type":"lvm","type":"scsi","volume":"local-lvm2:vm-2002-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":true,"guest_agent_ready_timeout":600,"hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=192.168.0.102/24,gw=192.168.0.1","ipconfig1":"","ipconfig2":"","iso":"","kvm":true,"mac":"","memory":2048,"name":"test-vm-2","nameserver":"","network":[{"bridge":"vmbr0","firewall":false,"link_down":false,"macaddr":"E6:47:26:C0:B4:B1","model":"virtio","queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":true,"os_network_config":"","os_type":"cloud-init","pool":"","preprovision":true,"qemu_os":"other","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"192.168.0.102","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE+O8FwO8rcOb+W/VNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS/v6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6/9/yfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef+Nw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM+My0NeagOFbK0/D5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii+Zkww1bOLvZmf6Wsd/pnU28pSZhLK+/3EQ03niqO5eogcTM+0MlT+FM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk= pavelkozlov@MacBookPro.local\n\n","storage":"","storage_type":"","tags":"","target_node":"prox","unused_disk":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":2002}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2002
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 145
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"active":1,"shared":0,"avail":415458394112,"total":512107741184,"used":96649347072,"type":"lvm","enabled":1,"content":"images,rootdir"}}
+unusedDiskNames: []
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1220[0m[36m >[0m [READ] Received Config from Proxmox API: {"vmid":0,"name":"test-vm-1","desc":"","bios":"seabios","onboot":true,"agent":1,"memory":2048,"balloon":0,"os":"other","cores":2,"sockets":1,"vcpus":0,"cpu":"host","numa":false,"kvm":true,"hotplug":"network,disk,usb","iso":"local-lvm2:vm-2001-cloudinit","fullclone":null,"boot":"cdn","bootdisk":"scsi0","scsihw":"virtio-scsi-pci","disk":{"0":{"file":"vm-2001-disk-0","format":"raw","size":"30G","slot":0,"storage":"local-lvm2","storage_type":"lvm","type":"scsi","volume":"local-lvm2:vm-2001-disk-0"}},"unused_disk":{},"network":{"0":{"bridge":"vmbr0","id":0,"macaddr":"92:1E:F6:66:32:5E","model":"virtio"}},"serial":{"0":{"id":0,"type":"socket"}},"tags":"","args":"","diskGB":0,"storage":"","storageType":"","nic":"","bridge":"","vlan":-1,"mac":"","ciuser":"","cipassword":"","cicustom":"","searchdomain":"","nameserver":"","sshkeys":"  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE+O8FwO8rcOb+W/VNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS/v6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6/9/yfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef+Nw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM+My0NeagOFbK0/D5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii+Zkww1bOLvZmf6Wsd/pnU28pSZhLK+/3EQ03niqO5eogcTM+0MlT+FM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk= pavelkozlov@MacBookPro.local\n\n","ipconfig0":"ip=192.168.0.101/24,gw=192.168.0.1","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":""} [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1308[0m[36m >[0m Unused Disk Block Processed 'map[0:map[bridge:vmbr0 id:0 macaddr:92:1E:F6:66:32:5E model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1322[0m[36m >[0m Network block received 'map[0:map[bridge:vmbr0 id:0 macaddr:92:1E:F6:66:32:5E model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1367[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr0 id:0 macaddr:92:1E:F6:66:32:5E model:virtio tag:-1]]' from '[map[bridge:vmbr0 macaddr:92:1E:F6:66:32:5E model:virtio tag:-1]]' set as '[map[bridge:vmbr0 firewall:false link_down:false macaddr:92:1E:F6:66:32:5E model:virtio queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1369[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":15,"agent":1,"args":"","balloon":0,"bios":"seabios","boot":"cdn","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"","clone":"VM 9000","clone_wait":15,"cloudinit_cdrom_storage":"","cores":2,"cpu":"host","default_ipv4_address":"","define_connection_info":true,"desc":"","disk":[{"backup":0,"cache":"none","discard":"","file":"vm-2001-disk-0","format":"raw","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"30G","slot":0,"ssd":0,"storage":"local-lvm2","storage_type":"lvm","type":"scsi","volume":"local-lvm2:vm-2001-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":true,"guest_agent_ready_timeout":600,"hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=192.168.0.101/24,gw=192.168.0.1","ipconfig1":"","ipconfig2":"","iso":"","kvm":true,"mac":"","memory":2048,"name":"test-vm-1","nameserver":"","network":[{"bridge":"vmbr0","firewall":false,"link_down":false,"macaddr":"92:1E:F6:66:32:5E","model":"virtio","queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":true,"os_network_config":"","os_type":"cloud-init","pool":"","preprovision":true,"qemu_os":"other","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"192.168.0.101","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE+O8FwO8rcOb+W/VNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS/v6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6/9/yfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef+Nw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM+My0NeagOFbK0/D5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii+Zkww1bOLvZmf6Wsd/pnU28pSZhLK+/3EQ03niqO5eogcTM+0MlT+FM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk= pavelkozlov@MacBookPro.local\n\n","storage":"","storage_type":"","tags":"","target_node":"prox","unused_disk":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":2001}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+2023/09/06 16:03:09 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 145
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:09 GMT
+Expires: Wed, 06 Sep 2023 13:03:09 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"total":512107741184,"used":96649347072,"type":"lvm","content":"images,rootdir","enabled":1,"active":1,"shared":0,"avail":415458394112}}
+unusedDiskNames: []
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1220[0m[36m >[0m [READ] Received Config from Proxmox API: {"vmid":0,"name":"test-vm-3","desc":"","bios":"seabios","onboot":true,"agent":1,"memory":2048,"balloon":0,"os":"other","cores":2,"sockets":1,"vcpus":0,"cpu":"host","numa":false,"kvm":true,"hotplug":"network,disk,usb","iso":"local-lvm2:vm-2003-cloudinit","fullclone":null,"boot":"cdn","bootdisk":"scsi0","scsihw":"virtio-scsi-pci","disk":{"0":{"file":"vm-2003-disk-0","format":"raw","size":"30G","slot":0,"storage":"local-lvm2","storage_type":"lvm","type":"scsi","volume":"local-lvm2:vm-2003-disk-0"}},"unused_disk":{},"network":{"0":{"bridge":"vmbr0","id":0,"macaddr":"62:70:CC:A9:70:19","model":"virtio"}},"serial":{"0":{"id":0,"type":"socket"}},"tags":"","args":"","diskGB":0,"storage":"","storageType":"","nic":"","bridge":"","vlan":-1,"mac":"","ciuser":"","cipassword":"","cicustom":"","searchdomain":"","nameserver":"","sshkeys":"  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE+O8FwO8rcOb+W/VNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS/v6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6/9/yfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef+Nw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM+My0NeagOFbK0/D5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii+Zkww1bOLvZmf6Wsd/pnU28pSZhLK+/3EQ03niqO5eogcTM+0MlT+FM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk= pavelkozlov@MacBookPro.local\n\n","ipconfig0":"ip=192.168.0.103/24,gw=192.168.0.1","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":""} [36mloggerName=[0mresource_vm_read [36mvmid=[0m2003
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1308[0m[36m >[0m Unused Disk Block Processed 'map[0:map[bridge:vmbr0 id:0 macaddr:62:70:CC:A9:70:19 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2003
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1322[0m[36m >[0m Network block received 'map[0:map[bridge:vmbr0 id:0 macaddr:62:70:CC:A9:70:19 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2003
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1367[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr0 id:0 macaddr:62:70:CC:A9:70:19 model:virtio tag:-1]]' from '[map[bridge:vmbr0 macaddr:62:70:CC:A9:70:19 model:virtio tag:-1]]' set as '[map[bridge:vmbr0 firewall:false link_down:false macaddr:62:70:CC:A9:70:19 model:virtio queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2003
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1369[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":15,"agent":1,"args":"","balloon":0,"bios":"seabios","boot":"cdn","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"","clone":"VM 9000","clone_wait":15,"cloudinit_cdrom_storage":"","cores":2,"cpu":"host","default_ipv4_address":"","define_connection_info":true,"desc":"","disk":[{"backup":0,"cache":"none","discard":"","file":"vm-2003-disk-0","format":"raw","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"30G","slot":0,"ssd":0,"storage":"local-lvm2","storage_type":"lvm","type":"scsi","volume":"local-lvm2:vm-2003-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":true,"guest_agent_ready_timeout":600,"hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=192.168.0.103/24,gw=192.168.0.1","ipconfig1":"","ipconfig2":"","iso":"","kvm":true,"mac":"","memory":2048,"name":"test-vm-3","nameserver":"","network":[{"bridge":"vmbr0","firewall":false,"link_down":false,"macaddr":"62:70:CC:A9:70:19","model":"virtio","queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":true,"os_network_config":"","os_type":"cloud-init","pool":"","preprovision":true,"qemu_os":"other","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"192.168.0.103","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE+O8FwO8rcOb+W/VNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS/v6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6/9/yfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef+Nw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM+My0NeagOFbK0/D5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii+Zkww1bOLvZmf6Wsd/pnU28pSZhLK+/3EQ03niqO5eogcTM+0MlT+FM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk= pavelkozlov@MacBookPro.local\n\n","storage":"","storage_type":"","tags":"","target_node":"prox","unused_disk":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":2003}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2003
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:141[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mWed, 06 Sep 2023 16:03:09 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:174[0m[36m >[0m Logging Started. Root Logger Set to level debug
+[90mWed, 06 Sep 2023 16:03:11 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:141[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mWed, 06 Sep 2023 16:03:11 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:174[0m[36m >[0m Logging Started. Root Logger Set to level debug
+2023/09/06 16:03:11 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:11 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:11 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:11 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1662
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:11 GMT
+Expires: Wed, 06 Sep 2023 13:03:11 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"maxmem":4294967296,"netout":0,"template":0,"id":"qemu/100","status":"stopped","uptime":0,"node":"prox","vmid":100,"netin":0,"mem":0,"name":"testansible","maxcpu":4,"cpu":0,"disk":0,"diskread":0,"type":"qemu","diskwrite":0,"maxdisk":53687091200},{"name":"ubuntu2","mem":0,"netin":0,"vmid":123,"maxdisk":2361393152,"diskwrite":0,"disk":0,"diskread":0,"type":"qemu","cpu":0,"maxcpu":1,"netout":0,"maxmem":2147483648,"uptime":0,"node":"prox","status":"stopped","id":"qemu/123","template":0},{"netout":4203415,"maxmem":2147483648,"uptime":12583,"node":"prox","status":"running","id":"qemu/2001","template":0,"name":"test-vm-1","mem":149946368,"netin":887990807,"vmid":2001,"maxdisk":32212254720,"diskwrite":2519356416,"diskread":1197662020,"disk":0,"type":"qemu","cpu":0.0240370368984217,"maxcpu":2},{"vmid":2002,"netin":72854389,"mem":276418560,"name":"test-vm-2","cpu":0.0230559333515474,"maxcpu":2,"diskread":550803060,"disk":0,"type":"qemu","maxdisk":32212254720,"diskwrite":1780711936,"maxmem":2147483648,"netout":577586,"id":"qemu/2002","template":0,"node":"prox","uptime":12583,"status":"running"},{"netout":572527,"maxmem":2147483648,"template":0,"id":"qemu/2003","status":"running","node":"prox","uptime":12583,"netin":72830712,"vmid":2003,"name":"test-vm-3","mem":1007112192,"cpu":0.0230559333515474,"maxcpu":2,"diskwrite":1769849856,"maxdisk":32212254720,"diskread":335806276,"disk":0,"type":"qemu"},{"maxmem":2147483648,"netout":0,"status":"stopped","uptime":0,"node":"prox","template":1,"id":"qemu/9000","mem":0,"name":"VM 9000","vmid":9000,"netin":0,"disk":0,"diskread":0,"type":"qemu","diskwrite":0,"maxdisk":2361393152,"cpu":0,"maxcpu":1}]}
+2023/09/06 16:03:11 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1662
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:11 GMT
+Expires: Wed, 06 Sep 2023 13:03:11 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"maxcpu":4,"cpu":0,"maxdisk":53687091200,"diskwrite":0,"disk":0,"diskread":0,"type":"qemu","netin":0,"vmid":100,"name":"testansible","mem":0,"id":"qemu/100","template":0,"uptime":0,"node":"prox","status":"stopped","netout":0,"maxmem":4294967296},{"maxmem":2147483648,"netout":0,"template":0,"id":"qemu/123","status":"stopped","uptime":0,"node":"prox","vmid":123,"netin":0,"mem":0,"name":"ubuntu2","maxcpu":1,"cpu":0,"disk":0,"diskread":0,"type":"qemu","diskwrite":0,"maxdisk":2361393152},{"mem":149946368,"name":"test-vm-1","vmid":2001,"netin":887990807,"diskread":1197662020,"disk":0,"type":"qemu","maxdisk":32212254720,"diskwrite":2519356416,"cpu":0.0240370368984217,"maxcpu":2,"maxmem":2147483648,"netout":4203415,"node":"prox","uptime":12583,"status":"running","id":"qemu/2001","template":0},{"diskwrite":1780711936,"maxdisk":32212254720,"disk":0,"diskread":550803060,"type":"qemu","cpu":0.0230559333515474,"maxcpu":2,"name":"test-vm-2","mem":276418560,"netin":72854389,"vmid":2002,"status":"running","uptime":12583,"node":"prox","template":0,"id":"qemu/2002","netout":577586,"maxmem":2147483648},{"name":"test-vm-3","mem":1007112192,"netin":72830712,"vmid":2003,"maxdisk":32212254720,"diskwrite":1769849856,"disk":0,"diskread":335806276,"type":"qemu","maxcpu":2,"cpu":0.0230559333515474,"netout":572527,"maxmem":2147483648,"uptime":12583,"node":"prox","status":"running","id":"qemu/2003","template":0},{"cpu":0,"maxcpu":1,"diskwrite":0,"maxdisk":2361393152,"diskread":0,"disk":0,"type":"qemu","netin":0,"vmid":9000,"name":"VM 9000","mem":0,"template":1,"id":"qemu/9000","status":"stopped","uptime":0,"node":"prox","netout":0,"maxmem":2147483648}]}
+2023/09/06 16:03:11 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1662
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:11 GMT
+Expires: Wed, 06 Sep 2023 13:03:11 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"name":"testansible","mem":0,"netin":0,"vmid":100,"diskwrite":0,"maxdisk":53687091200,"diskread":0,"disk":0,"type":"qemu","cpu":0,"maxcpu":4,"netout":0,"maxmem":4294967296,"status":"stopped","uptime":0,"node":"prox","template":0,"id":"qemu/100"},{"vmid":123,"netin":0,"mem":0,"name":"ubuntu2","maxcpu":1,"cpu":0,"diskread":0,"disk":0,"type":"qemu","maxdisk":2361393152,"diskwrite":0,"maxmem":2147483648,"netout":0,"id":"qemu/123","template":0,"uptime":0,"node":"prox","status":"stopped"},{"maxcpu":2,"cpu":0.0240370368984217,"disk":0,"diskread":1197662020,"type":"qemu","diskwrite":2519356416,"maxdisk":32212254720,"vmid":2001,"netin":887990807,"mem":149946368,"name":"test-vm-1","template":0,"id":"qemu/2001","status":"running","uptime":12583,"node":"prox","maxmem":2147483648,"netout":4203415},{"mem":276418560,"name":"test-vm-2","vmid":2002,"netin":72854389,"diskread":550803060,"disk":0,"type":"qemu","diskwrite":1780711936,"maxdisk":32212254720,"cpu":0.0230559333515474,"maxcpu":2,"maxmem":2147483648,"netout":577586,"status":"running","node":"prox","uptime":12583,"template":0,"id":"qemu/2002"},{"netout":572527,"maxmem":2147483648,"id":"qemu/2003","template":0,"node":"prox","uptime":12583,"status":"running","netin":72830712,"vmid":2003,"name":"test-vm-3","mem":1007112192,"maxcpu":2,"cpu":0.0230559333515474,"maxdisk":32212254720,"diskwrite":1769849856,"disk":0,"diskread":335806276,"type":"qemu"},{"maxmem":2147483648,"netout":0,"template":1,"id":"qemu/9000","status":"stopped","node":"prox","uptime":0,"vmid":9000,"netin":0,"mem":0,"name":"VM 9000","cpu":0,"maxcpu":1,"diskread":0,"type":"qemu","disk":0,"diskwrite":0,"maxdisk":2361393152}]}
+2023/09/06 16:03:11 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/prox/qemu/2001/status/stop HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 0
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:11 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/prox/qemu/2003/status/stop HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 0
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:11 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/prox/qemu/2002/status/stop HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 0
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:11 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 69
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:11 GMT
+Expires: Wed, 06 Sep 2023 13:03:11 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:prox:000297BF:006DB38F:64F8788F:qmstop:2001:test@pam:"}
+2023/09/06 16:03:11 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000297BF:006DB38F:64F8788F:qmstop:2001:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:11 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 69
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:11 GMT
+Expires: Wed, 06 Sep 2023 13:03:11 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:prox:000297C0:006DB390:64F8788F:qmstop:2003:test@pam:"}
+2023/09/06 16:03:11 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000297C0:006DB390:64F8788F:qmstop:2003:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:11 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 69
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:11 GMT
+Expires: Wed, 06 Sep 2023 13:03:11 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:prox:000297C3:006DB391:64F8788F:qmstop:2002:test@pam:"}
+2023/09/06 16:03:11 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000297C3:006DB391:64F8788F:qmstop:2002:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:11 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 210
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:11 GMT
+Expires: Wed, 06 Sep 2023 13:03:11 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":169919,"pstart":7189391,"status":"running","node":"prox","starttime":1694005391,"type":"qmstop","user":"test@pam","upid":"UPID:prox:000297BF:006DB38F:64F8788F:qmstop:2001:test@pam:","id":"2001"}}
+2023/09/06 16:03:11 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 210
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:11 GMT
+Expires: Wed, 06 Sep 2023 13:03:11 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"status":"running","pstart":7189393,"pid":169923,"node":"prox","user":"test@pam","type":"qmstop","starttime":1694005391,"id":"2002","upid":"UPID:prox:000297C3:006DB391:64F8788F:qmstop:2002:test@pam:"}}
+2023/09/06 16:03:11 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 210
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:11 GMT
+Expires: Wed, 06 Sep 2023 13:03:11 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"prox","pid":169920,"pstart":7189392,"status":"running","upid":"UPID:prox:000297C0:006DB390:64F8788F:qmstop:2003:test@pam:","id":"2003","starttime":1694005391,"type":"qmstop","user":"test@pam"}}
+2023/09/06 16:03:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000297BF:006DB38F:64F8788F:qmstop:2001:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000297C3:006DB391:64F8788F:qmstop:2002:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000297C0:006DB390:64F8788F:qmstop:2003:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 228
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:13 GMT
+Expires: Wed, 06 Sep 2023 13:03:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"exitstatus":"OK","node":"prox","status":"stopped","pid":169919,"pstart":7189391,"upid":"UPID:prox:000297BF:006DB38F:64F8788F:qmstop:2001:test@pam:","id":"2001","type":"qmstop","user":"test@pam","starttime":1694005391}}
+2023/09/06 16:03:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/status/current HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 228
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:14 GMT
+Expires: Wed, 06 Sep 2023 13:03:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"id":"2002","upid":"UPID:prox:000297C3:006DB391:64F8788F:qmstop:2002:test@pam:","user":"test@pam","type":"qmstop","starttime":1694005391,"node":"prox","exitstatus":"OK","status":"stopped","pstart":7189393,"pid":169923}}
+2023/09/06 16:03:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2002/status/current HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 257
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:14 GMT
+Expires: Wed, 06 Sep 2023 13:03:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"cpu":0,"cpus":2,"diskread":0,"uptime":0,"netout":0,"agent":1,"mem":0,"disk":0,"ha":{"managed":0},"diskwrite":0,"serial":1,"maxdisk":32212254720,"netin":0,"name":"test-vm-2","qmpstatus":"stopped","maxmem":2147483648,"status":"stopped","vmid":2002}}
+2023/09/06 16:03:13 >>>>>>>>>> REQUEST:
+DELETE /api2/json/nodes/prox/qemu/2002 HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 228
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:14 GMT
+Expires: Wed, 06 Sep 2023 13:03:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"id":"2003","upid":"UPID:prox:000297C0:006DB390:64F8788F:qmstop:2003:test@pam:","starttime":1694005391,"user":"test@pam","type":"qmstop","node":"prox","exitstatus":"OK","pstart":7189392,"pid":169920,"status":"stopped"}}
+2023/09/06 16:03:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2003/status/current HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 257
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:14 GMT
+Expires: Wed, 06 Sep 2023 13:03:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"vmid":2001,"status":"stopped","maxmem":2147483648,"maxdisk":32212254720,"netin":0,"name":"test-vm-1","qmpstatus":"stopped","disk":0,"mem":0,"serial":1,"diskwrite":0,"ha":{"managed":0},"cpu":0,"agent":1,"netout":0,"diskread":0,"uptime":0,"cpus":2}}
+2023/09/06 16:03:13 >>>>>>>>>> REQUEST:
+DELETE /api2/json/nodes/prox/qemu/2001 HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 72
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:14 GMT
+Expires: Wed, 06 Sep 2023 13:03:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:prox:000297FE:006DB464:64F87892:qmdestroy:2002:test@pam:"}
+2023/09/06 16:03:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000297FE:006DB464:64F87892:qmdestroy:2002:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:14 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 257
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:14 GMT
+Expires: Wed, 06 Sep 2023 13:03:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"maxmem":2147483648,"status":"stopped","vmid":2003,"name":"test-vm-3","qmpstatus":"stopped","netin":0,"maxdisk":32212254720,"ha":{"managed":0},"diskwrite":0,"serial":1,"mem":0,"disk":0,"cpus":2,"diskread":0,"netout":0,"uptime":0,"agent":1,"cpu":0}}
+2023/09/06 16:03:14 >>>>>>>>>> REQUEST:
+DELETE /api2/json/nodes/prox/qemu/2003 HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:14 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 216
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:14 GMT
+Expires: Wed, 06 Sep 2023 13:03:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"starttime":1694005394,"user":"test@pam","type":"qmdestroy","id":"2002","upid":"UPID:prox:000297FE:006DB464:64F87892:qmdestroy:2002:test@pam:","pstart":7189604,"pid":169982,"status":"running","node":"prox"}}
+2023/09/06 16:03:14 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 72
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:14 GMT
+Expires: Wed, 06 Sep 2023 13:03:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:prox:00029800:006DB467:64F87892:qmdestroy:2001:test@pam:"}
+2023/09/06 16:03:14 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:00029800:006DB467:64F87892:qmdestroy:2001:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:14 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 72
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:14 GMT
+Expires: Wed, 06 Sep 2023 13:03:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:prox:00029802:006DB469:64F87892:qmdestroy:2003:test@pam:"}
+2023/09/06 16:03:14 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:00029802:006DB469:64F87892:qmdestroy:2003:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:14 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 216
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:14 GMT
+Expires: Wed, 06 Sep 2023 13:03:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"starttime":1694005394,"user":"test@pam","type":"qmdestroy","id":"2001","upid":"UPID:prox:00029800:006DB467:64F87892:qmdestroy:2001:test@pam:","pstart":7189607,"pid":169984,"status":"running","node":"prox"}}
+2023/09/06 16:03:14 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 216
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:14 GMT
+Expires: Wed, 06 Sep 2023 13:03:14 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"id":"2003","upid":"UPID:prox:00029802:006DB469:64F87892:qmdestroy:2003:test@pam:","user":"test@pam","type":"qmdestroy","starttime":1694005394,"node":"prox","status":"running","pstart":7189609,"pid":169986}}
+2023/09/06 16:03:16 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000297FE:006DB464:64F87892:qmdestroy:2002:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:16 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 234
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:16 GMT
+Expires: Wed, 06 Sep 2023 13:03:16 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"qmdestroy","user":"test@pam","starttime":1694005394,"upid":"UPID:prox:000297FE:006DB464:64F87892:qmdestroy:2002:test@pam:","id":"2002","status":"stopped","pid":169982,"pstart":7189604,"exitstatus":"OK","node":"prox"}}
+2023/09/06 16:03:16 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:00029800:006DB467:64F87892:qmdestroy:2001:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:16 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:00029802:006DB469:64F87892:qmdestroy:2003:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F8788F::gPe838w/Xh0R0ciGBe15bcfZhQApzCktMGerEacFna1n+ZFvad15p1It9/AwVDPxpwib93yyFSh9ddWAXhHctA4ZkyzPKzuJ1Gz77PEyphDe1eNyGGS7H6vL1fQwD/CCoH35j328QlndTReK5dZWo+LlYofbvPD4nrV5ygK2hJMvH0Pv9OuC7g4eSLsK+U8cHZM8ZZMNbtwOR+TM1beionDizj+1agospYcpP5wBW38kPzvp1dmmLXLX/S+9nEoGLz6d6b4FGjd4GxbuPtuh5GIQ1QJxr7OYDAihuMnUU2POOlTUYeOsNyHsN05fAFlJB14N98WISTHnCb5wdteDUQ==
+Csrfpreventiontoken: 64F8788F:MHsZCY7eD+fOWwYz/vc9ElUxP1//07aTi6Fdb8bG8ro
+Accept-Encoding: gzip
+
+2023/09/06 16:03:16 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 234
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:16 GMT
+Expires: Wed, 06 Sep 2023 13:03:16 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"upid":"UPID:prox:00029800:006DB467:64F87892:qmdestroy:2001:test@pam:","id":"2001","type":"qmdestroy","user":"test@pam","starttime":1694005394,"exitstatus":"OK","node":"prox","status":"stopped","pid":169984,"pstart":7189607}}
+2023/09/06 16:03:16 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 234
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:16 GMT
+Expires: Wed, 06 Sep 2023 13:03:16 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"prox","exitstatus":"OK","status":"stopped","pstart":7189609,"pid":169986,"id":"2003","upid":"UPID:prox:00029802:006DB469:64F87892:qmdestroy:2003:test@pam:","user":"test@pam","type":"qmdestroy","starttime":1694005394}}
+[90mWed, 06 Sep 2023 16:03:40 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:141[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mWed, 06 Sep 2023 16:03:40 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:174[0m[36m >[0m Logging Started. Root Logger Set to level debug
+[90mWed, 06 Sep 2023 16:03:42 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:141[0m[36m >[0m Enabling the capture of log-library logs as ithe _capturelog flag was detected
+[90mWed, 06 Sep 2023 16:03:42 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/util.go:174[0m[36m >[0m Logging Started. Root Logger Set to level debug
+2023/09/06 16:03:42 [DEBUG] setting computed for "unused_disk" from ComputedKeys
+[90mWed, 06 Sep 2023 16:03:42 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:711[0m[36m >[0m Invoking VM create with resource data:  '{"additional_wait":15,"agent":1,"args":"","balloon":0,"bios":"seabios","boot":"cdn","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"","clone":"VM 9000","clone_wait":15,"cloudinit_cdrom_storage":"","cores":2,"cpu":"host","default_ipv4_address":"","define_connection_info":true,"desc":"","disk":[{"backup":0,"cache":"none","discard":"","file":"","format":"","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"30G","slot":0,"ssd":0,"storage":"local-lvm2","storage_type":"","type":"scsi","volume":""}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":true,"guest_agent_ready_timeout":600,"hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=192.168.0.101/24,gw=192.168.0.1","ipconfig1":"","ipconfig2":"","iso":"","kvm":true,"mac":"","memory":2048,"name":"test-vm-1","nameserver":"","network":[{"bridge":"vmbr0","firewall":false,"link_down":false,"macaddr":"","model":"virtio","queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":true,"os_network_config":"","os_type":"cloud-init","pool":"","preprovision":true,"qemu_os":"","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"","ssh_port":"","ssh_private_key":"","ssh_user":"","sshkeys":"  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE+O8FwO8rcOb+W/VNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS/v6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6/9/yfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef+Nw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM+My0NeagOFbK0/D5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii+Zkww1bOLvZmf6Wsd/pnU28pSZhLK+/3EQ03niqO5eogcTM+0MlT+FM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk= pavelkozlov@MacBookPro.local\n","storage":"","storage_type":"","tags":"","target_node":"prox","unused_disk":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":2001}' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2023/09/06 16:03:42 [DEBUG] checking for duplicate name
+2023/09/06 16:03:42 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:42 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 743
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:42 GMT
+Expires: Wed, 06 Sep 2023 13:03:42 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"netin":0,"vmid":100,"name":"testansible","mem":0,"maxcpu":4,"cpu":0,"diskwrite":0,"maxdisk":53687091200,"diskread":0,"disk":0,"type":"qemu","netout":0,"maxmem":4294967296,"template":0,"id":"qemu/100","status":"stopped","node":"prox","uptime":0},{"netin":0,"vmid":123,"name":"ubuntu2","mem":0,"cpu":0,"maxcpu":1,"maxdisk":2361393152,"diskwrite":0,"diskread":0,"disk":0,"type":"qemu","netout":0,"maxmem":2147483648,"id":"qemu/123","template":0,"node":"prox","uptime":0,"status":"stopped"},{"disk":0,"diskread":0,"type":"qemu","maxdisk":2361393152,"diskwrite":0,"cpu":0,"maxcpu":1,"mem":0,"name":"VM 9000","vmid":9000,"netin":0,"uptime":0,"node":"prox","status":"stopped","id":"qemu/9000","template":1,"maxmem":2147483648,"netout":0}]}
+2023/09/06 16:03:42 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/nextid HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:42 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 14
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:42 GMT
+Expires: Wed, 06 Sep 2023 13:03:42 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"101"}
+2023/09/06 16:03:42 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:42 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 743
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:42 GMT
+Expires: Wed, 06 Sep 2023 13:03:42 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"maxmem":4294967296,"netout":0,"uptime":0,"node":"prox","status":"stopped","id":"qemu/100","template":0,"mem":0,"name":"testansible","vmid":100,"netin":0,"diskread":0,"disk":0,"type":"qemu","maxdisk":53687091200,"diskwrite":0,"maxcpu":4,"cpu":0},{"disk":0,"diskread":0,"type":"qemu","diskwrite":0,"maxdisk":2361393152,"cpu":0,"maxcpu":1,"mem":0,"name":"ubuntu2","vmid":123,"netin":0,"status":"stopped","node":"prox","uptime":0,"template":0,"id":"qemu/123","maxmem":2147483648,"netout":0},{"vmid":9000,"netin":0,"mem":0,"name":"VM 9000","cpu":0,"maxcpu":1,"disk":0,"diskread":0,"type":"qemu","maxdisk":2361393152,"diskwrite":0,"maxmem":2147483648,"netout":0,"id":"qemu/9000","template":1,"uptime":0,"node":"prox","status":"stopped"}]}
+2023/09/06 16:03:42 [DEBUG] cloning VM
+2023/09/06 16:03:42 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/prox/qemu/9000/clone HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 63
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+full=1&name=test-vm-1&newid=2001&storage=local-lvm2&target=prox
+2023/09/06 16:03:42 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 70
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:42 GMT
+Expires: Wed, 06 Sep 2023 13:03:42 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:prox:000298BD:006DBFA1:64F878AE:qmclone:9000:test@pam:"}
+2023/09/06 16:03:42 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000298BD:006DBFA1:64F878AE:qmclone:9000:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:42 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 212
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:42 GMT
+Expires: Wed, 06 Sep 2023 13:03:42 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":170173,"pstart":7192481,"status":"running","node":"prox","starttime":1694005422,"type":"qmclone","user":"test@pam","upid":"UPID:prox:000298BD:006DBFA1:64F878AE:qmclone:9000:test@pam:","id":"9000"}}
+2023/09/06 16:03:44 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000298BD:006DBFA1:64F878AE:qmclone:9000:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:44 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 212
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:44 GMT
+Expires: Wed, 06 Sep 2023 13:03:44 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"prox","status":"running","pid":170173,"pstart":7192481,"upid":"UPID:prox:000298BD:006DBFA1:64F878AE:qmclone:9000:test@pam:","id":"9000","type":"qmclone","user":"test@pam","starttime":1694005422}}
+2023/09/06 16:03:46 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000298BD:006DBFA1:64F878AE:qmclone:9000:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:46 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 212
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:46 GMT
+Expires: Wed, 06 Sep 2023 13:03:46 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"prox","status":"running","pstart":7192481,"pid":170173,"id":"9000","upid":"UPID:prox:000298BD:006DBFA1:64F878AE:qmclone:9000:test@pam:","user":"test@pam","type":"qmclone","starttime":1694005422}}
+2023/09/06 16:03:48 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:000298BD:006DBFA1:64F878AE:qmclone:9000:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:48 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 230
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:48 GMT
+Expires: Wed, 06 Sep 2023 13:03:48 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"exitstatus":"OK","node":"prox","status":"stopped","pid":170173,"pstart":7192481,"upid":"UPID:prox:000298BD:006DBFA1:64F878AE:qmclone:9000:test@pam:","id":"9000","type":"qmclone","user":"test@pam","starttime":1694005422}}
+2023/09/06 16:03:55 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/config HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:55 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 479
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:55 GMT
+Expires: Wed, 06 Sep 2023 13:03:55 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"name":"test-vm-1","net0":"virtio=8A:EC:E1:42:0F:9F,bridge=vmbr0","smbios1":"uuid=5a51fc45-9428-4b01-a936-82ce8425e035","serial0":"socket","memory":2048,"scsi0":"local-lvm2:vm-2001-disk-0,size=2252M","meta":"creation-qemu=8.0.2,ctime=1693936972","digest":"495aa8f2071c8874180c58cfdb521680b05ac048","scsihw":"virtio-scsi-pci","vga":"serial0","ide2":"local-lvm2:vm-2001-cloudinit,media=cdrom,size=4M","boot":"order=scsi0","vmgenid":"07430694-ab25-458c-8c03-2208f587b8b8"}}
+2023/09/06 16:03:55 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/content HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:56 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 256
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:56 GMT
+Expires: Wed, 06 Sep 2023 13:03:56 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"size":4194304,"vmid":2001,"content":"images","format":"raw","ctime":"1694005423","volid":"local-lvm2:vm-2001-cloudinit"},{"format":"raw","volid":"local-lvm2:vm-2001-disk-0","ctime":"1694005423","vmid":2001,"content":"images","size":2361393152}]}
+2023/09/06 16:03:56 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:56 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 144
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:56 GMT
+Expires: Wed, 06 Sep 2023 13:03:56 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"type":"lvm","content":"images,rootdir","enabled":1,"total":512107741184,"used":2365587456,"avail":509742153728,"active":1,"shared":0}}
+unusedDiskNames: []
+[90mWed, 06 Sep 2023 16:03:56 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:843[0m[36m >[0m Original disks: 'map[0:map[backup:0 cache:none discard: file: format: iothread:0 mbps:0 mbps_rd:0 mbps_rd_max:0 mbps_wr:0 mbps_wr_max:0 media: replicate:0 size:30G slot:0 ssd:0 storage:local-lvm2 storage_type: type:scsi volume:]]', Clone Disks 'map[0:map[file:vm-2001-disk-0 format:raw size:2252M slot:0 storage:local-lvm2 storage_type:lvm type:scsi volume:local-lvm2:vm-2001-disk-0]]' [36mloggerName=[0mresource_vm_create [36mvmid=[0m
+2023/09/06 16:03:56 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/prox/qemu/2001/config HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 1048
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+agent=1&bios=seabios&boot=cdn&bootdisk=scsi0&cores=2&cpu=host&delete=balloon%2C+vcpus%2C+vga&hotplug=network%2Cdisk%2Cusb&ipconfig0=ip%3D192.168.0.101%2F24%2Cgw%3D192.168.0.1&kvm=1&memory=2048&name=test-vm-1&net0=virtio%3DB6%3AF5%3A36%3ABA%3A3F%3AE0%2Cbridge%3Dvmbr0&numa=0&onboot=1&scsi0=local-lvm2%3Avm-2001-disk-0%2Csize%3D30G&scsihw=virtio-scsi-pci&sockets=1&sshkeys=%2520%2520ssh-rsa%2520AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE%252BO8FwO8rcOb%252BW%252FVNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS%252Fv6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6%252F9%252FyfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef%252BNw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM%252BMy0NeagOFbK0%252FD5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii%252BZkww1bOLvZmf6Wsd%252FpnU28pSZhLK%252B%252F3EQ03niqO5eogcTM%252B0MlT%252BFM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk%253D%2520pavelkozlov%2540MacBookPro.local%250A%250A
+2023/09/06 16:03:56 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 71
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:56 GMT
+Expires: Wed, 06 Sep 2023 13:03:56 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:prox:00029919:006DC4F1:64F878BC:qmconfig:2001:test@pam:"}
+2023/09/06 16:03:56 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:00029919:006DC4F1:64F878BC:qmconfig:2001:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:56 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 214
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:56 GMT
+Expires: Wed, 06 Sep 2023 13:03:56 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"prox","pid":170265,"pstart":7193841,"status":"running","upid":"UPID:prox:00029919:006DC4F1:64F878BC:qmconfig:2001:test@pam:","id":"2001","starttime":1694005436,"type":"qmconfig","user":"test@pam"}}
+2023/09/06 16:03:58 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:00029919:006DC4F1:64F878BC:qmconfig:2001:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:03:58 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 232
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:03:58 GMT
+Expires: Wed, 06 Sep 2023 13:03:58 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pstart":7193841,"pid":170265,"status":"stopped","node":"prox","exitstatus":"OK","starttime":1694005436,"user":"test@pam","type":"qmconfig","id":"2001","upid":"UPID:prox:00029919:006DC4F1:64F878BC:qmconfig:2001:test@pam:"}}
+2023/09/06 16:04:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/config HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:04:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1288
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:04:13 GMT
+Expires: Wed, 06 Sep 2023 13:04:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"vmgenid":"07430694-ab25-458c-8c03-2208f587b8b8","boot":"cdn","agent":"1","ipconfig0":"ip=192.168.0.101/24,gw=192.168.0.1","ide2":"local-lvm2:vm-2001-cloudinit,media=cdrom,size=4M","kvm":1,"cpu":"host","cores":2,"digest":"2c1e3d353fe61b22acad1f2c00ae44f3153f74eb","sshkeys":"%20%20ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE%2BO8FwO8rcOb%2BW%2FVNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS%2Fv6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6%2F9%2FyfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef%2BNw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM%2BMy0NeagOFbK0%2FD5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii%2BZkww1bOLvZmf6Wsd%2FpnU28pSZhLK%2B%2F3EQ03niqO5eogcTM%2B0MlT%2BFM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk%3D%20pavelkozlov%40MacBookPro.local%0A%0A","memory":2048,"net0":"virtio=B6:F5:36:BA:3F:E0,bridge=vmbr0","bootdisk":"scsi0","name":"test-vm-1","sockets":1,"bios":"seabios","numa":0,"scsihw":"virtio-scsi-pci","onboot":1,"meta":"creation-qemu=8.0.2,ctime=1693936972","scsi0":"local-lvm2:vm-2001-disk-0,size=2252M","hotplug":"network,disk,usb","serial0":"socket","smbios1":"uuid=5a51fc45-9428-4b01-a936-82ce8425e035"}}
+2023/09/06 16:04:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/content HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:04:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 256
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:04:13 GMT
+Expires: Wed, 06 Sep 2023 13:04:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"ctime":"1694005423","volid":"local-lvm2:vm-2001-cloudinit","format":"raw","content":"images","vmid":2001,"size":4194304},{"format":"raw","ctime":"1694005423","volid":"local-lvm2:vm-2001-disk-0","size":2361393152,"vmid":2001,"content":"images"}]}
+2023/09/06 16:04:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:04:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 144
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:04:13 GMT
+Expires: Wed, 06 Sep 2023 13:04:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"active":1,"shared":0,"avail":509742153728,"total":512107741184,"used":2365587456,"type":"lvm","content":"images,rootdir","enabled":1}}
+unusedDiskNames: []
+[90mWed, 06 Sep 2023 16:04:13 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1431[0m[36m >[0m Checking disk sizing. Original '30', New '2.19921875' [36mdiskId=[0m0 [36mloggerName=[0mprepareDiskSize
+[90mWed, 06 Sep 2023 16:04:13 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1433[0m[36m >[0m Resizing disk. Original '30', New '2.19921875' [36mdiskId=[0m0 [36mloggerName=[0mprepareDiskSize
+2023/09/06 16:04:13 >>>>>>>>>> REQUEST:
+PUT /api2/json/nodes/prox/qemu/2001/resize HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 19
+Accept: application/json
+Content-Type: application/x-www-form-urlencoded
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+disk=scsi0&size=30G
+2023/09/06 16:04:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 69
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:04:13 GMT
+Expires: Wed, 06 Sep 2023 13:04:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:prox:00029956:006DCBC7:64F878CD:resize:2001:test@pam:"}
+2023/09/06 16:04:13 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:00029956:006DCBC7:64F878CD:resize:2001:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:04:13 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 210
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:04:13 GMT
+Expires: Wed, 06 Sep 2023 13:04:13 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"pid":170326,"pstart":7195591,"status":"running","node":"prox","starttime":1694005453,"type":"resize","user":"test@pam","upid":"UPID:prox:00029956:006DCBC7:64F878CD:resize:2001:test@pam:","id":"2001"}}
+2023/09/06 16:04:15 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:00029956:006DCBC7:64F878CD:resize:2001:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:04:15 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 228
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:04:15 GMT
+Expires: Wed, 06 Sep 2023 13:04:15 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"prox","exitstatus":"OK","pstart":7195591,"pid":170326,"status":"stopped","id":"2001","upid":"UPID:prox:00029956:006DCBC7:64F878CD:resize:2001:test@pam:","starttime":1694005453,"user":"test@pam","type":"resize"}}
+[90mWed, 06 Sep 2023 16:04:15 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:906[0m[36m >[0m Set this vm (resource Id) to 'prox/qemu/2001' [36mloggerName=[0mresource_vm_create [36mvmid=[0m2001
+2023/09/06 16:04:30 [DEBUG] starting VM
+2023/09/06 16:04:30 >>>>>>>>>> REQUEST:
+POST /api2/json/nodes/prox/qemu/2001/status/start HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Content-Length: 0
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:04:30 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Connection: close
+Content-Length: 70
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:04:31 GMT
+Expires: Wed, 06 Sep 2023 13:04:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":"UPID:prox:00029990:006DD275:64F878DF:qmstart:2001:test@pam:"}
+2023/09/06 16:04:30 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:00029990:006DD275:64F878DF:qmstart:2001:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:04:30 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 212
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:04:31 GMT
+Expires: Wed, 06 Sep 2023 13:04:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"id":"2001","upid":"UPID:prox:00029990:006DD275:64F878DF:qmstart:2001:test@pam:","starttime":1694005471,"user":"test@pam","type":"qmstart","node":"prox","pstart":7197301,"pid":170384,"status":"running"}}
+2023/09/06 16:04:32 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/tasks/UPID:prox:00029990:006DD275:64F878DF:qmstart:2001:test@pam:/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:04:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 230
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:04:33 GMT
+Expires: Wed, 06 Sep 2023 13:04:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"node":"prox","exitstatus":"OK","pstart":7197301,"pid":170384,"status":"stopped","id":"2001","upid":"UPID:prox:00029990:006DD275:64F878DF:qmstart:2001:test@pam:","starttime":1694005471,"user":"test@pam","type":"qmstart"}}
+2023/09/06 16:04:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:04:36 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:04:36 GMT
+Expires: Wed, 06 Sep 2023 13:04:36 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:04:46 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:04:49 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:04:49 GMT
+Expires: Wed, 06 Sep 2023 13:04:49 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:04:59 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:05:02 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:05:02 GMT
+Expires: Wed, 06 Sep 2023 13:05:02 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:05:12 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:05:15 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:05:15 GMT
+Expires: Wed, 06 Sep 2023 13:05:15 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:05:25 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:05:28 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:05:28 GMT
+Expires: Wed, 06 Sep 2023 13:05:28 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:05:38 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:05:41 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:05:41 GMT
+Expires: Wed, 06 Sep 2023 13:05:41 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:05:51 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:05:54 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:05:54 GMT
+Expires: Wed, 06 Sep 2023 13:05:54 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:06:04 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:06:07 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:06:07 GMT
+Expires: Wed, 06 Sep 2023 13:06:07 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:06:17 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:06:20 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:06:20 GMT
+Expires: Wed, 06 Sep 2023 13:06:20 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:06:30 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:06:33 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:06:33 GMT
+Expires: Wed, 06 Sep 2023 13:06:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:06:43 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:06:46 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:06:46 GMT
+Expires: Wed, 06 Sep 2023 13:06:46 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:06:56 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:06:59 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:06:59 GMT
+Expires: Wed, 06 Sep 2023 13:06:59 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:07:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:07:12 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:07:12 GMT
+Expires: Wed, 06 Sep 2023 13:07:12 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:07:22 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:07:25 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:07:25 GMT
+Expires: Wed, 06 Sep 2023 13:07:25 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:07:35 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:07:38 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:07:38 GMT
+Expires: Wed, 06 Sep 2023 13:07:38 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:07:48 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:07:51 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:07:51 GMT
+Expires: Wed, 06 Sep 2023 13:07:51 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:08:01 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:08:04 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:08:04 GMT
+Expires: Wed, 06 Sep 2023 13:08:04 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:08:14 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:08:17 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:08:17 GMT
+Expires: Wed, 06 Sep 2023 13:08:17 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:08:27 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:08:30 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:08:31 GMT
+Expires: Wed, 06 Sep 2023 13:08:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:08:40 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:08:43 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:08:44 GMT
+Expires: Wed, 06 Sep 2023 13:08:44 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:08:53 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:08:57 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:08:57 GMT
+Expires: Wed, 06 Sep 2023 13:08:57 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:09:07 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:09:10 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:09:10 GMT
+Expires: Wed, 06 Sep 2023 13:09:10 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:09:20 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:09:23 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:09:23 GMT
+Expires: Wed, 06 Sep 2023 13:09:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:09:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:09:36 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:09:36 GMT
+Expires: Wed, 06 Sep 2023 13:09:36 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:09:46 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:09:49 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:09:49 GMT
+Expires: Wed, 06 Sep 2023 13:09:49 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:09:59 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:10:02 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:10:02 GMT
+Expires: Wed, 06 Sep 2023 13:10:02 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:10:12 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:10:15 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:10:15 GMT
+Expires: Wed, 06 Sep 2023 13:10:15 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:10:25 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:10:28 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:10:28 GMT
+Expires: Wed, 06 Sep 2023 13:10:28 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:10:38 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:10:41 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:10:41 GMT
+Expires: Wed, 06 Sep 2023 13:10:41 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:10:51 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:10:54 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:10:54 GMT
+Expires: Wed, 06 Sep 2023 13:10:54 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:11:04 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:11:07 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:11:07 GMT
+Expires: Wed, 06 Sep 2023 13:11:07 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:11:17 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:11:20 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:11:20 GMT
+Expires: Wed, 06 Sep 2023 13:11:20 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:11:30 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:11:33 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:11:33 GMT
+Expires: Wed, 06 Sep 2023 13:11:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:11:43 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:11:46 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:11:46 GMT
+Expires: Wed, 06 Sep 2023 13:11:46 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:11:56 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:11:59 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:11:59 GMT
+Expires: Wed, 06 Sep 2023 13:11:59 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:12:09 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:12:12 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:12:12 GMT
+Expires: Wed, 06 Sep 2023 13:12:12 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:12:22 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:12:25 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:12:26 GMT
+Expires: Wed, 06 Sep 2023 13:12:26 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:12:35 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:12:39 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:12:39 GMT
+Expires: Wed, 06 Sep 2023 13:12:39 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:12:49 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:12:52 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:12:52 GMT
+Expires: Wed, 06 Sep 2023 13:12:52 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:13:02 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:13:05 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:13:05 GMT
+Expires: Wed, 06 Sep 2023 13:13:05 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:13:15 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:13:18 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:13:18 GMT
+Expires: Wed, 06 Sep 2023 13:13:18 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:13:28 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:13:31 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:13:31 GMT
+Expires: Wed, 06 Sep 2023 13:13:31 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:13:41 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:13:44 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:13:44 GMT
+Expires: Wed, 06 Sep 2023 13:13:44 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:13:54 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:13:57 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:13:57 GMT
+Expires: Wed, 06 Sep 2023 13:13:57 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:14:07 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:14:10 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:14:10 GMT
+Expires: Wed, 06 Sep 2023 13:14:10 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:14:20 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/agent/network-get-interfaces HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:14:23 <<<<<<<<<< RESULT:
+HTTP/1.1 500 QEMU guest agent is not running
+Connection: close
+Content-Length: 13
+Cache-Control: max-age=0
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:14:23 GMT
+Expires: Wed, 06 Sep 2023 13:14:23 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":null}
+2023/09/06 16:14:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/config HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:14:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1286
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:14:33 GMT
+Expires: Wed, 06 Sep 2023 13:14:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"numa":0,"bios":"seabios","sockets":1,"smbios1":"uuid=5a51fc45-9428-4b01-a936-82ce8425e035","serial0":"socket","hotplug":"network,disk,usb","scsi0":"local-lvm2:vm-2001-disk-0,size=30G","meta":"creation-qemu=8.0.2,ctime=1693936972","onboot":1,"scsihw":"virtio-scsi-pci","kvm":1,"ide2":"local-lvm2:vm-2001-cloudinit,media=cdrom,size=4M","ipconfig0":"ip=192.168.0.101/24,gw=192.168.0.1","agent":"1","boot":"cdn","vmgenid":"07430694-ab25-458c-8c03-2208f587b8b8","name":"test-vm-1","bootdisk":"scsi0","net0":"virtio=B6:F5:36:BA:3F:E0,bridge=vmbr0","memory":2048,"sshkeys":"%20%20ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE%2BO8FwO8rcOb%2BW%2FVNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS%2Fv6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6%2F9%2FyfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef%2BNw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM%2BMy0NeagOFbK0%2FD5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii%2BZkww1bOLvZmf6Wsd%2FpnU28pSZhLK%2B%2F3EQ03niqO5eogcTM%2B0MlT%2BFM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk%3D%20pavelkozlov%40MacBookPro.local%0A%0A","digest":"9243355ee5a8c777a9a1aedc6730ffe88df13a13","cpu":"host","cores":2}}
+2023/09/06 16:14:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/status/current HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:14:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 2198
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:14:33 GMT
+Expires: Wed, 06 Sep 2023 13:14:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"status":"running","vmid":2001,"netin":74414884,"proxmox-support":{"query-bitmap-info":true,"pbs-dirty-bitmap-savevm":true,"backup-max-workers":true,"pbs-dirty-bitmap-migration":true,"pbs-dirty-bitmap":true,"pbs-library-version":"1.4.0 (UNKNOWN)","pbs-masterkey":true},"qmpstatus":"running","mem":237121536,"ballooninfo":{"minor_page_faults":2181160,"mem_swapped_in":0,"mem_swapped_out":0,"actual":2147483648,"major_page_faults":1384,"total_mem":2089594880,"max_mem":2147483648,"free_mem":1852473344,"last_update":1694006072},"cpu":0,"balloon":2147483648,"freemem":1852473344,"cpus":2,"netout":408984,"diskread":6789177156,"uptime":601,"maxmem":2147483648,"blockstat":{"ide2":{"rd_merged":0,"rd_operations":235,"unmap_operations":0,"failed_flush_operations":0,"account_failed":true,"invalid_rd_operations":0,"wr_total_time_ns":0,"idle_time_ns":559669089601,"wr_bytes":0,"unmap_total_time_ns":0,"failed_wr_operations":0,"invalid_unmap_operations":0,"flush_operations":0,"wr_highest_offset":0,"wr_operations":0,"invalid_flush_operations":0,"wr_merged":0,"invalid_wr_operations":0,"failed_unmap_operations":0,"account_invalid":true,"unmap_merged":0,"timed_stats":[],"rd_total_time_ns":10695195,"rd_bytes":895300,"flush_total_time_ns":0,"failed_rd_operations":0,"unmap_bytes":0},"scsi0":{"flush_operations":2124,"invalid_unmap_operations":0,"wr_highest_offset":32212254720,"invalid_flush_operations":0,"wr_operations":556731,"failed_unmap_operations":0,"invalid_wr_operations":0,"wr_merged":0,"timed_stats":[],"account_invalid":true,"unmap_merged":0,"rd_bytes":6788281856,"rd_total_time_ns":1282403334159,"unmap_bytes":0,"failed_rd_operations":0,"flush_total_time_ns":936185079,"rd_merged":0,"unmap_operations":0,"rd_operations":1590213,"account_failed":true,"failed_flush_operations":0,"invalid_rd_operations":0,"wr_bytes":12641039360,"idle_time_ns":168115658155,"wr_total_time_ns":901608161350,"unmap_total_time_ns":0,"failed_wr_operations":0}},"running-machine":"pc-i440fx-8.0+pve0","maxdisk":32212254720,"name":"test-vm-1","disk":0,"diskwrite":12641039360,"ha":{"managed":0},"serial":1,"pid":170422,"nics":{"tap2001i0":{"netin":74414884,"netout":408984}},"running-qemu":"8.0.2","agent":1}}
+[90mWed, 06 Sep 2023 16:14:33 +0300[0m [32mINF[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1202[0m[36m >[0m Reading configuration for vmid [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+2023/09/06 16:14:33 >>>>>>>>>> REQUEST:
+GET /api2/json/cluster/resources?type=vm HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:14:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1048
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:14:33 GMT
+Expires: Wed, 06 Sep 2023 13:14:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"maxmem":4294967296,"netout":0,"id":"qemu/100","template":0,"node":"prox","uptime":0,"status":"stopped","vmid":100,"netin":0,"mem":0,"name":"testansible","maxcpu":4,"cpu":0,"diskread":0,"disk":0,"type":"qemu","maxdisk":53687091200,"diskwrite":0},{"id":"qemu/123","template":0,"uptime":0,"node":"prox","status":"stopped","maxmem":2147483648,"netout":0,"maxcpu":1,"cpu":0,"diskread":0,"type":"qemu","disk":0,"maxdisk":2361393152,"diskwrite":0,"vmid":123,"netin":0,"mem":0,"name":"ubuntu2"},{"mem":237154304,"name":"test-vm-1","vmid":2001,"netin":74403408,"disk":0,"diskread":6789177156,"type":"qemu","diskwrite":12641039360,"maxdisk":32212254720,"cpu":0.0395046546936869,"maxcpu":2,"maxmem":2147483648,"netout":408984,"status":"running","uptime":596,"node":"prox","template":0,"id":"qemu/2001"},{"name":"VM 9000","mem":0,"netin":0,"vmid":9000,"diskwrite":0,"maxdisk":2361393152,"disk":0,"diskread":0,"type":"qemu","maxcpu":1,"cpu":0,"netout":0,"maxmem":2147483648,"status":"stopped","node":"prox","uptime":0,"template":1,"id":"qemu/9000"}]}
+2023/09/06 16:14:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/qemu/2001/config HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:14:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 1286
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:14:33 GMT
+Expires: Wed, 06 Sep 2023 13:14:33 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"serial0":"socket","hotplug":"network,disk,usb","smbios1":"uuid=5a51fc45-9428-4b01-a936-82ce8425e035","scsihw":"virtio-scsi-pci","onboot":1,"meta":"creation-qemu=8.0.2,ctime=1693936972","scsi0":"local-lvm2:vm-2001-disk-0,size=30G","bios":"seabios","sockets":1,"numa":0,"net0":"virtio=B6:F5:36:BA:3F:E0,bridge=vmbr0","bootdisk":"scsi0","name":"test-vm-1","cpu":"host","cores":2,"digest":"9243355ee5a8c777a9a1aedc6730ffe88df13a13","sshkeys":"%20%20ssh-rsa%20AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE%2BO8FwO8rcOb%2BW%2FVNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS%2Fv6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6%2F9%2FyfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef%2BNw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM%2BMy0NeagOFbK0%2FD5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii%2BZkww1bOLvZmf6Wsd%2FpnU28pSZhLK%2B%2F3EQ03niqO5eogcTM%2B0MlT%2BFM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk%3D%20pavelkozlov%40MacBookPro.local%0A%0A","memory":2048,"ide2":"local-lvm2:vm-2001-cloudinit,media=cdrom,size=4M","kvm":1,"vmgenid":"07430694-ab25-458c-8c03-2208f587b8b8","boot":"cdn","agent":"1","ipconfig0":"ip=192.168.0.101/24,gw=192.168.0.1"}}
+2023/09/06 16:14:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/content HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:14:33 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 257
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:14:34 GMT
+Expires: Wed, 06 Sep 2023 13:14:34 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":[{"size":4194304,"content":"images","vmid":2001,"volid":"local-lvm2:vm-2001-cloudinit","ctime":"1694005423","format":"raw"},{"volid":"local-lvm2:vm-2001-disk-0","ctime":"1694005423","format":"raw","size":32212254720,"content":"images","vmid":2001}]}
+2023/09/06 16:14:33 >>>>>>>>>> REQUEST:
+GET /api2/json/nodes/prox/storage/local-lvm2/status HTTP/1.1
+Host: 192.168.0.110:8006
+User-Agent: Go-http-client/1.1
+Accept: application/json
+Cookie: PVEAuthCookie=PVE:test@pam:64F878AE::JFgEtMEoKSHTlxys0fpkE3z3JdNEG77oFJK4xSn5cLTrOpp28Xayiii4NAYO0MUni+khmFUEmGf8vfoGG8dLqJVDEd30WrAgvGJhLqfUtJ084hq7Euvag+RkIcMkLU4QxOrNZVjzvQj1UXaE5ZIFWZDpMgxQGfrXjAMZO97rrRxASWMzHi7SgfAB9DkfhUZPrnxnS7WfaE5mxotjH6I1RCbSs1FsEWlZRyGoaczf0uLCXMeEn5oda1uSz5Cb4vxPdEV+ZPvZKOxCbK8m5vdlAy7wMys7zir6hsg5P/BFlUCnzrAMu0h9oBCNfea30PGRCl7Z77tnzoeEFx8PodSacQ==
+Csrfpreventiontoken: 64F878AE:+4Eht3cDBe9UBG7p7VaSfLnoIDyNgUBGE21WWfh4hOI
+Accept-Encoding: gzip
+
+2023/09/06 16:14:34 <<<<<<<<<< RESULT:
+HTTP/1.1 200 OK
+Content-Length: 145
+Cache-Control: max-age=0
+Connection: Keep-Alive
+Connection: Keep-Alive
+Content-Type: application/json;charset=UTF-8
+Date: Wed, 06 Sep 2023 13:14:34 GMT
+Expires: Wed, 06 Sep 2023 13:14:34 GMT
+Pragma: no-cache
+Server: pve-api-daemon/3.0
+
+{"data":{"enabled":1,"content":"images,rootdir","type":"lvm","used":32216449024,"total":512107741184,"avail":479891292160,"shared":0,"active":1}}
+unusedDiskNames: []
+[90mWed, 06 Sep 2023 16:14:34 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1220[0m[36m >[0m [READ] Received Config from Proxmox API: {"vmid":0,"name":"test-vm-1","desc":"","bios":"seabios","onboot":true,"agent":1,"memory":2048,"balloon":0,"os":"other","cores":2,"sockets":1,"vcpus":0,"cpu":"host","numa":false,"kvm":true,"hotplug":"network,disk,usb","iso":"local-lvm2:vm-2001-cloudinit","fullclone":null,"boot":"cdn","bootdisk":"scsi0","scsihw":"virtio-scsi-pci","disk":{"0":{"file":"vm-2001-disk-0","format":"raw","size":"30G","slot":0,"storage":"local-lvm2","storage_type":"lvm","type":"scsi","volume":"local-lvm2:vm-2001-disk-0"}},"unused_disk":{},"network":{"0":{"bridge":"vmbr0","id":0,"macaddr":"B6:F5:36:BA:3F:E0","model":"virtio"}},"serial":{"0":{"id":0,"type":"socket"}},"tags":"","args":"","diskGB":0,"storage":"","storageType":"","nic":"","bridge":"","vlan":-1,"mac":"","ciuser":"","cipassword":"","cicustom":"","searchdomain":"","nameserver":"","sshkeys":"  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE+O8FwO8rcOb+W/VNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS/v6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6/9/yfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef+Nw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM+My0NeagOFbK0/D5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii+Zkww1bOLvZmf6Wsd/pnU28pSZhLK+/3EQ03niqO5eogcTM+0MlT+FM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk= pavelkozlov@MacBookPro.local\n\n","ipconfig0":"ip=192.168.0.101/24,gw=192.168.0.1","ipconfig1":"","ipconfig2":"","ipconfig3":"","ipconfig4":"","ipconfig5":"","ipconfig6":"","ipconfig7":"","ipconfig8":"","ipconfig9":"","ipconfig10":"","ipconfig11":"","ipconfig12":"","ipconfig13":"","ipconfig14":"","ipconfig15":""} [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+[90mWed, 06 Sep 2023 16:14:34 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1308[0m[36m >[0m Unused Disk Block Processed 'map[0:map[bridge:vmbr0 id:0 macaddr:B6:F5:36:BA:3F:E0 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+[90mWed, 06 Sep 2023 16:14:34 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1322[0m[36m >[0m Network block received 'map[0:map[bridge:vmbr0 id:0 macaddr:B6:F5:36:BA:3F:E0 model:virtio]]' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+[90mWed, 06 Sep 2023 16:14:34 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1367[0m[36m >[0m VM Net Config 'map[0:map[bridge:vmbr0 id:0 macaddr:B6:F5:36:BA:3F:E0 model:virtio tag:-1]]' from '[map[bridge:vmbr0 macaddr:B6:F5:36:BA:3F:E0 model:virtio tag:-1]]' set as '[map[bridge:vmbr0 firewall:false link_down:false macaddr:B6:F5:36:BA:3F:E0 model:virtio queues:0 rate:0 tag:-1]]' type of 'string' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
+[90mWed, 06 Sep 2023 16:14:34 +0300[0m [33mDBG[0m [1mgithub.com/Telmate/terraform-provider-proxmox/proxmox/resource_vm_qemu.go:1369[0m[36m >[0m Finished VM read resulting in data: '{"additional_wait":15,"agent":1,"args":"","balloon":0,"bios":"seabios","boot":"cdn","bootdisk":"scsi0","bridge":"","ci_wait":0,"cicustom":"","cipassword":"","ciuser":"","clone":"VM 9000","clone_wait":15,"cloudinit_cdrom_storage":"","cores":2,"cpu":"host","default_ipv4_address":"","define_connection_info":true,"desc":"","disk":[{"backup":0,"cache":"none","discard":"","file":"vm-2001-disk-0","format":"raw","iothread":0,"mbps":0,"mbps_rd":0,"mbps_rd_max":0,"mbps_wr":0,"mbps_wr_max":0,"media":"","replicate":0,"size":"30G","slot":0,"ssd":0,"storage":"local-lvm2","storage_type":"lvm","type":"scsi","volume":"local-lvm2:vm-2001-disk-0"}],"disk_gb":0,"force_create":false,"force_recreate_on_change_of":"","full_clone":true,"guest_agent_ready_timeout":600,"hastate":"","hotplug":"network,disk,usb","ipconfig0":"ip=192.168.0.101/24,gw=192.168.0.1","ipconfig1":"","ipconfig2":"","iso":"","kvm":true,"mac":"","memory":2048,"name":"test-vm-1","nameserver":"","network":[{"bridge":"vmbr0","firewall":false,"link_down":false,"macaddr":"B6:F5:36:BA:3F:E0","model":"virtio","queues":0,"rate":0,"tag":-1}],"nic":"","numa":false,"onboot":true,"os_network_config":"","os_type":"cloud-init","pool":"","preprovision":true,"qemu_os":"other","reboot_required":false,"scsihw":"virtio-scsi-pci","searchdomain":"","serial":[],"sockets":1,"ssh_forward_ip":"","ssh_host":"192.168.0.101","ssh_port":"22","ssh_private_key":"","ssh_user":"","sshkeys":"  ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCrsrVuhoieehrZfB1t8oeli6F4HgouucdyOsLE+O8FwO8rcOb+W/VNmDWPo1XIXno2QsjstCqA4SjY0IjBo7K0lwS/v6MvDpmrPBqeK4j1IHdl2baaLyh8DD9EVaALUVhdy6/9/yfgOhMLM5HP8RBgcCjQD231IUt8HQFY4dA5Hlg1HMjIVef+Nw1BiicLMeio5j81vfIbRRwdH4saDVu6xDi9Kr9s3DfpEIX487FZcW32BfM+My0NeagOFbK0/D5hQRrX7BgmAGyuWfo1zUPTgtqCXWP9bKdAW9lLp1fpNKgfHs1QbJFoMa2WqT2Xz9f22cz39g0qtjAygN40A6ouEOlzQd4ZlpkxOgzcsrOR9DMVkHzi9waxSz9wlF1KVXKii+Zkww1bOLvZmf6Wsd/pnU28pSZhLK+/3EQ03niqO5eogcTM+0MlT+FM4ygDsEcpVhCqHJoDaZ4gUuKvGI1sHsW79EXOBzkDZA1mN7NLQySXOB8EYPcXSRcGKf5z0gk= pavelkozlov@MacBookPro.local\n\n","storage":"","storage_type":"","tags":"","target_node":"prox","unused_disk":[],"vcpus":0,"vga":[],"vlan":-1,"vmid":2001}' [36mloggerName=[0mresource_vm_read [36mvmid=[0m2001
