@@ -46,7 +46,7 @@
     "command": "list.select",
     "when": "listFocus && !inputFocus"
 },
-/ {
+ {
      "key": "' /",
      "command": "editor.action.commentLine",
     "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
@@ -94,5 +94,45 @@
     "key": "cmd+k cmd+i",
     "command": "-editor.action.showHover",
     "when": "editorTextFocus"
+},
+{
+    "key": "[ d",
+    "command": "editor.action.marker.prevInFiles",
+    "when": "editorFocus"
+},
+{
+    "key": "shift+f8",
+    "command": "-editor.action.marker.prevInFiles",
+    "when": "editorFocus"
+},
+{
+    "key": "] d",
+    "command": "editor.action.marker.nextInFiles",
+    "when": "editorFocus"
+},
+{
+    "key": "f8",
+    "command": "-editor.action.marker.nextInFiles",
+    "when": "editorFocus"
+},
+{
+    "key": "ctrl+o",
+    "command": "workbench.action.navigateBack",
+    "when": "canNavigateBack"
+},
+{
+    "key": "ctrl+-",
+    "command": "-workbench.action.navigateBack",
+    "when": "canNavigateBack"
+},
+{
+    "key": "ctrl+i",
+    "command": "workbench.action.navigateForward",
+    "when": "canNavigateForward"
+},
+{
+    "key": "ctrl+shift+-",
+    "command": "-workbench.action.navigateForward",
+    "when": "canNavigateForward"
 }
 ]
