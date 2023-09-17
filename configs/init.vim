@@ -115,6 +115,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'pearofducks/ansible-vim'
 Plug 'towolf/vim-helm'
+Plug 'mfussenegger/nvim-lint'
 call plug#end()
 
 
@@ -437,6 +438,13 @@ nvim_lsp.tsserver.setup({
         on_attach(client, bufnr)
     end,
 })
+
+
+require('lint').linters_by_ft = {
+  javascript = {'eslint'},
+  typescript = {'eslint'}
+}
+
 
 local null_ls = require("null-ls")
 null_ls.setup({
