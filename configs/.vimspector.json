@@ -9,16 +9,19 @@
       }
     }
     ,
-"js": {
-      "adapter": "vscode-node",
-      "filetypes": [ "javascript", "typescript" ],
-      "configuration": {
-        "request": "launch",
-        "program": "${file}"
-      }
-    }
-    ,
-"run": {
+        "js": {
+            "adapter": "js-debug",
+            "filetypes": ["javascript", "typescript"], // optional
+            "configuration": {
+                "request": "launch",
+                "stopOnEntry": true,
+                "console": "integratedTerminal",
+                "program": "${file}",
+                "cwd": "${workspaceRoot}",
+                "type": "pwa-node" // this is the default, but see below
+            }
+        },
+    "run": {
       "adapter": "delve",
       "filetypes": [ "go" ],
       "configuration": {
