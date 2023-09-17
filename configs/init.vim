@@ -126,6 +126,10 @@ autocmd FileType javascript map <buffer> <Leader>q :w<CR>:exec '!node %'<CR>
 " autocmd FileType python map <buffer> <C-r> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 " autocmd FileType python imap <buffer> <C-r> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
+if has("autocmd")
+    autocmd BufWritePost *.py silent! !autopep8 -i %
+endif
+
 " ✹
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'',
