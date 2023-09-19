@@ -642,3 +642,4 @@ if &diff
     colorscheme molokai
 endif
 
+nmap <S-F11> <Plug>VimspectorStepOut
