@@ -643,3 +643,5 @@ if &diff
 endif
 
 nmap <S-F11> <Plug>VimspectorStepOut
+" :VimspectorMkSession
+" :VimspectorLoadSession
