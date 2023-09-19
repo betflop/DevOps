@@ -24,7 +24,10 @@
     "run": {
       "adapter": "delve",
       "filetypes": [ "go" ],
-      "configuration": {
+         "variables": {
+        // example, to disable delve's go version check
+         "dlvFlags": "--check-go-version=false"
+      },      "configuration": {
         "request": "launch",
         "program": "${file}"
       }
