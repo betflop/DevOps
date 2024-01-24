@@ -1,0 +1,38 @@
+---
+- hosts: nfs-server
+  become: yes
+  tasks:
+    - name: Update all packages
+      apt:
+        update_cache: yes
+
+    - name: Install NFS server package
+      apt: 
+        name: nfs-kernel-server
+        state: present
+
+    - name: Create a directory to share
+      file:
+        path: /var/nfs_share
+        state: directory
+        mode: '777'
+
+    - name: Modify ownership & permissions of the shared directory
+      file:
+        path: /var/nfs_share
+        owner: nobody
+        group: nogroup
+        mode: '777'
+
+    - name: Add the directory to the NFS configuration file
+      lineinfile:
+        path: /etc/exports
+        line: '/var/nfs_share *(rw,sync,no_subtree_check,no_root_squash)'
+
+    - name: Export the shared directory
+      command:
+        cmd: systemctl restart nfs-kernel-server
+
+    - name: Restart NFS service
+      command:
+        cmd: systemctl restart nfs-kernel-server

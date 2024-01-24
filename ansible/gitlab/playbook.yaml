@@ -1,0 +1,12 @@
+---
+
+- hosts: gitlab_server
+  become: yes
+  vars:
+    gitlab_external_url: 'http://gitlab'
+  roles:
+    - geerlingguy.gitlab
+  tasks:
+    - name: Create GitLab backup
+      command: gitlab-backup create
+      tags: backup
