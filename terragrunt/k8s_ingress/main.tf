@@ -84,6 +84,15 @@ resource "yandex_kubernetes_node_group" "testgroup" {
     container_runtime {
       type = "containerd"
     }
+
+
+    metadata = {
+      ssh-keys = "ubuntu:${file("~/.ssh/id_rsa.pub")}"
+      # user-data = file("startup.sh")
+    }
+
+
+
   }
   scale_policy {
     fixed_scale {

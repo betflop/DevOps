@@ -1,0 +1,86 @@
+---
+- hosts: vpn
+  become: true
+  tasks:
+    - name: Update and upgrade all packages to the latest version
+      apt:
+        update_cache: true
+        upgrade: dist
+
+    - name: Install required packages
+      apt:
+        pkg:
+          - apt-transport-https
+          - ca-certificates
+          - curl
+          - gnupg
+          - software-properties-common
+
+    - name: Add Docker's official GPG key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+
+    - name: Add Docker repository
+      apt_repository:
+        repo: deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu focal stable
+        state: present
+
+    - name: Install Docker and related packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - docker-ce
+        - docker-ce-cli
+        - containerd.io
+
+    - name: Add Docker group
+      group:
+        name: docker
+        state: present
+
+    - name: Add user to Docker group
+      user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: true
+
+    - name: Enable and start Docker services
+      systemd:
+        name: "{{ item }}"
+        enabled: true
+        state: started
+      loop:
+        - docker.service
+        - containerd.service
+    - name: Run wireguard container
+      tags: wireguard
+      docker_container:
+        name: wireguard
+        image: linuxserver/wireguard
+        state: started
+        restart_policy: unless-stopped
+        published_ports: 51820:51820/udp
+        volumes:
+          - "/path/to/appdata/config:/config"
+          - "/lib/modules:/lib/modules"
+        env:
+          PUID: "1000"
+          PGID: "1000"
+          TZ: Etc/UTC
+          SERVERURL: wireguard.domain.com
+          SERVERPORT: "51820"
+          PEERS: "1"
+          PEERDNS: auto
+          INTERNAL_SUBNET: 10.13.13.0
+          ALLOWEDIPS: 0.0.0.0/0
+          PERSISTENTKEEPALIVE_PEERS: ""
+          LOG_CONFS: "true"
+        capabilities:
+          - NET_ADMIN
+          - SYS_MODULE
+        sysctls:
+          net.ipv4.conf.all.src_valid_mark: 1
+...
+
