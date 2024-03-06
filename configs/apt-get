@@ -20,6 +20,7 @@ sudo apt-get install ripgrep
 
 ################# prog
 sudo npm i -g bash-language-server
+sudo pip3 install debugpy
 npm install -g @ansible/ansible-language-server
 sudo apt-get intall terraform-ls
 sudo apt-get install  golang
@@ -29,7 +30,6 @@ sudo apt install tidy
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install -g pyright
-npm i -g bash-language-server
 sudo npm i -g yaml-language-server
 sudo npm install -g typescript typescript-language-server
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
@@ -38,7 +38,6 @@ nvm install --lts 10; nvm use --lts 10; python3 ./install_gadget.py --force-enab
 nvm deactivate
 
 ################# local
-### test comment
 
 npm i -D eslint
 npm install --save-dev --save-exact prettier
