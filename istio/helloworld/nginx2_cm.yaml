@@ -1,0 +1,12 @@
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: index2-html-configmap
+  namespace: default
+data:
+  index.html: |
+    <html>
+    <h1>Hello World 222</h1>
+    <h1>Yayy Looks like you found my Kube webpage!</h1>
+    </html>

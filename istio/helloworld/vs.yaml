@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: nginx-virtualservice
+spec:
+  hosts:
+  - "test.istio.com"
+  gateways:
+  - nginx-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/"
+    route:
+    - destination:
+        host: nginx-service.default.svc.cluster.local
+        port:
+          number: 80
+

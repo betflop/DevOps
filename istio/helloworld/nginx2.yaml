@@ -1,0 +1,27 @@
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx2-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx2-test
+  template:
+    metadata:
+      labels:
+        app: nginx2-test
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: nginx2-config
+          mountPath: /usr/share/nginx/html
+      volumes:
+      - name: nginx2-config
+        configMap:
+          name: index2-html-configmap
