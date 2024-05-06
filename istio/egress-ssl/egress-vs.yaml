@@ -1,0 +1,30 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: my-virtual-service
+  namespace: istio-system
+spec:
+  hosts:
+  - "192.168.0.59.sslip.io"
+  gateways:
+  - mesh
+  - ssl-gateway
+  http:
+    - match:
+      - gateways: 
+        - mesh
+        port: 80
+      route:
+      - destination:
+          host: "istio-egressgateway.istio-system.svc.cluster.local"
+          port:
+            number: 80
+    - match:
+      - gateways: 
+        - ssl-gateway
+        port: 8080
+      route:
+      - destination:
+          host: "192.168.0.59.sslip.io"
+          port:
+            number: 443

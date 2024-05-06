@@ -1,0 +1,27 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: egress-dr
+  namespace: istio-system
+spec:
+  host: 192.168.0.59.sslip.io
+  trafficPolicy:
+    loadBalancer:
+      simple: ROUND_ROBIN
+    outlierDetection:
+      consecutiveErrors: 3
+      interval: 10s
+      baseEjectionTime: 30s
+      maxEjectionPercent: 100
+    portLevelSettings:
+      - port:
+          number: 443
+        tls:
+          caCertificates: /etc/istio/nginx-ca-certs/ca.crt
+          clientCertificate: /etc/istio/nginx-client-certs/tls.crt
+          privateKey: /etc/istio/nginx-client-certs/tls.key
+          mode: MUTUAL
+          sni: 192.168.0.59.sslip.io
+  workloadSelector:
+    matchLabels:
+      istio: egressgateway
