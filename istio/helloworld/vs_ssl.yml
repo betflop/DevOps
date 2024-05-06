@@ -1,0 +1,16 @@
+
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: tcp-virtual-service
+spec:
+  hosts:
+  - test.ssl
+  tcp:
+  - match:
+    - port: 443
+    route:
+    - destination:
+        host: 192.168.0.59
+        port:
+          number: 443
